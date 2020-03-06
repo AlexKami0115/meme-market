@@ -1,4 +1,4 @@
-/*
+
 drop table Patrons CASCADE CONSTRAINTS;
 drop table Rarity CASCADE CONSTRAINTS;
 drop table Tags CASCADE CONSTRAINTS;
@@ -11,7 +11,7 @@ drop table TradePatronCards CASCADE CONSTRAINTS;
 drop table PackTiers CASCADE CONSTRAINTS;
 drop table PackTiersRarity CASCADE CONSTRAINTS;
 drop table Microtransactions CASCADE CONSTRAINTS;
-drop table PurchaseLevel CASCADE CONSTRAINTS;
+drop table PurchaseLevels CASCADE CONSTRAINTS;
 drop table Purchase CASCADE CONSTRAINTS;
 drop table Comments CASCADE CONSTRAINTS;
 
@@ -26,10 +26,9 @@ drop sequence TradePatronCards_seq;
 drop sequence PackTiers_seq;
 drop sequence PackTiersRarity_seq;
 drop sequence Microtransactions_seq;
-drop sequence PurchaseLevel_seq;
+drop sequence PurchaseLevels_seq;
 drop sequence Purchase_seq;
 drop sequence Comments_seq;
-*/
 
 create table Patrons(
     id number(10) primary key,
@@ -85,8 +84,8 @@ create table Trades(
     patronOneId number(10),
     patronTwoId number(10),
     constraint fk_Trades_TradeStatus foreign key (tradStatusId) references TradeStatus(id),
-    constraint fk_Trades_Patrons foreign key (patronOneId) references Patrons(id),
-    constraint fk_Trades_Patrons foreign key (patronTwoId) references Patrons(id)
+    constraint fk_Trades_Patrons_One foreign key (patronOneId) references Patrons(id),
+    constraint fk_Trades_Patrons_Two foreign key (patronTwoId) references Patrons(id)
 );
 
 create table TradePatronCards(
@@ -118,7 +117,7 @@ create table Microtransactions( -- Using stonks to buy packs.
     constraint fk_Microtransactions_Patrons foreign key (patronId) references Patrons(id)
 );
 
-create table PurchaseLevel(
+create table PurchaseLevels(
     id number(1) primary key,
     levelName varchar2(20) not null,
     stonkAmount number(5) not null,
@@ -154,9 +153,11 @@ create sequence TradePatronCards_seq nocache;
 create sequence PackTiers_seq nocache;
 create sequence PackTiersRarity_seq nocache;
 create sequence Microtransactions_seq nocache;
-create sequence PurchaseLevel_seq nocache;
+create sequence PurchaseLevels_seq nocache;
 create sequence Purchase_seq nocache;
 create sequence Comments_seq nocache;
+
+commit;
 
 /*
 create table Patrons
