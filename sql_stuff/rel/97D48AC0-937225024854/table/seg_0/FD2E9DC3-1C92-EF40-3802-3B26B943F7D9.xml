@@ -1,0 +1,131 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FD2E9DC3-1C92-EF40-3802-3B26B943F7D9" schemaObject="5C1C050D-808D-4D6A-4ACF-3C0978E7674A" name="COMMENTS">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>ADMIN</sourceObjSchema>
+<sourceObjName>COMMENTS</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:57 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="1E05FCEA-81A6-993F-7315-D9D6D7627652">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>COMMENTS</sourceObjSchema>
+<sourceObjName>ID</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:58 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CARDID" id="E52AA13A-F1D0-2D84-864E-AC13C5A16AB3">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>COMMENTS</sourceObjSchema>
+<sourceObjName>CARDID</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:58 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5ED0C68A-DB1E-697A-EE9D-26DFFA31046F" referredColumn="0EA36378-4413-EA9D-2F98-67A33CF58EAD"/>
+</associations>
+</Column>
+<Column name="PATRONID" id="D07C684D-ED08-D24F-4B75-59A18667C21F">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>COMMENTS</sourceObjSchema>
+<sourceObjName>PATRONID</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:58 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1E359734-8126-0A2E-BFDD-6F0A9D7F1379" referredColumn="CD76CF0F-C876-AFE9-81F1-C3C22EB1632B"/>
+</associations>
+</Column>
+<Column name="COMMENTTEXT" id="6859F70A-7192-E8A8-F560-E7DC81B9B2A6">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>COMMENTS</sourceObjSchema>
+<sourceObjName>COMMENTTEXT</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:58 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>500 BYTE</dataTypeSize>
+<ownDataTypeParameters>500 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TIMEOFCOMMENT" id="E02B3DB4-5BB9-CE62-0F18-1E3D41D35EEA">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>COMMENTS</sourceObjSchema>
+<sourceObjName>TIMEOFCOMMENT</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:58 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<defaultValue>systimestamp</defaultValue>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B4D8B3DA-801C-6ED8-376B-18055CA54AE0" schemaObject="5C1C050D-808D-4D6A-4ACF-3C0978E7674A" name="COMMENTS_PK">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>ADMIN</sourceObjSchema>
+<sourceObjName>SYS_C0010901</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:59 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1E05FCEA-81A6-993F-7315-D9D6D7627652"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8382381F-341D-1F61-9F99-FA95904AFECB" name="FK_COMMENTS_CARDS">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:07:02 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E52AA13A-F1D0-2D84-864E-AC13C5A16AB3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F408775B-9CE9-50F2-716A-60DC748A3C45" name="FK_COMMENTS_PATRONS">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:07:02 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D07C684D-ED08-D24F-4B75-59A18667C21F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

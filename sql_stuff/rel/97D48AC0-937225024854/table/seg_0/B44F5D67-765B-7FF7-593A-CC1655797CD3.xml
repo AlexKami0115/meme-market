@@ -1,0 +1,59 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B44F5D67-765B-7FF7-593A-CC1655797CD3" schemaObject="5C1C050D-808D-4D6A-4ACF-3C0978E7674A" name="PACKTIERS">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>ADMIN</sourceObjSchema>
+<sourceObjName>PACKTIERS</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:58 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="352DA498-2A21-3B69-1927-C102627FD3D3">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>PACKTIERS</sourceObjSchema>
+<sourceObjName>ID</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:58 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,1,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TIERNAME" id="EFA29414-F8CC-7687-0E75-3BC4C70D12B1">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>PACKTIERS</sourceObjSchema>
+<sourceObjName>TIERNAME</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:58 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="3E40189C-3EDF-46E3-D60C-0D7182795686" schemaObject="5C1C050D-808D-4D6A-4ACF-3C0978E7674A" name="PACKTIERS_PK">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>ADMIN</sourceObjSchema>
+<sourceObjName>SYS_C0010878</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:59 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="352DA498-2A21-3B69-1927-C102627FD3D3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,38 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="CARDTAGS" directorySegmentName="seg_0" id="1313ECC9-A5C8-3968-947D-D80B95A3B380">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:57 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<schemaObject>5C1C050D-808D-4D6A-4ACF-3C0978E7674A</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>47852E91-6DA3-6E09-9749-3C97CCB0C989</segment>
+<tableSpace>E6839252-32E7-8D47-A157-32C22EEEE889</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="TAGID" id="2F0604BB-506B-9D40-6A42-CE5D59CA3941">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:58 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="CARDID" id="FACBBDD7-9FDE-C846-F42F-812BAC2F3085">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:58 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FK_CARDTAGS_TAGS" id="9C2F9D05-3884-83CB-2F9B-F78FA92B4D5B">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:07:02 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FK_CARDTAGS_CARDS" id="A5B589C5-C3B7-0E45-438D-3F02A4FAEC60">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:07:02 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+</TableProxyOraclev11g>

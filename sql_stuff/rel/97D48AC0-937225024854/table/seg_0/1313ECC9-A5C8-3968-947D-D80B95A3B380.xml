@@ -1,0 +1,72 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1313ECC9-A5C8-3968-947D-D80B95A3B380" schemaObject="5C1C050D-808D-4D6A-4ACF-3C0978E7674A" name="CARDTAGS">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>ADMIN</sourceObjSchema>
+<sourceObjName>CARDTAGS</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:57 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CARDID" id="FACBBDD7-9FDE-C846-F42F-812BAC2F3085">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>CARDTAGS</sourceObjSchema>
+<sourceObjName>CARDID</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:58 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="CEDA4253-DA76-6AFD-AB76-6E9D4D66F6DE" referredColumn="0EA36378-4413-EA9D-2F98-67A33CF58EAD"/>
+</associations>
+</Column>
+<Column name="TAGID" id="2F0604BB-506B-9D40-6A42-CE5D59CA3941">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>CARDTAGS</sourceObjSchema>
+<sourceObjName>TAGID</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:58 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,2,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="BAE226DC-3A78-B236-9996-9FCDB7390E7D" referredColumn="F2C43B92-9722-FF50-246A-974C3891D569"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A5B589C5-C3B7-0E45-438D-3F02A4FAEC60" name="FK_CARDTAGS_CARDS">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:07:02 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FACBBDD7-9FDE-C846-F42F-812BAC2F3085"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9C2F9D05-3884-83CB-2F9B-F78FA92B4D5B" name="FK_CARDTAGS_TAGS">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:07:02 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2F0604BB-506B-9D40-6A42-CE5D59CA3941"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

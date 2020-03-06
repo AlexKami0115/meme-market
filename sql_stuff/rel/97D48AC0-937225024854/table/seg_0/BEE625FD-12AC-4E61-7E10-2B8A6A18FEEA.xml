@@ -1,0 +1,117 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BEE625FD-12AC-4E61-7E10-2B8A6A18FEEA" schemaObject="5C1C050D-808D-4D6A-4ACF-3C0978E7674A" name="PATRONCARDS">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>ADMIN</sourceObjSchema>
+<sourceObjName>PATRONCARDS</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:58 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="512DE0E4-451F-8A8F-C51A-369B15C1E7E8">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>PATRONCARDS</sourceObjSchema>
+<sourceObjName>ID</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:58 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PATRONID" id="F38C8057-115B-9E4E-2DD0-992F88E23E71">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>PATRONCARDS</sourceObjSchema>
+<sourceObjName>PATRONID</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:58 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C6E89F75-1D1B-8E4E-1C6E-D1C463273338" referredColumn="CD76CF0F-C876-AFE9-81F1-C3C22EB1632B"/>
+</associations>
+</Column>
+<Column name="CARDID" id="C26FDC27-C257-EA46-7BD6-4E71BD50D2D3">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>PATRONCARDS</sourceObjSchema>
+<sourceObjName>CARDID</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:58 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2726FF7A-9084-23D1-F075-C2B0AFE0F1BE" referredColumn="0EA36378-4413-EA9D-2F98-67A33CF58EAD"/>
+</associations>
+</Column>
+<Column name="SHOWCASED" id="43DF4759-729E-8362-D057-ACE286CFBC0E">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>PATRONCARDS</sourceObjSchema>
+<sourceObjName>SHOWCASED</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:58 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,1,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="ED7DE4D6-2734-9B07-B380-24A7FC3235E8" schemaObject="5C1C050D-808D-4D6A-4ACF-3C0978E7674A" name="PATRONCARDS_PK">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>ADMIN</sourceObjSchema>
+<sourceObjName>SYS_C0010863</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:59 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="512DE0E4-451F-8A8F-C51A-369B15C1E7E8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2160054A-C708-6083-D994-D8E39F4D6894" name="FK_PATRONCARDS_CARDS">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:07:02 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C26FDC27-C257-EA46-7BD6-4E71BD50D2D3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B627A551-BF93-7F45-39B3-E3860CDC8B00" name="FK_PATRONCARDS_PATRONS">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:07:02 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F38C8057-115B-9E4E-2DD0-992F88E23E71"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

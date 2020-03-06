@@ -1,0 +1,101 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="595A4165-52D7-6D76-690E-585A2A4ED2CC" schemaObject="5C1C050D-808D-4D6A-4ACF-3C0978E7674A" name="PACKTIERSRARITY">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>ADMIN</sourceObjSchema>
+<sourceObjName>PACKTIERSRARITY</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:58 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="PACKTIERSID" id="7B22A898-B21B-A44F-5B6F-4B9403989B9F">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>PACKTIERSRARITY</sourceObjSchema>
+<sourceObjName>PACKTIERSID</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:58 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,1,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8D337C24-250C-0E9D-64C6-7591198AF8A1" referredColumn="352DA498-2A21-3B69-1927-C102627FD3D3"/>
+</associations>
+</Column>
+<Column name="RARITYID" id="7631E734-7027-A4D5-70F4-B5071B99B34D">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>PACKTIERSRARITY</sourceObjSchema>
+<sourceObjName>RARITYID</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:58 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,1,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E87A7380-1AAB-C2E5-6EDF-B13342BEF494" referredColumn="ED5A77D6-4968-CFB0-2467-5810F229DFFD"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="1415F338-6D9F-FF39-C860-12AB7A9832E0" name="PK_PACKTIERSRARITY">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>ADMIN</sourceObjSchema>
+<sourceObjName>PK_PACKTIERSRARITY</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:07:00 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7B22A898-B21B-A44F-5B6F-4B9403989B9F"/>
+<colUsage columnID="7631E734-7027-A4D5-70F4-B5071B99B34D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2D07D92B-C8AB-AB44-A506-7AE35922788E" schemaObject="5C1C050D-808D-4D6A-4ACF-3C0978E7674A" name="PK_PACKTIERSRARITY">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>ADMIN</sourceObjSchema>
+<sourceObjName>PK_PACKTIERSRARITY</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:59 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7B22A898-B21B-A44F-5B6F-4B9403989B9F"/>
+<colUsage columnID="7631E734-7027-A4D5-70F4-B5071B99B34D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F08510A1-DFFC-6395-3EA9-B4C974E8D5D0" name="FK_PACKTIERSRARITY_PACKTIERS">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:07:02 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7B22A898-B21B-A44F-5B6F-4B9403989B9F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4745C832-2FFC-A042-EF7D-60F0E53C8ECB" name="FK_PACKTIERSRARITY_RARITY">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:07:02 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7631E734-7027-A4D5-70F4-B5071B99B34D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

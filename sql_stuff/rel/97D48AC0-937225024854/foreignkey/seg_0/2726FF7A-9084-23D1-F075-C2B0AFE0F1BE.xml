@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="2726FF7A-9084-23D1-F075-C2B0AFE0F1BE" containerWithKeyObject="BEE625FD-12AC-4E61-7E10-2B8A6A18FEEA" localFKIndex="2160054A-C708-6083-D994-D8E39F4D6894" name="FK_PATRONCARDS_CARDS">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>ADMIN</sourceObjSchema>
+<sourceObjName>FK_PATRONCARDS_CARDS</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:07:02 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<referredTableLongName>ADMIN.CARDS</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>49FC731A-9AB0-4223-C24A-18BC94B0B925</referredTableID>
+<keyObject>97C2767F-5CD7-10BB-410A-61B6FAFEA095</keyObject>
+<referredKeyID>97C2767F-5CD7-10BB-410A-61B6FAFEA095</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

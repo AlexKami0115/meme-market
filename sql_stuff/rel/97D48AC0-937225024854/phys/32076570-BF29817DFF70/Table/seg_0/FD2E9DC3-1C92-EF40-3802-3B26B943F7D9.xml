@@ -1,0 +1,67 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="COMMENTS" directorySegmentName="seg_0" id="FD2E9DC3-1C92-EF40-3802-3B26B943F7D9">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:57 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<schemaObject>5C1C050D-808D-4D6A-4ACF-3C0978E7674A</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>47852E91-6DA3-6E09-9749-3C97CCB0C989</segment>
+<tableSpace>E6839252-32E7-8D47-A157-32C22EEEE889</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="ID" id="1E05FCEA-81A6-993F-7315-D9D6D7627652">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:58 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="COMMENTTEXT" id="6859F70A-7192-E8A8-F560-E7DC81B9B2A6">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:58 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="PATRONID" id="D07C684D-ED08-D24F-4B75-59A18667C21F">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:58 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="TIMEOFCOMMENT" id="E02B3DB4-5BB9-CE62-0F18-1E3D41D35EEA">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:58 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<defaultValue>systimestamp</defaultValue>
+</ColumnProxy>
+<ColumnProxy name="CARDID" id="E52AA13A-F1D0-2D84-864E-AC13C5A16AB3">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:58 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FK_COMMENTS_CARDS" id="8382381F-341D-1F61-9F99-FA95904AFECB">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:07:02 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FK_COMMENTS_PATRONS" id="F408775B-9CE9-50F2-716A-60DC748A3C45">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:07:02 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="COMMENTS_PK" id="B4D8B3DA-801C-6ED8-376B-18055CA54AE0">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:07:00 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<schemaObject>5C1C050D-808D-4D6A-4ACF-3C0978E7674A</schemaObject>
+<segment>BD1940AC-BC52-D44B-B2E4-EF584EC85DDF</segment>
+<tableSpace>E6839252-32E7-8D47-A157-32C22EEEE889</tableSpace>
+<indexSegment>BD1940AC-BC52-D44B-B2E4-EF584EC85DDF</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

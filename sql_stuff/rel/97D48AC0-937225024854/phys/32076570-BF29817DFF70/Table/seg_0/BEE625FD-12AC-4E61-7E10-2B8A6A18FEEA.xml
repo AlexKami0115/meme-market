@@ -1,0 +1,61 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="PATRONCARDS" directorySegmentName="seg_0" id="BEE625FD-12AC-4E61-7E10-2B8A6A18FEEA">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:58 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<schemaObject>5C1C050D-808D-4D6A-4ACF-3C0978E7674A</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>47852E91-6DA3-6E09-9749-3C97CCB0C989</segment>
+<tableSpace>E6839252-32E7-8D47-A157-32C22EEEE889</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="SHOWCASED" id="43DF4759-729E-8362-D057-ACE286CFBC0E">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:58 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ID" id="512DE0E4-451F-8A8F-C51A-369B15C1E7E8">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:58 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="CARDID" id="C26FDC27-C257-EA46-7BD6-4E71BD50D2D3">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:58 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="PATRONID" id="F38C8057-115B-9E4E-2DD0-992F88E23E71">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:58 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FK_PATRONCARDS_CARDS" id="2160054A-C708-6083-D994-D8E39F4D6894">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:07:02 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FK_PATRONCARDS_PATRONS" id="B627A551-BF93-7F45-39B3-E3860CDC8B00">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:07:02 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="PATRONCARDS_PK" id="ED7DE4D6-2734-9B07-B380-24A7FC3235E8">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:07:00 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<schemaObject>5C1C050D-808D-4D6A-4ACF-3C0978E7674A</schemaObject>
+<segment>BD1940AC-BC52-D44B-B2E4-EF584EC85DDF</segment>
+<tableSpace>E6839252-32E7-8D47-A157-32C22EEEE889</tableSpace>
+<indexSegment>BD1940AC-BC52-D44B-B2E4-EF584EC85DDF</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

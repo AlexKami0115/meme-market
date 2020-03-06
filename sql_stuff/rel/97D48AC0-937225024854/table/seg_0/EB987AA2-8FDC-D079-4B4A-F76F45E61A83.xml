@@ -1,0 +1,101 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="EB987AA2-8FDC-D079-4B4A-F76F45E61A83" schemaObject="5C1C050D-808D-4D6A-4ACF-3C0978E7674A" name="PURCHASE">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>ADMIN</sourceObjSchema>
+<sourceObjName>PURCHASE</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:58 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="FD2D57EA-1C29-1D1B-1508-6CC9182BA4A5">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>PURCHASE</sourceObjSchema>
+<sourceObjName>ID</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:58 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PATRONID" id="9341C1E3-D1C4-E17D-079E-7CC636C93EB2">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>PURCHASE</sourceObjSchema>
+<sourceObjName>PATRONID</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:58 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="23418FFB-B917-5044-175B-EA6A116D63BD" referredColumn="CD76CF0F-C876-AFE9-81F1-C3C22EB1632B"/>
+</associations>
+</Column>
+<Column name="PURCHASELEVELID" id="4A15C700-7987-006A-DD74-D09D3823F98E">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>PURCHASE</sourceObjSchema>
+<sourceObjName>PURCHASELEVELID</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:58 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,1,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="94AE626F-31D0-5EE2-D6FE-96F106875FF5" referredColumn="CA4B108F-B00A-438E-109F-71808189D6C4"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8454CCD1-1624-5F30-9F68-79D26AFB6B2C" schemaObject="5C1C050D-808D-4D6A-4ACF-3C0978E7674A" name="PURCHASE_PK">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>ADMIN</sourceObjSchema>
+<sourceObjName>SYS_C0010895</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:59 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FD2D57EA-1C29-1D1B-1508-6CC9182BA4A5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="255BF1A3-3224-A60C-C373-310B59D75D1C" name="FK_PURCHASE_PATRONS">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:07:02 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9341C1E3-D1C4-E17D-079E-7CC636C93EB2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9C66D7AF-948E-F71C-0215-776E05B2CE53" name="FK_PURCHASE_PURCHASELEVELS">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:07:02 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4A15C700-7987-006A-DD74-D09D3823F98E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

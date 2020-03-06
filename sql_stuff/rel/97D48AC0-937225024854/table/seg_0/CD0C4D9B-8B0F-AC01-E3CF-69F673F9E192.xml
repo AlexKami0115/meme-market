@@ -1,0 +1,59 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="CD0C4D9B-8B0F-AC01-E3CF-69F673F9E192" schemaObject="5C1C050D-808D-4D6A-4ACF-3C0978E7674A" name="TRADESTATUS">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>ADMIN</sourceObjSchema>
+<sourceObjName>TRADESTATUS</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:58 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="D998C820-5ED3-B519-601D-7B4B28B0C28C">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>TRADESTATUS</sourceObjSchema>
+<sourceObjName>ID</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:59 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,1,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="STATUSNAME" id="55AD1C4F-817F-63C4-05B6-101C8FA74E03">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>TRADESTATUS</sourceObjSchema>
+<sourceObjName>STATUSNAME</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:59 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="FC03D5B9-6079-5162-0FE7-C5A0D5111831" schemaObject="5C1C050D-808D-4D6A-4ACF-3C0978E7674A" name="TRADESTATUS_PK">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>ADMIN</sourceObjSchema>
+<sourceObjName>SYS_C0010867</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:07:00 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D998C820-5ED3-B519-601D-7B4B28B0C28C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

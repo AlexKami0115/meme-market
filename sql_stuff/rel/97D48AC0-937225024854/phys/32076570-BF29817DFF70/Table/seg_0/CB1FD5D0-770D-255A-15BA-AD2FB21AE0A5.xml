@@ -1,0 +1,49 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="PURCHASELEVELS" directorySegmentName="seg_0" id="CB1FD5D0-770D-255A-15BA-AD2FB21AE0A5">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:58 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<schemaObject>5C1C050D-808D-4D6A-4ACF-3C0978E7674A</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>47852E91-6DA3-6E09-9749-3C97CCB0C989</segment>
+<tableSpace>E6839252-32E7-8D47-A157-32C22EEEE889</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="LEVELCOST" id="2CF1447A-635D-28F3-C51C-C27383052C82">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:58 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="STONKAMOUNT" id="AA885989-59FE-8FB0-321A-23E26E1A9BBA">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:58 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ID" id="CA4B108F-B00A-438E-109F-71808189D6C4">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:58 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="LEVELNAME" id="D74538AD-2CC9-F07B-0D73-A58576909C75">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:58 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="PURCHASELEVELS_PK" id="1AF6848E-794A-AF5A-24DA-AFE9D4DA26B1">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:07:01 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<schemaObject>5C1C050D-808D-4D6A-4ACF-3C0978E7674A</schemaObject>
+<segment>BD1940AC-BC52-D44B-B2E4-EF584EC85DDF</segment>
+<tableSpace>E6839252-32E7-8D47-A157-32C22EEEE889</tableSpace>
+<indexSegment>BD1940AC-BC52-D44B-B2E4-EF584EC85DDF</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

@@ -1,0 +1,132 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="598262B0-F45B-DA1F-C399-F8961BE36B9A" schemaObject="5C1C050D-808D-4D6A-4ACF-3C0978E7674A" name="TRADES">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>ADMIN</sourceObjSchema>
+<sourceObjName>TRADES</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:58 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="375CE262-AACE-D48A-DDB7-2EA06F452881">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>TRADES</sourceObjSchema>
+<sourceObjName>ID</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:59 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TRADSTATUSID" id="7F59DD28-3A3E-38B7-12A5-18236D0626AB">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>TRADES</sourceObjSchema>
+<sourceObjName>TRADSTATUSID</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:59 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="44115265-4477-9B42-D4DC-71251A204325" referredColumn="D998C820-5ED3-B519-601D-7B4B28B0C28C"/>
+</associations>
+</Column>
+<Column name="PATRONONEID" id="8DED7E46-6819-D581-83BE-0373365DDFC5">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>TRADES</sourceObjSchema>
+<sourceObjName>PATRONONEID</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:59 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C3965ADB-DA4D-C478-8D3A-BD2ECBCD7287" referredColumn="CD76CF0F-C876-AFE9-81F1-C3C22EB1632B"/>
+</associations>
+</Column>
+<Column name="PATRONTWOID" id="6B2C0F18-9E29-24B0-ED71-9FBFDE81B506">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>TRADES</sourceObjSchema>
+<sourceObjName>PATRONTWOID</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:59 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="72877223-6B8A-140C-D518-65F9E62AA35B" referredColumn="CD76CF0F-C876-AFE9-81F1-C3C22EB1632B"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="0022842A-E744-F935-B3D7-3E64B3C2D218" schemaObject="5C1C050D-808D-4D6A-4ACF-3C0978E7674A" name="TRADES_PK">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>ADMIN</sourceObjSchema>
+<sourceObjName>SYS_C0010868</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:07:00 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="375CE262-AACE-D48A-DDB7-2EA06F452881"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A39E5F6C-B696-DDBF-3163-3EF2D6EFDE66" name="FK_TRADES_PATRONS_ONE">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:07:02 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8DED7E46-6819-D581-83BE-0373365DDFC5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BB997BAD-46C9-E37D-0A8E-3328AAA12666" name="FK_TRADES_PATRONS_TWO">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:07:02 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6B2C0F18-9E29-24B0-ED71-9FBFDE81B506"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1996CEA4-D247-533F-953D-C18E40C69B71" name="FK_TRADES_TRADESTATUS">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:07:02 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7F59DD28-3A3E-38B7-12A5-18236D0626AB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

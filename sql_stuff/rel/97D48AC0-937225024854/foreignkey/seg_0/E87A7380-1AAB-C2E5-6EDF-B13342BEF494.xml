@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="E87A7380-1AAB-C2E5-6EDF-B13342BEF494" containerWithKeyObject="595A4165-52D7-6D76-690E-585A2A4ED2CC" localFKIndex="4745C832-2FFC-A042-EF7D-60F0E53C8ECB" name="FK_PACKTIERSRARITY_RARITY">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>ADMIN</sourceObjSchema>
+<sourceObjName>FK_PACKTIERSRARITY_RARITY</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:07:02 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<referredTableLongName>ADMIN.RARITY</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>02795DE5-B157-6465-B258-2CB0E27388D6</referredTableID>
+<keyObject>528F05DE-8DA1-152F-CB37-358094113601</keyObject>
+<referredKeyID>528F05DE-8DA1-152F-CB37-358094113601</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

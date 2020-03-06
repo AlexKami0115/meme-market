@@ -1,0 +1,101 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="930BD85A-32D2-4162-384D-1E2F48ACA4A0" schemaObject="5C1C050D-808D-4D6A-4ACF-3C0978E7674A" name="MICROTRANSACTIONS">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>ADMIN</sourceObjSchema>
+<sourceObjName>MICROTRANSACTIONS</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:58 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="7F4295E6-FFE9-CA4B-4C81-67D133020631">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>MICROTRANSACTIONS</sourceObjSchema>
+<sourceObjName>ID</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:58 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PATRONID" id="50507E68-EA50-6AFE-AD9C-BFCCE9DAE91A">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>MICROTRANSACTIONS</sourceObjSchema>
+<sourceObjName>PATRONID</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:58 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="850EC245-0160-3A20-6658-47070E0DD3FD" referredColumn="CD76CF0F-C876-AFE9-81F1-C3C22EB1632B"/>
+</associations>
+</Column>
+<Column name="PACKTIERSID" id="B6A94C63-B742-1533-4FF7-058D87F93FB1">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>MICROTRANSACTIONS</sourceObjSchema>
+<sourceObjName>PACKTIERSID</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:58 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,1,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="AFF3B57A-37F3-B4D4-4F22-18A082702E55" referredColumn="352DA498-2A21-3B69-1927-C102627FD3D3"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9A860653-A453-24B1-ECC2-36D9AC42B019" schemaObject="5C1C050D-808D-4D6A-4ACF-3C0978E7674A" name="MICROTRANSACTIONS_PK">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>ADMIN</sourceObjSchema>
+<sourceObjName>SYS_C0010886</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:06:59 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7F4295E6-FFE9-CA4B-4C81-67D133020631"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8D55B0F4-54F4-8165-3DD7-9A7F6C45BF10" name="FK_MICROTRANSACTIONS_PACKS">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:07:02 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B6A94C63-B742-1533-4FF7-058D87F93FB1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B994D6E7-AF93-D5AF-A84D-254E3B82C8D5" name="FK_MICROTRANSACTIONS_PATRONS">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-06 20:07:02 UTC</createdTime>
+<ownerDesignName>sql_stuff</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="50507E68-EA50-6AFE-AD9C-BFCCE9DAE91A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
