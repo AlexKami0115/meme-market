@@ -1,5 +1,6 @@
 
 drop table Patrons CASCADE CONSTRAINTS;
+drop table Userz CASCADE CONSTRAINTS;
 drop table Rarity CASCADE CONSTRAINTS;
 drop table Tags CASCADE CONSTRAINTS;
 drop table Cards CASCADE CONSTRAINTS;
@@ -12,10 +13,11 @@ drop table PackTiers CASCADE CONSTRAINTS;
 drop table PackTiersRarity CASCADE CONSTRAINTS;
 drop table Microtransactions CASCADE CONSTRAINTS;
 drop table PurchaseLevels CASCADE CONSTRAINTS;
-drop table Purchase CASCADE CONSTRAINTS;
+drop table Purchases CASCADE CONSTRAINTS;
 drop table Comments CASCADE CONSTRAINTS;
 
 drop sequence Patrons_seq;
+drop sequence Userz_seq;
 drop sequence Rarity_seq;
 drop sequence Cards_seq;
 drop sequence CardTags_seq;
@@ -27,14 +29,20 @@ drop sequence PackTiers_seq;
 drop sequence PackTiersRarity_seq;
 drop sequence Microtransactions_seq;
 drop sequence PurchaseLevels_seq;
-drop sequence Purchase_seq;
+drop sequence Purchases_seq;
 drop sequence Comments_seq;
 
 create table Patrons(
     id number(10) primary key,
-    username varchar2(20) unique not null,
-    pass varchar2(20) not null,
     stonks number(8)
+);
+
+create table Userz(
+    id number(10) primary key,
+    username varchar2(20) not null,
+    pass varchar2(20) not null,
+    PatronID number(10),
+    constraint fk_Userz_Patrons foreign key (PatronID) references Patrons(id)
 );
 
 create table Rarity(
@@ -112,8 +120,9 @@ create table PackTiersRarity(
 create table Microtransactions( -- Using stonks to buy packs.
     id number(10) primary key,
     patronId number(10) not null,
-    packTiersId number(1) not null,
-    constraint fk_Microtransactions_Packs foreign key (packTiersId) references PackTiers(id),
+    packTierId number(1) not null,
+    transDate timestamp default systimestamp,
+    constraint fk_Microtransactions_Packs foreign key (packTierId) references PackTiers(id),
     constraint fk_Microtransactions_Patrons foreign key (patronId) references Patrons(id)
 );
 
@@ -124,10 +133,11 @@ create table PurchaseLevels(
     levelCost number(5,2) not null
 );
 
-create table Purchase( -- Using real money to buy stonks.
+create table Purchases( -- Using real money to buy stonks.
     id number(10) primary key,
     patronId number(10) not null,
     purchaseLevelId number(1) not null,
+    purchaseDate timestamp default systimestamp,
     constraint fk_Purchase_PurchaseLevels foreign key (purchaseLevelId) references PurchaseLevels(id),
     constraint fk_Purchase_Patrons foreign key (patronId) references Patrons(id)
 );
@@ -143,6 +153,7 @@ create table Comments(
 );
 
 create sequence Patrons_seq nocache;
+create sequence Userz_seq nocache;
 create sequence Rarity_seq nocache;
 create sequence Cards_seq nocache;
 create sequence CardTags_seq nocache;
@@ -154,7 +165,7 @@ create sequence PackTiers_seq nocache;
 create sequence PackTiersRarity_seq nocache;
 create sequence Microtransactions_seq nocache;
 create sequence PurchaseLevels_seq nocache;
-create sequence Purchase_seq nocache;
+create sequence Purchases_seq nocache;
 create sequence Comments_seq nocache;
 
 commit;
