@@ -2,15 +2,20 @@ package com.revature.beans;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="Tags")
 public class Tag {
 	@Id
-	// NO SEQUENCE FOR 'TAGS' IN DB, SO I DIDN'T INPUT SEQUENCE GENERATOR
+	@SequenceGenerator(name="tag", sequenceName="Tags_seq", allocationSize=1)
+	@GeneratedValue(generator="tag", strategy=GenerationType.SEQUENCE)
 	private Integer id;
+	
 	@Column(name="tagName")
 	private String name;
 	

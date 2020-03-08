@@ -8,6 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -21,14 +22,14 @@ public class User {
 	private String username;
 	@Column(name="pass")
 	private String password;
-	@ManyToOne(fetch = FetchType.EAGER)
+	
+	@OneToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "patronId")
 	private Patron patron;
 	
 	
 	public User() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	@Override
 	public String toString() {

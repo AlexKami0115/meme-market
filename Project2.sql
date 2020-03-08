@@ -5,10 +5,10 @@ drop table Rarity CASCADE CONSTRAINTS;
 drop table Tags CASCADE CONSTRAINTS;
 drop table Cards CASCADE CONSTRAINTS;
 drop table CardTags CASCADE CONSTRAINTS;
-drop table PatronCards CASCADE CONSTRAINTS;
+drop table OwnedCards CASCADE CONSTRAINTS;
 drop table TradeStatus CASCADE CONSTRAINTS;
 drop table Trades CASCADE CONSTRAINTS;
-drop table TradePatronCards CASCADE CONSTRAINTS;
+drop table TradeOwnedCards CASCADE CONSTRAINTS;
 drop table PackTiers CASCADE CONSTRAINTS;
 drop table PackTiersRarity CASCADE CONSTRAINTS;
 drop table Microtransactions CASCADE CONSTRAINTS;
@@ -19,14 +19,12 @@ drop table Comments CASCADE CONSTRAINTS;
 drop sequence Patrons_seq;
 drop sequence Userz_seq;
 drop sequence Rarity_seq;
+drop sequence Tags_seq;
 drop sequence Cards_seq;
-drop sequence CardTags_seq;
-drop sequence PatronCards_seq;
+drop sequence OwnedCards_seq;
 drop sequence TradeStatus_seq;
 drop sequence Trades_seq;
-drop sequence TradePatronCards_seq;
 drop sequence PackTiers_seq;
-drop sequence PackTiersRarity_seq;
 drop sequence Microtransactions_seq;
 drop sequence PurchaseLevels_seq;
 drop sequence Purchases_seq;
@@ -72,7 +70,7 @@ create table CardTags(
     constraint fk_CardTags_Tags foreign key (tagId) references Tags(id)
 );
 
-create table PatronCards(
+create table OwnedCards(
     id number(10) primary key,
     patronId number(10) not null,
     cardId number(10) not null,
@@ -96,17 +94,17 @@ create table Trades(
     constraint fk_Trades_Patrons_Two foreign key (patronTwoId) references Patrons(id)
 );
 
-create table TradePatronCards(
-    id number(10) primary key,
+create table TradeOwnedCards(
     tradeId number(10) not null,
-    patronCardsId number(10) not null,
+    ownedCardsId number(10) not null,
     constraint fk_TradeCardPatron_Trades foreign key (tradeId) references Trades(id),
-    constraint fk_TradeCardPatron_PatronCards foreign key (patronCardsId) references PatronCards(id)
+    constraint fk_TradeCardPatron_OwnedCards foreign key (ownedCardsId) references OwnedCards(id)
 );
 
 create table PackTiers(
     id number(1) primary key,
-    tierName varchar2(20) not null
+    tierName varchar2(20) not null,
+    tierPrice number(8) not null
 );
 
 create table PackTiersRarity(
@@ -155,14 +153,12 @@ create table Comments(
 create sequence Patrons_seq nocache;
 create sequence Userz_seq nocache;
 create sequence Rarity_seq nocache;
+create sequence Tags_seq nocache;
 create sequence Cards_seq nocache;
-create sequence CardTags_seq nocache;
-create sequence PatronCards_seq nocache;
+create sequence OwnedCards_seq nocache;
 create sequence TradeStatus_seq nocache;
 create sequence Trades_seq nocache;
-create sequence TradePatronCards_seq nocache;
 create sequence PackTiers_seq nocache;
-create sequence PackTiersRarity_seq nocache;
 create sequence Microtransactions_seq nocache;
 create sequence PurchaseLevels_seq nocache;
 create sequence Purchases_seq nocache;

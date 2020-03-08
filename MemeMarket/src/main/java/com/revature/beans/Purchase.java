@@ -113,7 +113,6 @@ public class Purchase {
 
 	public Purchase() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	
 }
