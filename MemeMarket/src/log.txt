@@ -4,3 +4,10 @@
 2020-03-09 16:24:11 DEBUG logging:109 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
 2020-03-09 16:24:11 INFO  Version:45 - HHH000412: Hibernate Core {5.2.12.Final}
 2020-03-09 16:24:11 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2020-03-09 17:13:06 DEBUG logging:109 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2020-03-09 17:13:06 INFO  Version:45 - HHH000412: Hibernate Core {5.2.12.Final}
+2020-03-09 17:13:06 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2020-03-09 17:13:27 DEBUG logging:109 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2020-03-09 17:13:27 INFO  Version:45 - HHH000412: Hibernate Core {5.2.12.Final}
+2020-03-09 17:13:27 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2020-03-09 17:21:17 DEBUG logging:109 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
