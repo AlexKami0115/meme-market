@@ -4,21 +4,21 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import com.revature.beans.Card;
+import com.revature.beans.PackTier;
 import com.revature.utils.HibernateUtil;
 import com.revature.utils.LogUtil;
 
-public class CardHibernate implements CardDao{
+public class PackTierHibernate implements PackTierDao {
 	private HibernateUtil hu = HibernateUtil.getInstance();
-	
+
 	@Override
-	public int addCard(Card c) {
+	public int addPackTier(PackTier pt) {
 		Session s = hu.getSession();
 		Transaction t = null;
 		Integer i = 0;
 		try {
 			t = s.beginTransaction();
-			i = (Integer) s.save(c);
+			i = (Integer) s.save(pt);
 			t.commit();
 		} catch(HibernateException e) {
 			t.rollback();
@@ -30,19 +30,20 @@ public class CardHibernate implements CardDao{
 	};
 	
 	@Override
-	public Card getCard(int id) {
+	public PackTier getPackTier(int id) {
 		Session s = hu.getSession();
-		Card c = s.get(Card.class, id);
+		PackTier pt = s.get(PackTier.class, id);
 		s.close();
-		return c;
+		return pt;	
 	};
 	
-	public void updateCard(Card c) {
+	@Override
+	public void updatePackTier(PackTier pt) {
 		Session s = hu.getSession();
 		Transaction t = null;
 		try{
 			t = s.beginTransaction();
-			s.update(c.getId());
+			s.update(pt.getId());
 			t.commit();
 		} catch(Exception e) {
 			if(t != null)
@@ -52,12 +53,14 @@ public class CardHibernate implements CardDao{
 			s.close();
 		}
 	};
-	public void deleteCard(Card c) {
+	
+	@Override
+	public void deletePackTier(PackTier pt) {
 		Session s = hu.getSession();
 		Transaction t = null;
 		try{
 			t = s.beginTransaction();
-			s.delete(c.getId());
+			s.delete(pt.getId());
 			t.commit();
 		} catch(Exception e) {
 			if(t != null)

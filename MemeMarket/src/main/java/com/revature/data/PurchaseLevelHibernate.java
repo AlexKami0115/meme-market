@@ -4,21 +4,21 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import com.revature.beans.Card;
+import com.revature.beans.PurchaseLevel;
 import com.revature.utils.HibernateUtil;
 import com.revature.utils.LogUtil;
 
-public class CardHibernate implements CardDao{
+public class PurchaseLevelHibernate implements PurchaseLevelDao{
 	private HibernateUtil hu = HibernateUtil.getInstance();
 	
 	@Override
-	public int addCard(Card c) {
+	public int addPurchaseLevel(PurchaseLevel pl) {
 		Session s = hu.getSession();
 		Transaction t = null;
 		Integer i = 0;
 		try {
 			t = s.beginTransaction();
-			i = (Integer) s.save(c);
+			i = (Integer) s.save(pl);
 			t.commit();
 		} catch(HibernateException e) {
 			t.rollback();
@@ -26,23 +26,24 @@ public class CardHibernate implements CardDao{
 		} finally {
 			s.close();
 		}
-		return i;
+		return i;	
 	};
 	
 	@Override
-	public Card getCard(int id) {
+	public PurchaseLevel getPurchaseLevel(int id) {
 		Session s = hu.getSession();
-		Card c = s.get(Card.class, id);
+		PurchaseLevel c = s.get(PurchaseLevel.class, id);
 		s.close();
 		return c;
 	};
 	
-	public void updateCard(Card c) {
+	@Override
+	public void updatePurchaseLevel(PurchaseLevel pl) {
 		Session s = hu.getSession();
 		Transaction t = null;
 		try{
 			t = s.beginTransaction();
-			s.update(c.getId());
+			s.update(pl.getId());
 			t.commit();
 		} catch(Exception e) {
 			if(t != null)
@@ -52,12 +53,14 @@ public class CardHibernate implements CardDao{
 			s.close();
 		}
 	};
-	public void deleteCard(Card c) {
+	
+	@Override
+	public void deletePurchaseLevel(PurchaseLevel pl) {
 		Session s = hu.getSession();
 		Transaction t = null;
 		try{
 			t = s.beginTransaction();
-			s.delete(c.getId());
+			s.delete(pl.getId());
 			t.commit();
 		} catch(Exception e) {
 			if(t != null)
