@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="03D81DC2-B4EC-66C4-7836-33ED77174AED" containerWithKeyObject="DFFC812E-9FDE-D0C4-31F5-2E707CFAC9FA" localFKIndex="F8839CDB-0F4B-0539-2F02-137B754BE81B" name="FK_MICROTRANSACTIONS_PACKS">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>PROJECT2</sourceObjSchema>
+<sourceObjName>FK_MICROTRANSACTIONS_PACKS</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-09 14:18:13 UTC</createdTime>
+<ownerDesignName>otheSQLstuff</ownerDesignName>
+<referredTableLongName>PROJECT2.PACKTIERS</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>DB9F5660-C952-77F6-44F9-BD66EA6A4209</referredTableID>
+<keyObject>9782C68C-7115-F19A-E528-2DB4744B1E07</keyObject>
+<referredKeyID>9782C68C-7115-F19A-E528-2DB4744B1E07</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

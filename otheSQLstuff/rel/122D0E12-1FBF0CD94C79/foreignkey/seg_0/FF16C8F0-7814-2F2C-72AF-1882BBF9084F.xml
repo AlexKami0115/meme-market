@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="FF16C8F0-7814-2F2C-72AF-1882BBF9084F" containerWithKeyObject="F787C4BF-AC48-C0A6-AD1C-C71AC708B71C" localFKIndex="A6134251-D7DE-C299-C374-2486B1102BDE" name="FK_PACKTIERSRARITY_PACKTIERS">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>PROJECT2</sourceObjSchema>
+<sourceObjName>FK_PACKTIERSRARITY_PACKTIERS</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-09 14:18:13 UTC</createdTime>
+<ownerDesignName>otheSQLstuff</ownerDesignName>
+<referredTableLongName>PROJECT2.PACKTIERS</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>DB9F5660-C952-77F6-44F9-BD66EA6A4209</referredTableID>
+<keyObject>9782C68C-7115-F19A-E528-2DB4744B1E07</keyObject>
+<referredKeyID>9782C68C-7115-F19A-E528-2DB4744B1E07</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

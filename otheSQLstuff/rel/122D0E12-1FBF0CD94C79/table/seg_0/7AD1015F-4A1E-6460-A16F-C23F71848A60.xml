@@ -1,0 +1,102 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="7AD1015F-4A1E-6460-A16F-C23F71848A60" schemaObject="6AFD8927-460E-96E0-B4D3-73CCB6235847" name="USERZ">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>PROJECT2</sourceObjSchema>
+<sourceObjName>USERZ</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-09 14:18:09 UTC</createdTime>
+<ownerDesignName>otheSQLstuff</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="2FFFF32C-4407-2D22-2C08-FD36084C034F">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>USERZ</sourceObjSchema>
+<sourceObjName>ID</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-09 14:18:10 UTC</createdTime>
+<ownerDesignName>otheSQLstuff</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="USERNAME" id="737B7135-374D-1430-8C4D-49B29BA50C56">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>USERZ</sourceObjSchema>
+<sourceObjName>USERNAME</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-09 14:18:10 UTC</createdTime>
+<ownerDesignName>otheSQLstuff</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PASS" id="1E3DE2F6-E438-8280-ABC8-D3396647A561">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>USERZ</sourceObjSchema>
+<sourceObjName>PASS</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-09 14:18:10 UTC</createdTime>
+<ownerDesignName>otheSQLstuff</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PATRONID" id="435276B2-7250-88F6-2BE1-C5F0A9B35DFD">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>USERZ</sourceObjSchema>
+<sourceObjName>PATRONID</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-09 14:18:10 UTC</createdTime>
+<ownerDesignName>otheSQLstuff</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="BEC2C9AB-90B8-EB68-8882-3A49B656508F" referredColumn="A4ADF3CC-0814-1AE8-8935-91151B7F93B5"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A40321AF-DC58-EBD9-7953-1FEC565F6092" schemaObject="6AFD8927-460E-96E0-B4D3-73CCB6235847" name="USERZ_PK">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>PROJECT2</sourceObjSchema>
+<sourceObjName>SYS_C0011593</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-09 14:18:11 UTC</createdTime>
+<ownerDesignName>otheSQLstuff</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2FFFF32C-4407-2D22-2C08-FD36084C034F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E1D81DA0-C803-812F-AAAB-4931A553634C" name="FK_USERZ_PATRONS">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-09 14:18:13 UTC</createdTime>
+<ownerDesignName>otheSQLstuff</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="435276B2-7250-88F6-2BE1-C5F0A9B35DFD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

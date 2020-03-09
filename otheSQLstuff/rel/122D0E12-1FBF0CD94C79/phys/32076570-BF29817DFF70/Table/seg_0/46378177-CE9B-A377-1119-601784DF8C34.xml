@@ -1,0 +1,44 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="RARITY" directorySegmentName="seg_0" id="46378177-CE9B-A377-1119-601784DF8C34">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-09 14:18:09 UTC</createdTime>
+<ownerDesignName>otheSQLstuff</ownerDesignName>
+<schemaObject>6AFD8927-460E-96E0-B4D3-73CCB6235847</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>CEDD347D-7C90-8FB3-5116-3258E9B70BC7</segment>
+<tableSpace>B272CB50-F969-3949-1B1F-CE0FBDB6FDA7</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="ID" id="35E48724-B33E-88CE-F9DD-A59B760EEB28">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-09 14:18:10 UTC</createdTime>
+<ownerDesignName>otheSQLstuff</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="RARITYNAME" id="9627035D-AFF2-9395-F733-6F0629735A5F">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-09 14:18:10 UTC</createdTime>
+<ownerDesignName>otheSQLstuff</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="RARITYWEIGHT" id="EEAD0182-A179-EB4A-B694-8114E7A18F89">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-09 14:18:10 UTC</createdTime>
+<ownerDesignName>otheSQLstuff</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="RARITY_PK" id="22C2E9EF-AE0D-C9EA-1BF8-844A5D11E92A">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-09 14:18:12 UTC</createdTime>
+<ownerDesignName>otheSQLstuff</ownerDesignName>
+<schemaObject>6AFD8927-460E-96E0-B4D3-73CCB6235847</schemaObject>
+<segment>38BD453C-5547-02C6-9417-6191078C6C6A</segment>
+<tableSpace>B272CB50-F969-3949-1B1F-CE0FBDB6FDA7</tableSpace>
+<indexSegment>38BD453C-5547-02C6-9417-6191078C6C6A</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

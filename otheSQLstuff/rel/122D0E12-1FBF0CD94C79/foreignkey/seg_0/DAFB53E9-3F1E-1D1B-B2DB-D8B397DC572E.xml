@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="DAFB53E9-3F1E-1D1B-B2DB-D8B397DC572E" containerWithKeyObject="F1A1469F-15D6-099B-7853-862F241533D1" localFKIndex="7B39B903-8677-E01B-CE89-1EC79711CEFA" name="FK_TRADES_PATRONS_ONE">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>PROJECT2</sourceObjSchema>
+<sourceObjName>FK_TRADES_PATRONS_ONE</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-09 14:18:13 UTC</createdTime>
+<ownerDesignName>otheSQLstuff</ownerDesignName>
+<referredTableLongName>PROJECT2.PATRONS</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>9533436D-C89E-A43B-EDED-ABCDF3A3C72B</referredTableID>
+<keyObject>74072F2C-0DEC-B108-29E5-F99088D11BFF</keyObject>
+<referredKeyID>74072F2C-0DEC-B108-29E5-F99088D11BFF</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

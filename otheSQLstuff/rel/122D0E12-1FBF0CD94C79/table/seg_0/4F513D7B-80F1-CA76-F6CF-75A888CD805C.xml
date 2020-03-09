@@ -1,0 +1,118 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="4F513D7B-80F1-CA76-F6CF-75A888CD805C" schemaObject="6AFD8927-460E-96E0-B4D3-73CCB6235847" name="CARDS">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>PROJECT2</sourceObjSchema>
+<sourceObjName>CARDS</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-09 14:18:09 UTC</createdTime>
+<ownerDesignName>otheSQLstuff</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="21DF51EC-E507-73A4-AE21-C9950F1F0A47">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>CARDS</sourceObjSchema>
+<sourceObjName>ID</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-09 14:18:10 UTC</createdTime>
+<ownerDesignName>otheSQLstuff</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CARDIMAGE" id="4422FCF6-58DE-6217-423A-D5C402270DCE">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>CARDS</sourceObjSchema>
+<sourceObjName>CARDIMAGE</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-09 14:18:10 UTC</createdTime>
+<ownerDesignName>otheSQLstuff</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 BYTE</dataTypeSize>
+<ownDataTypeParameters>100 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CARDTEXT" id="0D27C743-482E-50C5-942E-B27C28062CF3">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>CARDS</sourceObjSchema>
+<sourceObjName>CARDTEXT</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-09 14:18:10 UTC</createdTime>
+<ownerDesignName>otheSQLstuff</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 BYTE</dataTypeSize>
+<ownDataTypeParameters>50 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MEMETEXT" id="FD642CD3-0B17-0AC8-3FCB-90EF2E93ACB7">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>CARDS</sourceObjSchema>
+<sourceObjName>MEMETEXT</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-09 14:18:10 UTC</createdTime>
+<ownerDesignName>otheSQLstuff</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 BYTE</dataTypeSize>
+<ownDataTypeParameters>50 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RARITYID" id="E6EECAAD-61F4-1A90-4D7A-88D1293E60C9">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>CARDS</sourceObjSchema>
+<sourceObjName>RARITYID</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-09 14:18:10 UTC</createdTime>
+<ownerDesignName>otheSQLstuff</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,1,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="EE99AD24-6893-B282-6584-5B998E502B8E" referredColumn="35E48724-B33E-88CE-F9DD-A59B760EEB28"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="228C65B6-23AA-56E9-C64B-43E2AE857A68" schemaObject="6AFD8927-460E-96E0-B4D3-73CCB6235847" name="CARDS_PK">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>PROJECT2</sourceObjSchema>
+<sourceObjName>SYS_C0011599</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-09 14:18:11 UTC</createdTime>
+<ownerDesignName>otheSQLstuff</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="21DF51EC-E507-73A4-AE21-C9950F1F0A47"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="44A70CD5-79A2-06D2-953C-938E49E0D1C3" name="FK_CARDS_RARITY">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-09 14:18:13 UTC</createdTime>
+<ownerDesignName>otheSQLstuff</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E6EECAAD-61F4-1A90-4D7A-88D1293E60C9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

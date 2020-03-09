@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="otheSQLstuff" id="90DADF26-7106-A813-AFF3-6D1C390B9F4A" version="3.5">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-09 14:17:23 UTC</createdTime>
+<ownerDesignName>otheSQLstuff</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>90DADF26-7106-A813-AFF3-6D1C390B9F4A</designId>
+</OSDM_Design>

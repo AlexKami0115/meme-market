@@ -1,0 +1,49 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="PURCHASELEVELS" directorySegmentName="seg_0" id="DDD10D1A-F0CE-F7B0-A753-2FD89143D60E">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-09 14:18:09 UTC</createdTime>
+<ownerDesignName>otheSQLstuff</ownerDesignName>
+<schemaObject>6AFD8927-460E-96E0-B4D3-73CCB6235847</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>CEDD347D-7C90-8FB3-5116-3258E9B70BC7</segment>
+<tableSpace>B272CB50-F969-3949-1B1F-CE0FBDB6FDA7</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="STONKAMOUNT" id="4BF0C1F7-BDCC-1413-4F43-A744C7009F51">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-09 14:18:10 UTC</createdTime>
+<ownerDesignName>otheSQLstuff</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ID" id="78F1E0B3-B588-6BBB-BC64-46FA4E399251">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-09 14:18:10 UTC</createdTime>
+<ownerDesignName>otheSQLstuff</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="LEVELCOST" id="D855F15C-39D4-9DC4-86A6-FE24774B7BA3">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-09 14:18:10 UTC</createdTime>
+<ownerDesignName>otheSQLstuff</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="LEVELNAME" id="F78A64E4-5AC6-4826-0D33-3FCDA5A45222">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-09 14:18:10 UTC</createdTime>
+<ownerDesignName>otheSQLstuff</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="PURCHASELEVELS_PK" id="7AC56235-A164-6FE1-2667-B7277FB26DF1">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-09 14:18:12 UTC</createdTime>
+<ownerDesignName>otheSQLstuff</ownerDesignName>
+<schemaObject>6AFD8927-460E-96E0-B4D3-73CCB6235847</schemaObject>
+<segment>38BD453C-5547-02C6-9417-6191078C6C6A</segment>
+<tableSpace>B272CB50-F969-3949-1B1F-CE0FBDB6FDA7</tableSpace>
+<indexSegment>38BD453C-5547-02C6-9417-6191078C6C6A</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

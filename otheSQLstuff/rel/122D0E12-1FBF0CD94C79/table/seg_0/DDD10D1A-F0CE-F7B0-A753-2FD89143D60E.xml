@@ -1,0 +1,89 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DDD10D1A-F0CE-F7B0-A753-2FD89143D60E" schemaObject="6AFD8927-460E-96E0-B4D3-73CCB6235847" name="PURCHASELEVELS">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>PROJECT2</sourceObjSchema>
+<sourceObjName>PURCHASELEVELS</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-09 14:18:09 UTC</createdTime>
+<ownerDesignName>otheSQLstuff</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="78F1E0B3-B588-6BBB-BC64-46FA4E399251">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>PURCHASELEVELS</sourceObjSchema>
+<sourceObjName>ID</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-09 14:18:10 UTC</createdTime>
+<ownerDesignName>otheSQLstuff</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,1,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LEVELNAME" id="F78A64E4-5AC6-4826-0D33-3FCDA5A45222">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>PURCHASELEVELS</sourceObjSchema>
+<sourceObjName>LEVELNAME</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-09 14:18:10 UTC</createdTime>
+<ownerDesignName>otheSQLstuff</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="STONKAMOUNT" id="4BF0C1F7-BDCC-1413-4F43-A744C7009F51">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>PURCHASELEVELS</sourceObjSchema>
+<sourceObjName>STONKAMOUNT</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-09 14:18:10 UTC</createdTime>
+<ownerDesignName>otheSQLstuff</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,5,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LEVELCOST" id="D855F15C-39D4-9DC4-86A6-FE24774B7BA3">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>PURCHASELEVELS</sourceObjSchema>
+<sourceObjName>LEVELCOST</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-09 14:18:10 UTC</createdTime>
+<ownerDesignName>otheSQLstuff</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,5,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="7AC56235-A164-6FE1-2667-B7277FB26DF1" schemaObject="6AFD8927-460E-96E0-B4D3-73CCB6235847" name="PURCHASELEVELS_PK">
+<sourceConnName>Project2</sourceConnName>
+<sourceObjSchema>PROJECT2</sourceObjSchema>
+<sourceObjName>SYS_C0011636</sourceObjName>
+<createdBy>chris</createdBy>
+<createdTime>2020-03-09 14:18:11 UTC</createdTime>
+<ownerDesignName>otheSQLstuff</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="78F1E0B3-B588-6BBB-BC64-46FA4E399251"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

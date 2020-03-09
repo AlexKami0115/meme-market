@@ -1,0 +1,61 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="CARDS" directorySegmentName="seg_0" id="4F513D7B-80F1-CA76-F6CF-75A888CD805C">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-09 14:18:09 UTC</createdTime>
+<ownerDesignName>otheSQLstuff</ownerDesignName>
+<schemaObject>6AFD8927-460E-96E0-B4D3-73CCB6235847</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>CEDD347D-7C90-8FB3-5116-3258E9B70BC7</segment>
+<tableSpace>B272CB50-F969-3949-1B1F-CE0FBDB6FDA7</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="CARDTEXT" id="0D27C743-482E-50C5-942E-B27C28062CF3">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-09 14:18:10 UTC</createdTime>
+<ownerDesignName>otheSQLstuff</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ID" id="21DF51EC-E507-73A4-AE21-C9950F1F0A47">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-09 14:18:10 UTC</createdTime>
+<ownerDesignName>otheSQLstuff</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="CARDIMAGE" id="4422FCF6-58DE-6217-423A-D5C402270DCE">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-09 14:18:10 UTC</createdTime>
+<ownerDesignName>otheSQLstuff</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="RARITYID" id="E6EECAAD-61F4-1A90-4D7A-88D1293E60C9">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-09 14:18:10 UTC</createdTime>
+<ownerDesignName>otheSQLstuff</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="MEMETEXT" id="FD642CD3-0B17-0AC8-3FCB-90EF2E93ACB7">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-09 14:18:10 UTC</createdTime>
+<ownerDesignName>otheSQLstuff</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FK_CARDS_RARITY" id="44A70CD5-79A2-06D2-953C-938E49E0D1C3">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-09 14:18:13 UTC</createdTime>
+<ownerDesignName>otheSQLstuff</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="CARDS_PK" id="228C65B6-23AA-56E9-C64B-43E2AE857A68">
+<createdBy>chris</createdBy>
+<createdTime>2020-03-09 14:18:11 UTC</createdTime>
+<ownerDesignName>otheSQLstuff</ownerDesignName>
+<schemaObject>6AFD8927-460E-96E0-B4D3-73CCB6235847</schemaObject>
+<segment>38BD453C-5547-02C6-9417-6191078C6C6A</segment>
+<tableSpace>B272CB50-F969-3949-1B1F-CE0FBDB6FDA7</tableSpace>
+<indexSegment>38BD453C-5547-02C6-9417-6191078C6C6A</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>
