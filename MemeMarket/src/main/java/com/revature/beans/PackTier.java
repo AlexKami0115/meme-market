@@ -18,6 +18,6 @@ public class PackTier {
 	
 	@Column(name="tierName")
 	private String name;
-	
+	@Column
 	private Integer tierPrice;
 }

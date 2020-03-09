@@ -1,5 +1,6 @@
 package com.revature.beans;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,6 +15,7 @@ public class TradeStatus {
 	@SequenceGenerator(name="tradestatus", sequenceName="TradeStatus_seq", allocationSize=1)
 	@GeneratedValue(generator="tradestatus", strategy=GenerationType.SEQUENCE)
 	private Integer id;
+	@Column
 	private String statusName;
 	
 	//CONSTRUCTORS

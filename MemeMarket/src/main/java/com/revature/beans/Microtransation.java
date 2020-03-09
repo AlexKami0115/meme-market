@@ -2,6 +2,7 @@ package com.revature.beans;
 
 import java.sql.Timestamp;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -28,6 +29,7 @@ public class Microtransation {
 	@JoinColumn(name = "packTierId")
 	private PackTier packTier;
 	
+	@Column
 	private Timestamp transDate;
 	
 

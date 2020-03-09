@@ -2,6 +2,7 @@ package com.revature.beans;
 
 import java.sql.Timestamp;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -28,6 +29,7 @@ public class Purchase {
 	@JoinColumn(name = "purchaseLevelId")
 	private PurchaseLevel purchaseLevel;
 	
+	@Column
 	private Timestamp purchaseDate;
 
 	public Integer getId() {

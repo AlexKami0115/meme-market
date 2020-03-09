@@ -2,6 +2,7 @@ package com.revature.beans;
 
 import java.sql.Timestamp;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -30,6 +31,8 @@ public class Comment {
 	@JoinColumn(name = "patronId")
 	private Patron patron;
 	
+	@Column
 	private String commentText;
+	@Column
 	private Timestamp timeOfComment;
 }

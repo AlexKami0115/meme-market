@@ -23,7 +23,9 @@ public class Card {
 	
 	@Column(name="cardImage")
 	private String image;
+	@Column
 	private String cardText;
+	@Column
 	private String memeText;
 	
 	@ManyToMany(fetch = FetchType.EAGER)

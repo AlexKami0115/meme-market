@@ -19,6 +19,7 @@ public class PurchaseLevel {
 	private String name;
 	@Column(name="levelCost")
 	private Integer cost;
+	@Column
 	private Integer stonkAmount;
 	
 	// CONSTRUCTORS
