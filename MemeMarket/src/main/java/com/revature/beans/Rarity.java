@@ -20,8 +20,7 @@ public class Rarity {
 	@Column(name="rarityName")
 	private String name;
 	@Column(name="rarityWeight")
-	private String weight;
-	
+	private Integer weight;
 	public Integer getId() {
 		return id;
 	}
@@ -34,10 +33,10 @@ public class Rarity {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getWeight() {
+	public Integer getWeight() {
 		return weight;
 	}
-	public void setWeight(String weight) {
+	public void setWeight(Integer weight) {
 		this.weight = weight;
 	}
 	@Override
@@ -82,6 +81,7 @@ public class Rarity {
 	public Rarity() {
 		super();
 	}
+	
 	
 	
 }
