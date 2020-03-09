@@ -4,21 +4,21 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import com.revature.beans.Card;
+import com.revature.beans.Patron;
 import com.revature.utils.HibernateUtil;
 import com.revature.utils.LogUtil;
 
-public class CardHibernate implements CardDao{
+public class PatronHibernate implements PatronDao {
 	private HibernateUtil hu = HibernateUtil.getInstance();
-	
+
 	@Override
-	public int addCard(Card c) {
+	public int addPatron(Patron p) {
 		Session s = hu.getSession();
 		Transaction t = null;
 		Integer i = 0;
 		try {
 			t = s.beginTransaction();
-			i = (Integer) s.save(c);
+			i = (Integer) s.save(p);
 			t.commit();
 		} catch(HibernateException e) {
 			t.rollback();
@@ -26,23 +26,24 @@ public class CardHibernate implements CardDao{
 		} finally {
 			s.close();
 		}
-		return i;
+		return i;	
 	};
 	
 	@Override
-	public Card getCard(int id) {
+	public Patron getPatron(int id) {
 		Session s = hu.getSession();
-		Card c = s.get(Card.class, id);
+		Patron c = s.get(Patron.class, id);
 		s.close();
-		return c;
+		return c;	
 	};
 	
-	public void updateCard(Card c) {
+	@Override
+	public void updatePatron(Patron p) {
 		Session s = hu.getSession();
 		Transaction t = null;
 		try{
 			t = s.beginTransaction();
-			s.update(c.getId());
+			s.update(p.getId());
 			t.commit();
 		} catch(Exception e) {
 			if(t != null)
@@ -51,13 +52,15 @@ public class CardHibernate implements CardDao{
 		} finally {
 			s.close();
 		}
+		
 	};
-	public void deleteCard(Card c) {
+	@Override
+	public void deletePatron(Patron p) {
 		Session s = hu.getSession();
 		Transaction t = null;
 		try{
 			t = s.beginTransaction();
-			s.delete(c.getId());
+			s.delete(p.getId());
 			t.commit();
 		} catch(Exception e) {
 			if(t != null)
@@ -66,6 +69,7 @@ public class CardHibernate implements CardDao{
 		} finally {
 			s.close();
 		}
+		
 	};
 
 }

@@ -4,21 +4,21 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import com.revature.beans.Card;
+import com.revature.beans.TradeStatus;
 import com.revature.utils.HibernateUtil;
 import com.revature.utils.LogUtil;
 
-public class CardHibernate implements CardDao{
+public class TradeStatusHibernate implements TradeStatusDao {
 	private HibernateUtil hu = HibernateUtil.getInstance();
 	
 	@Override
-	public int addCard(Card c) {
+	public int addTradeStatus(TradeStatus ts) {
 		Session s = hu.getSession();
 		Transaction t = null;
 		Integer i = 0;
 		try {
 			t = s.beginTransaction();
-			i = (Integer) s.save(c);
+			i = (Integer) s.save(ts);
 			t.commit();
 		} catch(HibernateException e) {
 			t.rollback();
@@ -26,23 +26,24 @@ public class CardHibernate implements CardDao{
 		} finally {
 			s.close();
 		}
-		return i;
+		return i;	
 	};
 	
 	@Override
-	public Card getCard(int id) {
+	public TradeStatus getTradeStatus(int id) {
 		Session s = hu.getSession();
-		Card c = s.get(Card.class, id);
+		TradeStatus ts = s.get(TradeStatus.class, id);
 		s.close();
-		return c;
+		return ts;
 	};
 	
-	public void updateCard(Card c) {
+	@Override
+	public void updateTradeStatus(TradeStatus ts) {
 		Session s = hu.getSession();
 		Transaction t = null;
 		try{
 			t = s.beginTransaction();
-			s.update(c.getId());
+			s.update(ts.getId());
 			t.commit();
 		} catch(Exception e) {
 			if(t != null)
@@ -50,14 +51,16 @@ public class CardHibernate implements CardDao{
 			LogUtil.logException(e, UserHibernate.class);
 		} finally {
 			s.close();
-		}
+		}	
 	};
-	public void deleteCard(Card c) {
+	
+	@Override
+	public void deleteTradeStatus(TradeStatus ts) {
 		Session s = hu.getSession();
 		Transaction t = null;
 		try{
 			t = s.beginTransaction();
-			s.delete(c.getId());
+			s.delete(ts.getId());
 			t.commit();
 		} catch(Exception e) {
 			if(t != null)
@@ -66,6 +69,7 @@ public class CardHibernate implements CardDao{
 		} finally {
 			s.close();
 		}
+		
 	};
 
 }

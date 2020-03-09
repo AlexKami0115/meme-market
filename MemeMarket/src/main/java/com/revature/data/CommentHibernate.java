@@ -4,15 +4,15 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import com.revature.beans.Card;
+import com.revature.beans.Comment;
 import com.revature.utils.HibernateUtil;
 import com.revature.utils.LogUtil;
 
-public class CardHibernate implements CardDao{
+public class CommentHibernate implements CommentDao{
 	private HibernateUtil hu = HibernateUtil.getInstance();
 	
 	@Override
-	public int addCard(Card c) {
+	public int addComment(Comment c) {
 		Session s = hu.getSession();
 		Transaction t = null;
 		Integer i = 0;
@@ -30,14 +30,15 @@ public class CardHibernate implements CardDao{
 	};
 	
 	@Override
-	public Card getCard(int id) {
+	public Comment getComment(int id) {
 		Session s = hu.getSession();
-		Card c = s.get(Card.class, id);
+		Comment c = s.get(Comment.class, id);
 		s.close();
 		return c;
 	};
 	
-	public void updateCard(Card c) {
+	@Override
+	public void updateComment(Comment c) {
 		Session s = hu.getSession();
 		Transaction t = null;
 		try{
@@ -50,9 +51,11 @@ public class CardHibernate implements CardDao{
 			LogUtil.logException(e, UserHibernate.class);
 		} finally {
 			s.close();
-		}
+		}		
 	};
-	public void deleteCard(Card c) {
+	
+	@Override
+	public void deleteComment(Comment c) {
 		Session s = hu.getSession();
 		Transaction t = null;
 		try{

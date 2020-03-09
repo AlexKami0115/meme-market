@@ -4,45 +4,46 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import com.revature.beans.Card;
+import com.revature.beans.Tag;
 import com.revature.utils.HibernateUtil;
 import com.revature.utils.LogUtil;
 
-public class CardHibernate implements CardDao{
+public class TagHibernate implements TagDao{
 	private HibernateUtil hu = HibernateUtil.getInstance();
 	
 	@Override
-	public int addCard(Card c) {
+	public int addTag(Tag t) {
 		Session s = hu.getSession();
-		Transaction t = null;
+		Transaction ts = null;
 		Integer i = 0;
 		try {
-			t = s.beginTransaction();
-			i = (Integer) s.save(c);
-			t.commit();
+			ts = s.beginTransaction();
+			i = (Integer) s.save(t);
+			ts.commit();
 		} catch(HibernateException e) {
-			t.rollback();
+			ts.rollback();
 			LogUtil.logException(e, UserHibernate.class);
 		} finally {
 			s.close();
 		}
-		return i;
+		return i;	
 	};
 	
 	@Override
-	public Card getCard(int id) {
+	public Tag getTag(int id) {
 		Session s = hu.getSession();
-		Card c = s.get(Card.class, id);
+		Tag t = s.get(Tag.class, id);
 		s.close();
-		return c;
+		return t;
 	};
 	
-	public void updateCard(Card c) {
+	@Override
+	public void updateTag(Tag tg) {
 		Session s = hu.getSession();
 		Transaction t = null;
 		try{
 			t = s.beginTransaction();
-			s.update(c.getId());
+			s.update(tg.getId());
 			t.commit();
 		} catch(Exception e) {
 			if(t != null)
@@ -51,13 +52,16 @@ public class CardHibernate implements CardDao{
 		} finally {
 			s.close();
 		}
+		
 	};
-	public void deleteCard(Card c) {
+	
+	@Override
+	public void deleteTag(Tag tg) {
 		Session s = hu.getSession();
 		Transaction t = null;
 		try{
 			t = s.beginTransaction();
-			s.delete(c.getId());
+			s.delete(tg.getId());
 			t.commit();
 		} catch(Exception e) {
 			if(t != null)
@@ -66,6 +70,7 @@ public class CardHibernate implements CardDao{
 		} finally {
 			s.close();
 		}
+		
 	};
 
 }
