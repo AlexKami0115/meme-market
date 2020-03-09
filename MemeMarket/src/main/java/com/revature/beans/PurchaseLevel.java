@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+//Done
+
 @Entity
 @Table(name="PurchaseLevels")
 public class PurchaseLevel {
@@ -21,54 +23,30 @@ public class PurchaseLevel {
 	private Integer cost;
 	@Column
 	private Integer stonkAmount;
-	
-	// CONSTRUCTORS
-	public PurchaseLevel() {
-		super();
-	}
-	
-	public PurchaseLevel(Integer id, String name, Integer cost, Integer stonkAmount) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.cost = cost;
-		this.stonkAmount = stonkAmount;
-	}
-	
-    // GETTERS AND SETTERS
 	public Integer getId() {
 		return id;
 	}
-
 	public void setId(Integer id) {
 		this.id = id;
 	}
-
 	public String getName() {
 		return name;
 	}
-
 	public void setName(String name) {
 		this.name = name;
 	}
-
 	public Integer getCost() {
 		return cost;
 	}
-
 	public void setCost(Integer cost) {
 		this.cost = cost;
 	}
-
 	public Integer getStonkAmount() {
 		return stonkAmount;
 	}
-
 	public void setStonkAmount(Integer stonkAmount) {
 		this.stonkAmount = stonkAmount;
 	}
-
-	// HASHCODE, EQUALS, TOSTRING
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -79,7 +57,6 @@ public class PurchaseLevel {
 		result = prime * result + ((stonkAmount == null) ? 0 : stonkAmount.hashCode());
 		return result;
 	}
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -111,10 +88,12 @@ public class PurchaseLevel {
 			return false;
 		return true;
 	}
-
 	@Override
 	public String toString() {
 		return "PurchaseLevel [id=" + id + ", name=" + name + ", cost=" + cost + ", stonkAmount=" + stonkAmount + "]";
+	}
+	public PurchaseLevel() {
+		super();
 	}
 	
 	

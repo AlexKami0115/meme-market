@@ -16,11 +16,11 @@ import javax.persistence.Table;
 //Done
 
 @Entity
-@Table(name="Purchases")
-public class Purchase {
+@Table(name="Microtransations")
+public class Microtransaction {
 	@Id
-	@SequenceGenerator(name="purchases", sequenceName="Purchases_seq", allocationSize=1)
-	@GeneratedValue(generator="purchases", strategy=GenerationType.SEQUENCE)
+	@SequenceGenerator(name="microtransations", sequenceName="Microtransations_seq", allocationSize=1)
+	@GeneratedValue(generator="microtransations", strategy=GenerationType.SEQUENCE)
 	private Integer id;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
@@ -28,11 +28,11 @@ public class Purchase {
 	private Patron patron;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "purchaseLevelId")
-	private PurchaseLevel purchaseLevel;
+	@JoinColumn(name = "packTierId")
+	private PackTier packTier;
 	
 	@Column
-	private Timestamp purchaseDate;
+	private Timestamp transDate;
 
 	public Integer getId() {
 		return id;
@@ -50,20 +50,20 @@ public class Purchase {
 		this.patron = patron;
 	}
 
-	public PurchaseLevel getPurchaseLevel() {
-		return purchaseLevel;
+	public PackTier getPackTier() {
+		return packTier;
 	}
 
-	public void setPurchaseLevel(PurchaseLevel purchaseLevel) {
-		this.purchaseLevel = purchaseLevel;
+	public void setPackTier(PackTier packTier) {
+		this.packTier = packTier;
 	}
 
-	public Timestamp getPurchaseDate() {
-		return purchaseDate;
+	public Timestamp getTransDate() {
+		return transDate;
 	}
 
-	public void setPurchaseDate(Timestamp purchaseDate) {
-		this.purchaseDate = purchaseDate;
+	public void setTransDate(Timestamp transDate) {
+		this.transDate = transDate;
 	}
 
 	@Override
@@ -71,9 +71,9 @@ public class Purchase {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + ((packTier == null) ? 0 : packTier.hashCode());
 		result = prime * result + ((patron == null) ? 0 : patron.hashCode());
-		result = prime * result + ((purchaseDate == null) ? 0 : purchaseDate.hashCode());
-		result = prime * result + ((purchaseLevel == null) ? 0 : purchaseLevel.hashCode());
+		result = prime * result + ((transDate == null) ? 0 : transDate.hashCode());
 		return result;
 	}
 
@@ -85,37 +85,37 @@ public class Purchase {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Purchase other = (Purchase) obj;
+		Microtransaction other = (Microtransaction) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
 		} else if (!id.equals(other.id))
+			return false;
+		if (packTier == null) {
+			if (other.packTier != null)
+				return false;
+		} else if (!packTier.equals(other.packTier))
 			return false;
 		if (patron == null) {
 			if (other.patron != null)
 				return false;
 		} else if (!patron.equals(other.patron))
 			return false;
-		if (purchaseDate == null) {
-			if (other.purchaseDate != null)
+		if (transDate == null) {
+			if (other.transDate != null)
 				return false;
-		} else if (!purchaseDate.equals(other.purchaseDate))
-			return false;
-		if (purchaseLevel == null) {
-			if (other.purchaseLevel != null)
-				return false;
-		} else if (!purchaseLevel.equals(other.purchaseLevel))
+		} else if (!transDate.equals(other.transDate))
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "Purchase [id=" + id + ", patron=" + patron + ", purchaseLevel=" + purchaseLevel + ", purchaseDate="
-				+ purchaseDate + "]";
+		return "Microtransation [id=" + id + ", patron=" + patron + ", packTier=" + packTier + ", transDate="
+				+ transDate + "]";
 	}
 
-	public Purchase() {
+	public Microtransaction() {
 		super();
 	}
 	

@@ -2,7 +2,7 @@
 drop table Patrons CASCADE CONSTRAINTS;
 drop table Userz CASCADE CONSTRAINTS;
 drop table Rarity CASCADE CONSTRAINTS;
-drop table Tags CASCADE CONSTRAINTS;
+drop table Tags CASCADE CONSTRAINTS;git
 drop table Cards CASCADE CONSTRAINTS;
 drop table CardTags CASCADE CONSTRAINTS;
 drop table OwnedCards CASCADE CONSTRAINTS;
