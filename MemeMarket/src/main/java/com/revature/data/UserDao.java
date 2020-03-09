@@ -7,7 +7,7 @@ public interface UserDao {
 	 * Returns the id of a user object inserted into the database.
 	 * 
 	 * @param user the user object to be inserted
-	 * @return the id of the user object inserted..
+	 * @return the id of the user object inserted
 	 */
 	public int addUser(User u);
 	
