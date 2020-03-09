@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+//Done
+
 @Entity
 @Table(name="TradeStatus")
 public class TradeStatus {
@@ -18,35 +20,18 @@ public class TradeStatus {
 	@Column
 	private String statusName;
 	
-	//CONSTRUCTORS
-	public TradeStatus() {
-		super();
-	}
-	
-	public TradeStatus(Integer id, String statusName) {
-		super();
-		this.id = id;
-		this.statusName = statusName;
-	}
-	
-	// GETTERS AND SETTERS
 	public Integer getId() {
 		return id;
 	}
-
 	public void setId(Integer id) {
 		this.id = id;
 	}
-
 	public String getStatusName() {
 		return statusName;
 	}
-
 	public void setStatusName(String statusName) {
 		this.statusName = statusName;
 	}
-
-	// HASHCODE, EQUALS, TOSTRING
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -55,7 +40,6 @@ public class TradeStatus {
 		result = prime * result + ((statusName == null) ? 0 : statusName.hashCode());
 		return result;
 	}
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -77,10 +61,13 @@ public class TradeStatus {
 			return false;
 		return true;
 	}
-
 	@Override
 	public String toString() {
 		return "TradeStatus [id=" + id + ", statusName=" + statusName + "]";
 	}
-
+	public TradeStatus() {
+		super();
+	}
+	
+	
 }

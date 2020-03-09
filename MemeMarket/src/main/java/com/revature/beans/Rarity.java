@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+//Done
+
 @Entity
 @Table(name="Rarity")
 public class Rarity {
@@ -20,53 +22,24 @@ public class Rarity {
 	@Column(name="rarityWeight")
 	private String weight;
 	
-	// CONSTRUCTORS
-	public Rarity() {
-		super();
-	}
-	
-	public Rarity(Integer id) {
-		super();
-		this.id = id;
-	}
-	
-	public Rarity(Integer id, String name) {
-		super();
-		this.name = name;
-	}
-	
-	public Rarity(Integer id, String name, String weight) {
-		super();
-		this.name = name;
-		this.weight = weight;
-	}
-
-	// GETTERS AND SETTERS
 	public Integer getId() {
 		return id;
 	}
-
 	public void setId(Integer id) {
 		this.id = id;
 	}
-
 	public String getName() {
 		return name;
 	}
-
 	public void setName(String name) {
 		this.name = name;
 	}
-
 	public String getWeight() {
 		return weight;
 	}
-
 	public void setWeight(String weight) {
 		this.weight = weight;
 	}
-
-	// HASHCODE, EQUALS, AND TOSTRING
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -76,7 +49,6 @@ public class Rarity {
 		result = prime * result + ((weight == null) ? 0 : weight.hashCode());
 		return result;
 	}
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -103,12 +75,13 @@ public class Rarity {
 			return false;
 		return true;
 	}
-
 	@Override
 	public String toString() {
 		return "Rarity [id=" + id + ", name=" + name + ", weight=" + weight + "]";
 	}
+	public Rarity() {
+		super();
+	}
 	
 	
-
 }

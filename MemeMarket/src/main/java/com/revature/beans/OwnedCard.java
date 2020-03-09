@@ -11,6 +11,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+//Done
+
 @Entity
 @Table(name="OwnedCards")
 public class OwnedCard {
@@ -23,7 +25,6 @@ public class OwnedCard {
 	@JoinColumn(name = "cardId")
 	private Card card;
 	
-	//TODO make sure to remove from toString etc.
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "patronId")
 	private Patron patron;
@@ -69,7 +70,6 @@ public class OwnedCard {
 		int result = 1;
 		result = prime * result + ((card == null) ? 0 : card.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((patron == null) ? 0 : patron.hashCode());
 		result = prime * result + ((showcased == null) ? 0 : showcased.hashCode());
 		return result;
 	}
@@ -93,11 +93,6 @@ public class OwnedCard {
 				return false;
 		} else if (!id.equals(other.id))
 			return false;
-		if (patron == null) {
-			if (other.patron != null)
-				return false;
-		} else if (!patron.equals(other.patron))
-			return false;
 		if (showcased == null) {
 			if (other.showcased != null)
 				return false;
@@ -108,11 +103,12 @@ public class OwnedCard {
 
 	@Override
 	public String toString() {
-		return "OwnedCard [id=" + id + ", card=" + card + ", patron=" + patron + ", showcased=" + showcased + "]";
+		return "OwnedCard [id=" + id + ", card=" + card + ", showcased=" + showcased + "]";
 	}
 
 	public OwnedCard() {
 		super();
 	}
+	
 	
 }

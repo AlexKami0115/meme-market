@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+//Done
+
 @Entity
 @Table(name="Tags")
 public class Tag {
@@ -18,19 +20,7 @@ public class Tag {
 	
 	@Column(name="tagName")
 	private String name;
-	
-	// CONSTRUCTORS
-	public Tag() {
-		super();
-	}
-	
-	public Tag(Integer id, String name) {
-		super();
-		this.id = id;
-		this.name = name;
-	}
-	
-	// GETTERS AND SETTERS
+
 	public Integer getId() {
 		return id;
 	}
@@ -47,7 +37,6 @@ public class Tag {
 		this.name = name;
 	}
 
-	// HASHCODE, EQUALS, TOSTRING
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -83,6 +72,10 @@ public class Tag {
 	public String toString() {
 		return "Tag [id=" + id + ", name=" + name + "]";
 	}
-	
 
+	public Tag() {
+		super();
+	}
+	
+	
 }

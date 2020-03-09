@@ -13,6 +13,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+//Done
+
 @Entity
 @Table(name="Purchases")
 public class Purchase {
@@ -116,5 +118,6 @@ public class Purchase {
 	public Purchase() {
 		super();
 	}
+	
 	
 }

@@ -14,6 +14,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+//Done
+
 @Entity
 @Table(name="Patrons")
 // @Inheritence(strategy=InheritanceType.JOINED) each class has its table and querying a subclass entity requires joining the tables
@@ -27,12 +29,97 @@ public class Patron {
 	@OneToMany(fetch = FetchType.EAGER, mappedBy="patron")
 	private List<OwnedCard> ownedCards;
 	
-	//TODO make sure to remove from toString etc.
 	@OneToMany(fetch = FetchType.LAZY, mappedBy="patron")
 	private List<Comment> comments;
 	
-	//TODO make sure to remove from toString etc.
 	@OneToOne(fetch = FetchType.LAZY, mappedBy="patron")
 	private User user;
 
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public Integer getStonks() {
+		return stonks;
+	}
+
+	public void setStonks(Integer stonks) {
+		this.stonks = stonks;
+	}
+
+	public List<OwnedCard> getOwnedCards() {
+		return ownedCards;
+	}
+
+	public void setOwnedCards(List<OwnedCard> ownedCards) {
+		this.ownedCards = ownedCards;
+	}
+
+	public List<Comment> getComments() {
+		return comments;
+	}
+
+	public void setComments(List<Comment> comments) {
+		this.comments = comments;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + ((ownedCards == null) ? 0 : ownedCards.hashCode());
+		result = prime * result + ((stonks == null) ? 0 : stonks.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Patron other = (Patron) obj;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		if (ownedCards == null) {
+			if (other.ownedCards != null)
+				return false;
+		} else if (!ownedCards.equals(other.ownedCards))
+			return false;
+		if (stonks == null) {
+			if (other.stonks != null)
+				return false;
+		} else if (!stonks.equals(other.stonks))
+			return false;
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "Patron [id=" + id + ", stonks=" + stonks + ", ownedCards=" + ownedCards + "]";
+	}
+
+	public Patron() {
+		super();
+	}
+
+	
 }
