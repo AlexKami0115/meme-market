@@ -17,7 +17,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="Microtransations")
-public class Microtransation {
+public class Microtransaction {
 	@Id
 	@SequenceGenerator(name="microtransations", sequenceName="Microtransations_seq", allocationSize=1)
 	@GeneratedValue(generator="microtransations", strategy=GenerationType.SEQUENCE)
@@ -85,7 +85,7 @@ public class Microtransation {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Microtransation other = (Microtransation) obj;
+		Microtransaction other = (Microtransaction) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -115,7 +115,7 @@ public class Microtransation {
 				+ transDate + "]";
 	}
 
-	public Microtransation() {
+	public Microtransaction() {
 		super();
 	}
 	
