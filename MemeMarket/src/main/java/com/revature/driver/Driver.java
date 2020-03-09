@@ -7,15 +7,16 @@ import com.revature.data.PatronHibernate;
 import com.revature.data.UserDao;
 import com.revature.data.UserHibernate;
 
+
 public class Driver {
 	public static void main(String[] args) {
 		UserDao ud = new UserHibernate();
 		User u = new User();
 		
-		u.setUsername("Wideman");
-		u.setPassword("Wideman");
-		ud.addUser(u);
-		System.out.println(u);
+//		u.setUsername("Wideman");
+//		u.setPassword("Wideman");
+//		ud.addUser(u);
+//		System.out.println(u);
 		
 //		PatronDao pd = new PatronHibernate();
 //		

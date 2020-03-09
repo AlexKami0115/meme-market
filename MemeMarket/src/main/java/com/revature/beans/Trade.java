@@ -1,6 +1,6 @@
 package com.revature.beans;
 
-import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -36,7 +36,7 @@ public class Trade {
 	@JoinTable(name="TradeOwnedCards",
 			joinColumns=@JoinColumn(name="tradeId"),
 			inverseJoinColumns=@JoinColumn(name="ownedCardsId"))
-	private List<OwnedCard> cardsToBeTraded;
+	private Set<OwnedCard> cardsToBeTraded;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "tradeStatus")
@@ -66,11 +66,11 @@ public class Trade {
 		this.patronTwo = patronTwo;
 	}
 
-	public List<OwnedCard> getCardsToBeTraded() {
+	public Set<OwnedCard> getCardsToBeTraded() {
 		return cardsToBeTraded;
 	}
 
-	public void setCardsToBeTraded(List<OwnedCard> cardsToBeTraded) {
+	public void setCardsToBeTraded(Set<OwnedCard> cardsToBeTraded) {
 		this.cardsToBeTraded = cardsToBeTraded;
 	}
 

@@ -1,6 +1,6 @@
 package com.revature.beans;
 
-import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -36,7 +36,7 @@ public class Card {
 	@JoinTable(name="CardTags",
 			joinColumns=@JoinColumn(name="cardId"),
 			inverseJoinColumns=@JoinColumn(name="tagId"))
-	private List<Tag> tag;
+	private Set<Tag> tag;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "rarityId")
@@ -139,11 +139,11 @@ public class Card {
 		this.memeText = memeText;
 	}
 
-	public List<Tag> getTag() {
+	public Set<Tag> getTag() {
 		return tag;
 	}
 
-	public void setTag(List<Tag> tag) {
+	public void setTag(Set<Tag> tag) {
 		this.tag = tag;
 	}
 

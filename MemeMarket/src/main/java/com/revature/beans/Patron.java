@@ -1,6 +1,6 @@
 package com.revature.beans;
 
-import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -25,10 +25,10 @@ public class Patron {
 	private Integer stonks;
 	
 	@OneToMany(fetch = FetchType.EAGER, mappedBy="patron")
-	private List<OwnedCard> ownedCards;
+	private Set<OwnedCard> ownedCards;
 	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy="patron")
-	private List<Comment> comments;
+	private Set<Comment> comments;
 	
 	@OneToOne(fetch = FetchType.LAZY, mappedBy="patron")
 	private User user;
@@ -49,19 +49,19 @@ public class Patron {
 		this.stonks = stonks;
 	}
 
-	public List<OwnedCard> getOwnedCards() {
+	public Set<OwnedCard> getOwnedCards() {
 		return ownedCards;
 	}
 
-	public void setOwnedCards(List<OwnedCard> ownedCards) {
+	public void setOwnedCards(Set<OwnedCard> ownedCards) {
 		this.ownedCards = ownedCards;
 	}
 
-	public List<Comment> getComments() {
+	public Set<Comment> getComments() {
 		return comments;
 	}
 
-	public void setComments(List<Comment> comments) {
+	public void setComments(Set<Comment> comments) {
 		this.comments = comments;
 	}
 
