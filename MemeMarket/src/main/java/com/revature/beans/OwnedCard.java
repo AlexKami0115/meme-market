@@ -17,7 +17,7 @@ import javax.persistence.Table;
 @Table(name="OwnedCards")
 public class OwnedCard {
 	@Id
-	@SequenceGenerator(name="ownedCard", sequenceName="OwnedCard_seq", allocationSize=1)
+	@SequenceGenerator(name="ownedCard", sequenceName="OwnedCards_seq", allocationSize=1)
 	@GeneratedValue(generator="ownedCard", strategy=GenerationType.SEQUENCE)
 	private Integer id;
 	

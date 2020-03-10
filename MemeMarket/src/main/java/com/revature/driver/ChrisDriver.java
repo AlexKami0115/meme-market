@@ -2,36 +2,26 @@ package com.revature.driver;
 
 import com.revature.beans.Patron;
 import com.revature.beans.User;
-import com.revature.data.PatronDao;
-import com.revature.data.PatronHibernate;
-import com.revature.data.UserDao;
-import com.revature.data.UserHibernate;
+import com.revature.services.UserService;
+import com.revature.services.UserServiceHibernate;
 
 
 public class ChrisDriver {
 	public static void main(String[] args) {
-		UserDao ud = new UserHibernate();
-		PatronDao pd = new PatronHibernate();
-		User u = new User();
-//		
-//		u.setUsername("UserTest4");
-//		u.setPassword("UserTestPass4");
-//		
-//		Patron p = new Patron();
-//		p.setStonks(100);
-//		
-//		pd.addPatron(p);
-//		
-//		u.setPatron(p);
-//		
-//
-//		ud.addUser(u);
-//		p.setUser(u);
+		UserService us = new UserServiceHibernate();
 		
-//		u = ud.getUser("UserTest", "UserTestPass111");
-		// log in tests here. if null, no user. 
+		User u = new User();
+		
+		u.setUsername("UserTest2");
+		u.setPassword("UserTestPass2");
+		
+		Patron p = new Patron();
+		p.setStonks(100);
+		
+		us.addUser(u, p);
+		
 		
 		System.out.println(u);
-//		System.out.println(p.getUser());
+		System.out.println(p.getUser());
 	}
 }

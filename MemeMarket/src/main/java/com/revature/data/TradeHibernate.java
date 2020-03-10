@@ -60,7 +60,7 @@ public class TradeHibernate implements TradeDao{
 		Transaction t = null;
 		try{
 			t = s.beginTransaction();
-			s.delete(tr.getId());
+			s.delete(tr);
 			t.commit();
 		} catch(Exception e) {
 			if(t != null)

@@ -61,7 +61,7 @@ public class Card {
 		result = prime * result + ((image == null) ? 0 : image.hashCode());
 		result = prime * result + ((memeText == null) ? 0 : memeText.hashCode());
 		result = prime * result + ((rarity == null) ? 0 : rarity.hashCode());
-		result = prime * result + ((tag == null) ? 0 : tag.hashCode());
+//		result = prime * result + ((tag == null) ? 0 : tag.hashCode());
 		return result;
 	}
 

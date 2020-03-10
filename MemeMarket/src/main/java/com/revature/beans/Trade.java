@@ -20,7 +20,7 @@ import javax.persistence.Table;
 @Table(name="Trades")
 public class Trade {
 	@Id
-	@SequenceGenerator(name="trade", sequenceName="Trade_seq", allocationSize=1)
+	@SequenceGenerator(name="trade", sequenceName="Trades_seq", allocationSize=1)
 	@GeneratedValue(generator="trade", strategy=GenerationType.SEQUENCE)
 	private Integer id;
 	
@@ -39,7 +39,7 @@ public class Trade {
 	private Set<OwnedCard> cardsToBeTraded;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "tradeStatus")
+	@JoinColumn(name = "tradeStatusId")
 	private TradeStatus tradeStatus;
 
 	public Integer getId() {
