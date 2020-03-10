@@ -4,9 +4,16 @@
             <fa-icon [icon]="faAlignLeft"></fa-icon>
             Toggle Navigation
         </button>
-        <div id="nav-login">
-            <button class="btn btn-primary my-2 my-sm-0" data-toggle="modal"
-            data-target="#loginModal">Login</button>
-        </div>
+        <ng-container *ngIf="!user; else authenticated">
+            <!-- User is not logged in; show Login button -->
+            <div id="nav-login">
+                <button class="btn btn-primary my-2 my-sm-0" data-toggle="modal"
+                data-target="#loginModal">Login</button>
+            </div>
+        </ng-container>
+        <ng-template #authenticated>
+            <!-- User is logged in; welcome them and show Logout button -->
+
+        </ng-template>
     </div>
 </nav>

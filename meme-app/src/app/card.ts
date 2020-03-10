@@ -1,4 +1,5 @@
-import { TagContentType } from '@angular/compiler';
+import { Tag } from './tag';
+import { Rarity } from './rarity';
 
 export class Card {
     id: number;
