@@ -1,46 +1,11 @@
  <!-- Navbar and header -->
  <div class="wrapper">
-  <nav id="sidebar">
-      <div class="sidebar-header">
-          <h3>MEME MARKET</h3>
-      </div>
-      <ul id="nav-sidebar" class="list-unstyled components">
-          <li class="active">
-              <a href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li>
-              <a href="#">Collection</a>
-          </li>
-          <li>
-              <a href="#">Trading</a>
-          </li>
-          
-      </ul>
-      <ul class="list-unstyled CTAs">
-          <li>
-              <a href="#" class="text-dark bg-warning">GET MORE CARDS!</a>
-          </li>
-          <li>
-              <a href="#" id="buy-stonks"><span class="sr-only">BUY STONKS</span></a>
-          </li>
-      </ul>
-  </nav>
+  <app-sidebar></app-sidebar>
 
 
   <!-- Content -->
   <div id="content">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <div class="container-fluid">
-              <button type="button" id="sidebarCollapse" class="btn btn-secondary">
-                  <fa-icon [icon]="faAlignLeft"></fa-icon>
-                  Toggle Navigation
-              </button>
-              <div id="nav-login">
-                  <button class="btn btn-primary my-2 my-sm-0" data-toggle="modal"
-                  data-target="#loginModal">Login</button>
-              </div>
-          </div>
-      </nav>
+      <app-navbar></app-navbar>
       <router-outlet></router-outlet>
   </div>
 </div>

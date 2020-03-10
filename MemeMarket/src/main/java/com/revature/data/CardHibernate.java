@@ -3,11 +3,13 @@ package com.revature.data;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.springframework.stereotype.Component;
 
 import com.revature.beans.Card;
 import com.revature.utils.HibernateUtil;
 import com.revature.utils.LogUtil;
 
+@Component
 public class CardHibernate implements CardDao{
 	private HibernateUtil hu = HibernateUtil.getInstance();
 	
