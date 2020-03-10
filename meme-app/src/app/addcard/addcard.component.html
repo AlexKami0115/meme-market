@@ -1,0 +1,23 @@
+<h2>Add Card</h2>
+<form class="form">
+    <div class="form-group">
+        <label for="cardImage">Card Image: </label>
+        <input type="text" name="cardImage" id="cardImage" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label for="cardText">Card Text: </label>
+        <input type="text" name="cardText" id="cardText" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label for="memeText">Meme Text: </label>
+        <input type="text" name="memeText" id="memeText" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label for="tags">Tags: </label>
+        <select name="tags" id="tags" class="form-control">
+            <option *ngFor="let t of tags" [value]="t.id">{{t.name}}</option>
+        </select>
+    </div>
+    <button id="submit" class="btn btn-primary btn-block" type="button">Submit New Card</button>
+</form>
+<div class="line"></div>
