@@ -60,7 +60,7 @@ public class CommentHibernate implements CommentDao{
 		Transaction t = null;
 		try{
 			t = s.beginTransaction();
-			s.delete(c.getId());
+			s.delete(c);
 			t.commit();
 		} catch(Exception e) {
 			if(t != null)

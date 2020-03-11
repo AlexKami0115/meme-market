@@ -60,7 +60,7 @@ public class PackTierHibernate implements PackTierDao {
 		Transaction t = null;
 		try{
 			t = s.beginTransaction();
-			s.delete(pt.getId());
+			s.delete(pt);
 			t.commit();
 		} catch(Exception e) {
 			if(t != null)

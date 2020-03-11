@@ -8,5 +8,5 @@ public interface OwnedCardDao {
 	public OwnedCard getOwnedCard(int id);
 	public void updateOwnedCard(OwnedCard oc);
 	public void deleteOwnedCard(OwnedCard oc);
-
+	//TODO implement a return set of ownedCards based on Patron
 }

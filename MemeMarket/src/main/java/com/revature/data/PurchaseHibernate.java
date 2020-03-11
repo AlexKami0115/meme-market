@@ -61,7 +61,7 @@ public class PurchaseHibernate implements PurchaseDao{
 		Transaction t = null;
 		try{
 			t = s.beginTransaction();
-			s.delete(p.getId());
+			s.delete(p);
 			t.commit();
 		} catch(Exception e) {
 			if(t != null)

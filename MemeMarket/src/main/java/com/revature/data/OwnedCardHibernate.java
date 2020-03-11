@@ -61,7 +61,7 @@ public class OwnedCardHibernate implements OwnedCardDao {
 		Transaction t = null;
 		try{
 			t = s.beginTransaction();
-			s.delete(oc.getId());
+			s.delete(oc);
 			t.commit();
 		} catch(Exception e) {
 			if(t != null)
