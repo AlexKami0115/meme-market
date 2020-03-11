@@ -13,7 +13,7 @@ import com.revature.beans.User;
 import com.revature.services.UserService;
 
 @RestController
-@CrossOrigin(origins="http://localhost:4200/login")
+@CrossOrigin(origins="http://localhost:4200, methods=\"GET,POST,PUT,DELETE,ORIGIN\"")
 public class LoginController {
 	
 	@Autowired
