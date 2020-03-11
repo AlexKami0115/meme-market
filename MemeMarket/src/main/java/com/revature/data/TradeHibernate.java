@@ -38,13 +38,15 @@ public class TradeHibernate implements TradeDao{
 	};
 	
 	@Override
-	public void updateTrade(Trade tr) {
+	public boolean updateTrade(Trade tr) {
 		Session s = hu.getSession();
 		Transaction t = null;
+		boolean b = false;
 		try{
 			t = s.beginTransaction();
 			s.update(tr.getId());
 			t.commit();
+			b = true;
 		} catch(Exception e) {
 			if(t != null)
 				t.rollback();
@@ -52,16 +54,19 @@ public class TradeHibernate implements TradeDao{
 		} finally {
 			s.close();
 		}
+		return b;
 	};
 	
 	@Override
-	public void deleteTrade(Trade tr) {
+	public boolean deleteTrade(Trade tr) {
 		Session s = hu.getSession();
 		Transaction t = null;
+		boolean b = false;
 		try{
 			t = s.beginTransaction();
 			s.delete(tr);
 			t.commit();
+			b = true;
 		} catch(Exception e) {
 			if(t != null)
 				t.rollback();
@@ -69,5 +74,6 @@ public class TradeHibernate implements TradeDao{
 		} finally {
 			s.close();
 		}
+		return b;
 	};
 }

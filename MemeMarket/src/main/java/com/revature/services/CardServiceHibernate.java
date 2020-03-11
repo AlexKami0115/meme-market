@@ -23,13 +23,13 @@ public class CardServiceHibernate implements CardService {
 	}
 
 	@Override
-	public void updateCard(Card c) {
-		cd.updateCard(c);
+	public boolean updateCard(Card c) {
+		return cd.updateCard(c);
 	}
 
 	@Override
-	public void deleteCard(Card c) {
-		cd.deleteCard(c);
+	public boolean deleteCard(Card c) {
+		return cd.deleteCard(c);
 	}
 
 }

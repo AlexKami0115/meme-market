@@ -38,13 +38,15 @@ public class RarityHibernate implements RarityDao {
 	};
 	
 	@Override
-	public void updateRarity(Rarity r) {
+	public boolean updateRarity(Rarity r) {
 		Session s = hu.getSession();
 		Transaction t = null;
+		boolean b = false;
 		try{
 			t = s.beginTransaction();
 			s.update(r.getId());
 			t.commit();
+			b = true;
 		} catch(Exception e) {
 			if(t != null)
 				t.rollback();
@@ -52,17 +54,19 @@ public class RarityHibernate implements RarityDao {
 		} finally {
 			s.close();
 		}
-		
+		return b;
 	};
 	
 	@Override
-	public void deleteRarity(Rarity r) {
+	public boolean deleteRarity(Rarity r) {
 		Session s = hu.getSession();
 		Transaction t = null;
+		boolean b = false;
 		try{
 			t = s.beginTransaction();
 			s.delete(r);
 			t.commit();
+			b = true;
 		} catch(Exception e) {
 			if(t != null)
 				t.rollback();
@@ -70,6 +74,7 @@ public class RarityHibernate implements RarityDao {
 		} finally {
 			s.close();
 		}
+		return b;
 	};
 
 }

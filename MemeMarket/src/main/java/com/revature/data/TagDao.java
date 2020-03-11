@@ -5,6 +5,6 @@ import com.revature.beans.Tag;
 public interface TagDao {
 	public int addTag(Tag t);
 	public Tag getTag(int id);
-	public void updateTag(Tag tg);
-	public void deleteTag(Tag tg);
+	public boolean updateTag(Tag tg);
+	public boolean deleteTag(Tag tg);
 }

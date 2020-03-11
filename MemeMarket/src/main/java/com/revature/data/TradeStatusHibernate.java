@@ -38,30 +38,15 @@ public class TradeStatusHibernate implements TradeStatusDao {
 	};
 	
 	@Override
-	public void updateTradeStatus(TradeStatus ts) {
+	public boolean updateTradeStatus(TradeStatus ts) {
 		Session s = hu.getSession();
 		Transaction t = null;
+		boolean b = false;
 		try{
 			t = s.beginTransaction();
 			s.update(ts.getId());
 			t.commit();
-		} catch(Exception e) {
-			if(t != null)
-				t.rollback();
-			LogUtil.logException(e, UserHibernate.class);
-		} finally {
-			s.close();
-		}	
-	};
-	
-	@Override
-	public void deleteTradeStatus(TradeStatus ts) {
-		Session s = hu.getSession();
-		Transaction t = null;
-		try{
-			t = s.beginTransaction();
-			s.delete(ts);
-			t.commit();
+			b = true;
 		} catch(Exception e) {
 			if(t != null)
 				t.rollback();
@@ -69,7 +54,27 @@ public class TradeStatusHibernate implements TradeStatusDao {
 		} finally {
 			s.close();
 		}
-		
+		return b;
+	};
+	
+	@Override
+	public boolean deleteTradeStatus(TradeStatus ts) {
+		Session s = hu.getSession();
+		Transaction t = null;
+		boolean b = false;
+		try{
+			t = s.beginTransaction();
+			s.delete(ts);
+			t.commit();
+			b = true;
+		} catch(Exception e) {
+			if(t != null)
+				t.rollback();
+			LogUtil.logException(e, UserHibernate.class);
+		} finally {
+			s.close();
+		}
+		return b;
 	};
 
 }

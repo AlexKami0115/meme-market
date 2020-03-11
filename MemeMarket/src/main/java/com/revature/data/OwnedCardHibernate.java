@@ -1,10 +1,13 @@
 package com.revature.data;
 
+import java.util.List;
+
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import com.revature.beans.OwnedCard;
+import com.revature.beans.Patron;
 import com.revature.utils.HibernateUtil;
 import com.revature.utils.LogUtil;
 
@@ -39,13 +42,15 @@ public class OwnedCardHibernate implements OwnedCardDao {
 	};
 	
 	@Override
-	public void updateOwnedCard(OwnedCard oc) {
+	public boolean updateOwnedCard(OwnedCard oc) {
 		Session s = hu.getSession();
 		Transaction t = null;
+		boolean b = false;
 		try{
 			t = s.beginTransaction();
 			s.update(oc.getId());
 			t.commit();
+			b = true;
 		} catch(Exception e) {
 			if(t != null)
 				t.rollback();
@@ -53,23 +58,27 @@ public class OwnedCardHibernate implements OwnedCardDao {
 		} finally {
 			s.close();
 		}
+		return b;
 	};
 	
 	@Override
-	public void deleteOwnedCard(OwnedCard oc) {
+	public boolean deleteOwnedCard(OwnedCard oc) {
 		Session s = hu.getSession();
 		Transaction t = null;
+		boolean b = false;
 		try{
 			t = s.beginTransaction();
 			s.delete(oc);
 			t.commit();
+			b = true;
 		} catch(Exception e) {
 			if(t != null)
 				t.rollback();
 			LogUtil.logException(e, UserHibernate.class);
 		} finally {
 			s.close();
-		}	
+		}
+		return b;
 	};
 
 }

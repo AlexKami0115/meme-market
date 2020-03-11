@@ -6,6 +6,6 @@ public interface CommentDao {
 
 	public int addComment(Comment c);
 	public Comment getComment(int id);
-	public void updateComment(Comment c);
-	public void deleteComment(Comment c);
+	public boolean updateComment(Comment c);
+	public boolean deleteComment(Comment c);
 }

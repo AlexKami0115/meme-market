@@ -38,13 +38,15 @@ public class PatronHibernate implements PatronDao {
 	};
 	
 	@Override
-	public void updatePatron(Patron p) {
+	public boolean updatePatron(Patron p) {
 		Session s = hu.getSession();
 		Transaction t = null;
+		boolean b = false;
 		try{
 			t = s.beginTransaction();
 			s.update(p.getId());
 			t.commit();
+			b = true;
 		} catch(Exception e) {
 			if(t != null)
 				t.rollback();
@@ -52,16 +54,18 @@ public class PatronHibernate implements PatronDao {
 		} finally {
 			s.close();
 		}
-		
+		return b;
 	};
 	@Override
-	public void deletePatron(Patron p) {
+	public boolean deletePatron(Patron p) {
 		Session s = hu.getSession();
 		Transaction t = null;
+		boolean b = false;
 		try{
 			t = s.beginTransaction();
 			s.delete(p);
 			t.commit();
+			b = true;
 		} catch(Exception e) {
 			if(t != null)
 				t.rollback();
@@ -69,7 +73,7 @@ public class PatronHibernate implements PatronDao {
 		} finally {
 			s.close();
 		}
-		
+		return b;
 	};
 
 }

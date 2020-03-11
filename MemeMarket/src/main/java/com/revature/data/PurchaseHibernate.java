@@ -38,13 +38,15 @@ public class PurchaseHibernate implements PurchaseDao{
 	};
 	
 	@Override
-	public void updatePurchase(Purchase p) {
+	public boolean updatePurchase(Purchase p) {
 		Session s = hu.getSession();
 		Transaction t = null;
+		boolean b = false;
 		try{
 			t = s.beginTransaction();
 			s.update(p.getId());
 			t.commit();
+			b = true;
 		} catch(Exception e) {
 			if(t != null)
 				t.rollback();
@@ -52,17 +54,19 @@ public class PurchaseHibernate implements PurchaseDao{
 		} finally {
 			s.close();
 		}
-		
+		return b;
 	};
 	
 	@Override
-	public void deletePurchase(Purchase p) {
+	public boolean deletePurchase(Purchase p) {
 		Session s = hu.getSession();
 		Transaction t = null;
+		boolean b = false;
 		try{
 			t = s.beginTransaction();
 			s.delete(p);
 			t.commit();
+			b = true;
 		} catch(Exception e) {
 			if(t != null)
 				t.rollback();
@@ -70,6 +74,7 @@ public class PurchaseHibernate implements PurchaseDao{
 		} finally {
 			s.close();
 		}
+		return b;
 	};
 
 }
