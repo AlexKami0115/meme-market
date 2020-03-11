@@ -1,16 +1,16 @@
 package com.revature.data;
 
-import java.util.List;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.springframework.stereotype.Component;
 
 import com.revature.beans.OwnedCard;
-import com.revature.beans.Patron;
 import com.revature.utils.HibernateUtil;
 import com.revature.utils.LogUtil;
 
+@Component
 public class OwnedCardHibernate implements OwnedCardDao {
 	private HibernateUtil hu = HibernateUtil.getInstance();
 	
