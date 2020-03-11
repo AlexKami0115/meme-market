@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { faAlignLeft } from '@fortawesome/free-solid-svg-icons';
 import { User } from '../user';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,11 +10,20 @@ import { User } from '../user';
 })
 export class NavbarComponent implements OnInit {
   faAlignLeft = faAlignLeft;
-  user: User;
 
-  constructor() { }
+  constructor(
+    public userService: UserService
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  isUser(): boolean {
+    return this.userService.isUser();
+  }
+
+  isAdmin(): boolean {
+    return this.userService.isAdmin();
   }
 
 }

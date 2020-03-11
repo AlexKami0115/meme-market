@@ -11,6 +11,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 //Done
 
 @Entity
@@ -27,6 +30,7 @@ public class OwnedCard {
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "patronId")
+	@JsonBackReference(value="ownedcard-patron")
 	private Patron patron;
 	
 	@Column

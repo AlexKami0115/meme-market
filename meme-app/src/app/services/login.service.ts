@@ -22,6 +22,7 @@ export class LoginService {
 
   checkLogin(u: User): Observable<User>{
     const body = JSON.stringify(u);
+    console.log(body);
     return this.http.post(this.appUrl, body, 
       {headers: this.headers, withCredentials: true})
       .pipe(

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
 import { Router } from '@angular/router';
-import { LoginService } from '../services/login.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -9,23 +9,23 @@ import { LoginService } from '../services/login.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  public u: User;
+  public username: string;
+  public password: string;
 
   constructor(
-    private ls: LoginService,
+    private us: UserService,
     private router: Router
   ) { }
 
   ngOnInit(): void {
-    this.u = new User;
   }
 
 
   submit(): void{
-    if(this.u.username && this.u.password){
-      this.ls.checkLogin(this.u).subscribe(
+    if(this.username && this.password){
+      this.us.checkLogin(this.username, this.password).subscribe(
         resp => {
-          this.u = resp;
+          if (resp) this.router.navigate(['/home']);
         });
     }
     else {

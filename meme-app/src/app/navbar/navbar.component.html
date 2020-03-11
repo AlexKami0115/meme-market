@@ -4,7 +4,7 @@
             <fa-icon [icon]="faAlignLeft"></fa-icon>
             Toggle Navigation
         </button>
-        <ng-container *ngIf="!user; else authenticated">
+        <ng-container *ngIf="!isUser(); else authenticated">
             <!-- User is not logged in; show Login button -->
             <div id="nav-login">
                 <button id="register-btn" class="btn btn-secondary ml-2 my-2 my-sm-0">Register</button>

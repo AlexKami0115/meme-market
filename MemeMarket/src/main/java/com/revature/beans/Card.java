@@ -12,8 +12,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 //Done
 
@@ -42,28 +45,97 @@ public class Card {
 	@JoinColumn(name = "rarityId")
 	private Rarity rarity;
 
-	public Card() {
-		super();
+	
+	@OneToMany(fetch = FetchType.EAGER)
+	@JoinColumn(name = "cardId")
+	@JsonManagedReference(value="comment-card")
+	private Set<Comment> comment;
+
+
+	public Integer getId() {
+		return id;
 	}
 
-	@Override
-	public String toString() {
-		return "Card [id=" + id + ", image=" + image + ", cardText=" + cardText + ", memeText=" + memeText + ", tag="
-				+ tag + ", rarity=" + rarity + "]";
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
+
+
+	public String getImage() {
+		return image;
+	}
+
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+
+	public String getCardText() {
+		return cardText;
+	}
+
+
+	public void setCardText(String cardText) {
+		this.cardText = cardText;
+	}
+
+
+	public String getMemeText() {
+		return memeText;
+	}
+
+
+	public void setMemeText(String memeText) {
+		this.memeText = memeText;
+	}
+
+
+	public Set<Tag> getTag() {
+		return tag;
+	}
+
+
+	public void setTag(Set<Tag> tag) {
+		this.tag = tag;
+	}
+
+
+	public Rarity getRarity() {
+		return rarity;
+	}
+
+
+	public void setRarity(Rarity rarity) {
+		this.rarity = rarity;
+	}
+
+
+	public Set<Comment> getComment() {
+		return comment;
+	}
+
+
+	public void setComment(Set<Comment> comment) {
+		this.comment = comment;
+	}
+
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((cardText == null) ? 0 : cardText.hashCode());
+		result = prime * result + ((comment == null) ? 0 : comment.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((image == null) ? 0 : image.hashCode());
 		result = prime * result + ((memeText == null) ? 0 : memeText.hashCode());
 		result = prime * result + ((rarity == null) ? 0 : rarity.hashCode());
-//		result = prime * result + ((tag == null) ? 0 : tag.hashCode());
+		result = prime * result + ((tag == null) ? 0 : tag.hashCode());
 		return result;
 	}
+
 
 	@Override
 	public boolean equals(Object obj) {
@@ -78,6 +150,11 @@ public class Card {
 			if (other.cardText != null)
 				return false;
 		} else if (!cardText.equals(other.cardText))
+			return false;
+		if (comment == null) {
+			if (other.comment != null)
+				return false;
+		} else if (!comment.equals(other.comment))
 			return false;
 		if (id == null) {
 			if (other.id != null)
@@ -107,52 +184,16 @@ public class Card {
 		return true;
 	}
 
-	public Integer getId() {
-		return id;
+
+	@Override
+	public String toString() {
+		return "Card [id=" + id + ", image=" + image + ", cardText=" + cardText + ", memeText=" + memeText + ", tag="
+				+ tag + ", rarity=" + rarity + ", comment=" + comment + "]";
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
 
-	public String getImage() {
-		return image;
-	}
-
-	public void setImage(String image) {
-		this.image = image;
-	}
-
-	public String getCardText() {
-		return cardText;
-	}
-
-	public void setCardText(String cardText) {
-		this.cardText = cardText;
-	}
-
-	public String getMemeText() {
-		return memeText;
-	}
-
-	public void setMemeText(String memeText) {
-		this.memeText = memeText;
-	}
-
-	public Set<Tag> getTag() {
-		return tag;
-	}
-
-	public void setTag(Set<Tag> tag) {
-		this.tag = tag;
-	}
-
-	public Rarity getRarity() {
-		return rarity;
-	}
-
-	public void setRarity(Rarity rarity) {
-		this.rarity = rarity;
+	public Card() {
+		super();
 	}
 	
 	

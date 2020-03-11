@@ -13,6 +13,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 //Done
 
 @Entity
@@ -25,10 +28,12 @@ public class Comment {
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "cardId")
+	@JsonBackReference(value="comment-card")
 	private Card card;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "patronId")
+//	@JsonManagedReference(value="patron-comment")
 	private Patron patron;
 	
 	@Column

@@ -13,6 +13,9 @@ import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 //Done
 
 @Entity
@@ -26,12 +29,15 @@ public class Patron {
 	private Integer stonks;
 	
 	@OneToMany(fetch = FetchType.EAGER, mappedBy="patron")
+//	@JsonManagedReference(value="ownedcard-patron")
 	private Set<OwnedCard> ownedCards;
 	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy="patron",  cascade=CascadeType.ALL)
+	@JsonBackReference(value="patron-comment")
 	private Set<Comment> comments;
 	
-	@OneToOne(fetch = FetchType.LAZY, mappedBy="patron",  cascade=CascadeType.ALL)
+	@OneToOne(fetch = FetchType.LAZY, mappedBy="patron")
+	@JsonBackReference(value="patron-user")
 	private User user;
 
 	public Integer getId() {
