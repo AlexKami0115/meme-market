@@ -86,10 +86,10 @@ create table TradeStatus(
 
 create table Trades(
     id number(10) primary key,
-    tradStatusId number(10),
+    tradeStatusId number(10),
     patronOneId number(10),
     patronTwoId number(10),
-    constraint fk_Trades_TradeStatus foreign key (tradStatusId) references TradeStatus(id),
+    constraint fk_Trades_TradeStatus foreign key (tradeStatusId) references TradeStatus(id),
     constraint fk_Trades_Patrons_One foreign key (patronOneId) references Patrons(id),
     constraint fk_Trades_Patrons_Two foreign key (patronTwoId) references Patrons(id)
 );
@@ -163,6 +163,11 @@ create sequence Microtransactions_seq nocache;
 create sequence PurchaseLevels_seq nocache;
 create sequence Purchases_seq nocache;
 create sequence Comments_seq nocache;
+
+INSERT INTO TradeStatus (id, statusname) VALUES (1, 'Pending');
+INSERT INTO TradeStatus (id, statusname) VALUES (2, 'Denied');
+INSERT INTO TradeStatus (id, statusname) VALUES (3, 'Complete');
+
 
 commit;
 

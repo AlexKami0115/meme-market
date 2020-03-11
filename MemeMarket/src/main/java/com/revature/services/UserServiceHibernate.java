@@ -1,16 +1,20 @@
 package com.revature.services;
 
+import org.springframework.beans.factory.annotation.Autowired; 
+import org.springframework.stereotype.Service;
+
 import com.revature.beans.Patron;
 import com.revature.beans.User;
 import com.revature.data.PatronDao;
-import com.revature.data.PatronHibernate;
 import com.revature.data.UserDao;
-import com.revature.data.UserHibernate;
 
-
+@Service
 public class UserServiceHibernate implements UserService{
-	UserDao ud = new UserHibernate();
-	PatronDao pd = new PatronHibernate();
+	@Autowired
+	UserDao ud;
+	@Autowired
+	PatronDao pd;
+	
 	@Override
 	public int addUser(User u, Patron p) {
 		pd.addPatron(p);
@@ -29,19 +33,19 @@ public class UserServiceHibernate implements UserService{
 	}
 	@Override
 	public User getUser(User u) {
-		return u;
+		return ud.getUser(u);
 	}
 	@Override
-	public User getUserById(User u) {
-		return u;
+	public User getUserById(Integer id) {
+		return ud.getUserById(id);
 	}
 	@Override
-	public void deleteUser(User u) {
-		ud.deleteUser(u);
+	public boolean deleteUser(User u) {
+		return ud.deleteUser(u);
 	}
 	@Override
-	public void updateUser(User u) {
-		ud.updateUser(u);
+	public boolean updateUser(User u) {
+		return ud.updateUser(u);
 	}
 	
 }

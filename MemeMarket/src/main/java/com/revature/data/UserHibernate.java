@@ -60,21 +60,23 @@ public class UserHibernate implements UserDao {
 	}
 	
 	@Override
-	public User getUserById(User u) {
+	public User getUserById(Integer id) {
 		Session s = hu.getSession();
-		User ret = s.get(User.class, u.getId());
+		User ret = s.get(User.class, id);
 		s.close();
 		return ret;
 	}
 	
 	@Override
-	public void deleteUser(User user) {
+	public boolean deleteUser(User user) {
 		Session s = hu.getSession();
 		Transaction t = null;
+		boolean b = false;
 		try{
 			t = s.beginTransaction();
 			s.delete(user);
 			t.commit();
+			b = true;
 		} catch(Exception e) {
 			if(t != null)
 				t.rollback();
@@ -82,16 +84,19 @@ public class UserHibernate implements UserDao {
 		} finally {
 			s.close();
 		}
+		return b;
 	}
 	
 	@Override
-	public void updateUser(User user) {
+	public boolean updateUser(User user) {
 		Session s = hu.getSession();
 		Transaction t = null;
+		boolean b = false;
 		try{
 			t = s.beginTransaction();
 			s.update(user.getId());
 			t.commit();
+			b = true;
 		} catch(Exception e) {
 			if(t != null)
 				t.rollback();
@@ -99,5 +104,6 @@ public class UserHibernate implements UserDao {
 		} finally {
 			s.close();
 		}
+		return b;
 	}
 }

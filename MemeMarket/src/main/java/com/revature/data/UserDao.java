@@ -34,19 +34,19 @@ public interface UserDao {
 	 * @param u previously created user object for updating with user information
 	 * @return the user from the database that matches the username and password
 	 */
-	public User getUserById(User u);
+	public User getUserById(Integer id);
 	
 	/**
 	 * deletes a User from the database
 	 * 
 	 * @param user the User to be deleted
 	 */
-	public void deleteUser(User u);
+	public boolean deleteUser(User u);
 	
 	/**
 	 * updates a User in the database
 	 * 
 	 * @param user the User to be updated
 	 */
-	public void updateUser(User user);
+	public boolean updateUser(User user);
 }
