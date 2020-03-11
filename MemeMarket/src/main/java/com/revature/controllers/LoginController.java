@@ -13,13 +13,12 @@ import com.revature.beans.User;
 import com.revature.services.UserService;
 
 @RestController
-@CrossOrigin(origins="http://localhost:4200")
+@CrossOrigin(origins="http://localhost:4200/login")
 public class LoginController {
 	
 	@Autowired
 	private UserService us;
 	
-	@CrossOrigin(origins="http://localhost:4200")
 	@PostMapping(path="/login")
 	private ResponseEntity<User> getUser(@RequestBody User u, HttpSession session) {
 		u = us.getUser(u.getUsername(), u.getPassword());
