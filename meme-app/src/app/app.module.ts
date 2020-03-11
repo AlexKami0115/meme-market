@@ -12,6 +12,7 @@ import { AddcardComponent } from './addcard/addcard.component';
 import { TagService } from './services/tag.service';
 import { CardService } from './services/card.service';
 import { HomeComponent } from './home/home.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { HomeComponent } from './home/home.component';
     NavbarComponent,
     SidebarComponent,
     AddcardComponent,
-    HomeComponent
+    HomeComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
