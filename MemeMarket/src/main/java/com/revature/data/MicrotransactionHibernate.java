@@ -38,13 +38,15 @@ public class MicrotransactionHibernate implements MicrotransactionDao{
 	};
 	
 	@Override
-	public void updateMicrotransaction(Microtransaction m) {
+	public boolean updateMicrotransaction(Microtransaction m) {
 		Session s = hu.getSession();
 		Transaction t = null;
+		boolean b = false;
 		try{
 			t = s.beginTransaction();
 			s.update(m.getId());
 			t.commit();
+			b = true;
 		} catch(Exception e) {
 			if(t != null)
 				t.rollback();
@@ -52,16 +54,19 @@ public class MicrotransactionHibernate implements MicrotransactionDao{
 		} finally {
 			s.close();
 		}
+		return b;
 	};
 	
 	@Override
-	public void deleteMicrotransaction(Microtransaction m) {
+	public boolean deleteMicrotransaction(Microtransaction m) {
 		Session s = hu.getSession();
 		Transaction t = null;
+		boolean b = false;
 		try{
 			t = s.beginTransaction();
 			s.delete(m);
 			t.commit();
+			b = true;
 		} catch(Exception e) {
 			if(t != null)
 				t.rollback();
@@ -69,6 +74,7 @@ public class MicrotransactionHibernate implements MicrotransactionDao{
 		} finally {
 			s.close();
 		}
+		return b;
 	};
 
 }

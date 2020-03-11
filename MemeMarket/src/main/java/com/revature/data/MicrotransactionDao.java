@@ -5,6 +5,6 @@ import com.revature.beans.Microtransaction;
 public interface MicrotransactionDao {
 	public int addMicrotransaction(Microtransaction m);
 	public Microtransaction getMicrotransaction(int id);
-	public void updateMicrotransaction(Microtransaction m);
-	public void deleteMicrotransaction(Microtransaction m);
+	public boolean updateMicrotransaction(Microtransaction m);
+	public boolean deleteMicrotransaction(Microtransaction m);
 }

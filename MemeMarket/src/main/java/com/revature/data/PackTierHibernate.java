@@ -38,13 +38,15 @@ public class PackTierHibernate implements PackTierDao {
 	};
 	
 	@Override
-	public void updatePackTier(PackTier pt) {
+	public boolean updatePackTier(PackTier pt) {
 		Session s = hu.getSession();
 		Transaction t = null;
+		boolean b = false;
 		try{
 			t = s.beginTransaction();
 			s.update(pt.getId());
 			t.commit();
+			b = true;
 		} catch(Exception e) {
 			if(t != null)
 				t.rollback();
@@ -52,16 +54,19 @@ public class PackTierHibernate implements PackTierDao {
 		} finally {
 			s.close();
 		}
+		return b;
 	};
 	
 	@Override
-	public void deletePackTier(PackTier pt) {
+	public boolean deletePackTier(PackTier pt) {
 		Session s = hu.getSession();
 		Transaction t = null;
+		boolean b = false;
 		try{
 			t = s.beginTransaction();
 			s.delete(pt);
 			t.commit();
+			b = true;
 		} catch(Exception e) {
 			if(t != null)
 				t.rollback();
@@ -69,6 +74,7 @@ public class PackTierHibernate implements PackTierDao {
 		} finally {
 			s.close();
 		}
+		return b;
 	};
 
 }

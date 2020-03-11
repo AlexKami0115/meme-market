@@ -27,13 +27,13 @@ public class PatronServiceHibernate implements PatronService {
 	}
 
 	@Override
-	public void updatePatron(Patron p) {
-		pd.updatePatron(p);
+	public boolean updatePatron(Patron p) {
+		return pd.updatePatron(p);
 	}
 
 	@Override
-	public void deletePatron(Patron p) {
-		pd.deletePatron(p);
+	public boolean deletePatron(Patron p) {
+		return pd.deletePatron(p);
 	}
 
 }

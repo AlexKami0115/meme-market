@@ -38,30 +38,15 @@ public class CommentHibernate implements CommentDao{
 	};
 	
 	@Override
-	public void updateComment(Comment c) {
+	public boolean updateComment(Comment c) {
 		Session s = hu.getSession();
 		Transaction t = null;
+		boolean b = false;
 		try{
 			t = s.beginTransaction();
 			s.update(c.getId());
 			t.commit();
-		} catch(Exception e) {
-			if(t != null)
-				t.rollback();
-			LogUtil.logException(e, UserHibernate.class);
-		} finally {
-			s.close();
-		}		
-	};
-	
-	@Override
-	public void deleteComment(Comment c) {
-		Session s = hu.getSession();
-		Transaction t = null;
-		try{
-			t = s.beginTransaction();
-			s.delete(c);
-			t.commit();
+			b = true;
 		} catch(Exception e) {
 			if(t != null)
 				t.rollback();
@@ -69,6 +54,27 @@ public class CommentHibernate implements CommentDao{
 		} finally {
 			s.close();
 		}
+		return b;
+	};
+	
+	@Override
+	public boolean deleteComment(Comment c) {
+		Session s = hu.getSession();
+		Transaction t = null;
+		boolean b = false;
+		try{
+			t = s.beginTransaction();
+			s.delete(c);
+			t.commit();
+			b = true;
+		} catch(Exception e) {
+			if(t != null)
+				t.rollback();
+			LogUtil.logException(e, UserHibernate.class);
+		} finally {
+			s.close();
+		}
+		return b;
 	};
 
 }

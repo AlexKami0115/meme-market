@@ -6,6 +6,6 @@ public interface TradeDao {
 	
 	public int addTrade(Trade tr);
 	public Trade getTrade(int id);
-	public void updateTrade(Trade tr);
-	public void deleteTrade(Trade tr);
+	public boolean updateTrade(Trade tr);
+	public boolean deleteTrade(Trade tr);
 }

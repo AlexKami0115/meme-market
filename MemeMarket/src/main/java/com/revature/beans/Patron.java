@@ -2,6 +2,7 @@ package com.revature.beans;
 
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -24,13 +25,13 @@ public class Patron {
 	private Integer id;
 	private Integer stonks;
 	
-	@OneToMany(fetch = FetchType.EAGER, mappedBy="patron")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy="patron",  cascade=CascadeType.ALL)
 	private Set<OwnedCard> ownedCards;
 	
-	@OneToMany(fetch = FetchType.LAZY, mappedBy="patron")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy="patron",  cascade=CascadeType.ALL)
 	private Set<Comment> comments;
 	
-	@OneToOne(fetch = FetchType.LAZY, mappedBy="patron")
+	@OneToOne(fetch = FetchType.LAZY, mappedBy="patron",  cascade=CascadeType.ALL)
 	private User user;
 
 	public Integer getId() {

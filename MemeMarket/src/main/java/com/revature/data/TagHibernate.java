@@ -38,13 +38,15 @@ public class TagHibernate implements TagDao{
 	};
 	
 	@Override
-	public void updateTag(Tag tg) {
+	public boolean updateTag(Tag tg) {
 		Session s = hu.getSession();
 		Transaction t = null;
+		boolean b = false;
 		try{
 			t = s.beginTransaction();
 			s.update(tg.getId());
 			t.commit();
+			b = true;
 		} catch(Exception e) {
 			if(t != null)
 				t.rollback();
@@ -52,17 +54,19 @@ public class TagHibernate implements TagDao{
 		} finally {
 			s.close();
 		}
-		
+		return b;
 	};
 	
 	@Override
-	public void deleteTag(Tag tg) {
+	public boolean deleteTag(Tag tg) {
 		Session s = hu.getSession();
 		Transaction t = null;
+		boolean b = false;
 		try{
 			t = s.beginTransaction();
 			s.delete(tg);
 			t.commit();
+			b = true;
 		} catch(Exception e) {
 			if(t != null)
 				t.rollback();
@@ -70,7 +74,7 @@ public class TagHibernate implements TagDao{
 		} finally {
 			s.close();
 		}
-		
+		return b;
 	};
 
 }

@@ -38,13 +38,15 @@ public class PurchaseLevelHibernate implements PurchaseLevelDao{
 	};
 	
 	@Override
-	public void updatePurchaseLevel(PurchaseLevel pl) {
+	public boolean updatePurchaseLevel(PurchaseLevel pl) {
 		Session s = hu.getSession();
 		Transaction t = null;
+		boolean b = false;
 		try{
 			t = s.beginTransaction();
 			s.update(pl.getId());
 			t.commit();
+			b = true;
 		} catch(Exception e) {
 			if(t != null)
 				t.rollback();
@@ -52,16 +54,19 @@ public class PurchaseLevelHibernate implements PurchaseLevelDao{
 		} finally {
 			s.close();
 		}
+		return b;
 	};
 	
 	@Override
-	public void deletePurchaseLevel(PurchaseLevel pl) {
+	public boolean deletePurchaseLevel(PurchaseLevel pl) {
 		Session s = hu.getSession();
 		Transaction t = null;
+		boolean b = false;
 		try{
 			t = s.beginTransaction();
 			s.delete(pl);
 			t.commit();
+			b = true;
 		} catch(Exception e) {
 			if(t != null)
 				t.rollback();
@@ -69,6 +74,7 @@ public class PurchaseLevelHibernate implements PurchaseLevelDao{
 		} finally {
 			s.close();
 		}
+		return b;
 	};
 
 }

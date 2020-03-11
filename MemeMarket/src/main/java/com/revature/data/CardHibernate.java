@@ -39,13 +39,15 @@ public class CardHibernate implements CardDao{
 		return c;
 	};
 	
-	public void updateCard(Card c) {
+	public boolean updateCard(Card c) {
 		Session s = hu.getSession();
 		Transaction t = null;
+		boolean b = false;
 		try{
 			t = s.beginTransaction();
 			s.update(c.getId());
 			t.commit();
+			b = true;
 		} catch(Exception e) {
 			if(t != null)
 				t.rollback();
@@ -53,14 +55,17 @@ public class CardHibernate implements CardDao{
 		} finally {
 			s.close();
 		}
+		return b;
 	};
-	public void deleteCard(Card c) {
+	public boolean deleteCard(Card c) {
 		Session s = hu.getSession();
 		Transaction t = null;
+		boolean b = false;
 		try{
 			t = s.beginTransaction();
 			s.delete(c);
 			t.commit();
+			b = true;
 		} catch(Exception e) {
 			if(t != null)
 				t.rollback();
@@ -68,6 +73,7 @@ public class CardHibernate implements CardDao{
 		} finally {
 			s.close();
 		}
+		return b;
 	};
 
 }
