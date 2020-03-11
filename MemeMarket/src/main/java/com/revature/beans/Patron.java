@@ -25,7 +25,7 @@ public class Patron {
 	private Integer id;
 	private Integer stonks;
 	
-	@OneToMany(fetch = FetchType.EAGER, mappedBy="patron",  cascade=CascadeType.ALL)
+	@OneToMany(fetch = FetchType.EAGER, mappedBy="patron")
 	private Set<OwnedCard> ownedCards;
 	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy="patron",  cascade=CascadeType.ALL)
