@@ -8,7 +8,7 @@ public interface UserService {
 	public int addUser(User u);
 	public User getUser(String username, String password);
 	public User getUser(User u);
-	public User getUserById(User u);
-	public void deleteUser(User u);
-	public void updateUser(User u);
+	public User getUserById(Integer id);
+	public boolean deleteUser(User u);
+	public boolean updateUser(User u);
 }
