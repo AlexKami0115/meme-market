@@ -9,7 +9,7 @@ import { map } from 'rxjs/internal/operators/map';
   providedIn: 'root'
 })
 export class LoginService {
-  private appUrl = this.urlService.getUrl + 'login';
+  private appUrl = this.urlService.getUrl() + 'login';
   private headers = new HttpHeaders({
     'Content-Type': 'application/json'
   });
