@@ -9,7 +9,7 @@ import { UrlService } from './url.service';
   providedIn: 'root'
 })
 export class CardService {
-  private appUrl = this.urlService.getUrl + 'card';
+  private appUrl = this.urlService.getUrl() + 'card';
   private headers = new HttpHeaders({
     'Content-Type': 'application/json'
   });
