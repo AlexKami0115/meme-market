@@ -61,7 +61,7 @@ public class RarityHibernate implements RarityDao {
 		Transaction t = null;
 		try{
 			t = s.beginTransaction();
-			s.delete(r.getId());
+			s.delete(r);
 			t.commit();
 		} catch(Exception e) {
 			if(t != null)

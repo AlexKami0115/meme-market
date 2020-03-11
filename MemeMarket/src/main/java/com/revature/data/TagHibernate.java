@@ -61,7 +61,7 @@ public class TagHibernate implements TagDao{
 		Transaction t = null;
 		try{
 			t = s.beginTransaction();
-			s.delete(tg.getId());
+			s.delete(tg);
 			t.commit();
 		} catch(Exception e) {
 			if(t != null)

@@ -60,7 +60,7 @@ public class PurchaseLevelHibernate implements PurchaseLevelDao{
 		Transaction t = null;
 		try{
 			t = s.beginTransaction();
-			s.delete(pl.getId());
+			s.delete(pl);
 			t.commit();
 		} catch(Exception e) {
 			if(t != null)
