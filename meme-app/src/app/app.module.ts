@@ -12,6 +12,8 @@ import { AddcardComponent } from './addcard/addcard.component';
 import { TagService } from './services/tag.service';
 import { CardService } from './services/card.service';
 import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { UrlService } from './services/url.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { HomeComponent } from './home/home.component';
     NavbarComponent,
     SidebarComponent,
     AddcardComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,8 @@ import { HomeComponent } from './home/home.component';
   ],
   providers: [
     TagService,
-    CardService
+    CardService,
+    UrlService
   ],
   bootstrap: [AppComponent]
 })
