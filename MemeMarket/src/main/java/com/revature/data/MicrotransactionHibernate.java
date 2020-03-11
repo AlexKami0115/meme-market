@@ -60,7 +60,7 @@ public class MicrotransactionHibernate implements MicrotransactionDao{
 		Transaction t = null;
 		try{
 			t = s.beginTransaction();
-			s.delete(m.getId());
+			s.delete(m);
 			t.commit();
 		} catch(Exception e) {
 			if(t != null)

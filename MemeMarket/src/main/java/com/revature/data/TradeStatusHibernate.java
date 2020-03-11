@@ -60,7 +60,7 @@ public class TradeStatusHibernate implements TradeStatusDao {
 		Transaction t = null;
 		try{
 			t = s.beginTransaction();
-			s.delete(ts.getId());
+			s.delete(ts);
 			t.commit();
 		} catch(Exception e) {
 			if(t != null)
