@@ -20,7 +20,6 @@ public class UserServiceHibernate implements UserService{
 		pd.addPatron(p);
 		u.setPatron(p);
 		ud.addUser(u);
-		p.setUser(u);
 		return u.getId();
 	}
 	@Override

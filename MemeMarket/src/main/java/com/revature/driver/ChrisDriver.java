@@ -22,6 +22,5 @@ public class ChrisDriver {
 		
 		
 		System.out.println(u);
-		System.out.println(p.getUser());
 	}
 }

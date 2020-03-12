@@ -11,10 +11,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 //Done
 
 @Entity
@@ -28,11 +24,6 @@ public class OwnedCard {
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "cardId")
 	private Card card;
-	
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "patronId")
-	@JsonIgnoreProperties({"ownedCards", "hibernateLazyInitializer", "handler"})
-	private Patron patron;
 	
 	@Column
 	private Integer showcased;
@@ -51,14 +42,6 @@ public class OwnedCard {
 
 	public void setCard(Card card) {
 		this.card = card;
-	}
-
-	public Patron getPatron() {
-		return patron;
-	}
-
-	public void setPatron(Patron patron) {
-		this.patron = patron;
 	}
 
 	public Integer getShowcased() {
@@ -114,6 +97,7 @@ public class OwnedCard {
 	public OwnedCard() {
 		super();
 	}
+
 	
 	
 }

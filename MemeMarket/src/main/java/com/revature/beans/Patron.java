@@ -2,18 +2,15 @@ package com.revature.beans;
 
 import java.util.Set; 
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 //Done
 
@@ -27,16 +24,9 @@ public class Patron {
 	private Integer id;
 	private Integer stonks;
 	
-	@OneToMany(fetch = FetchType.EAGER, mappedBy="patron")
+	@OneToMany(fetch = FetchType.EAGER)
+	@JoinColumn(name = "patronId")
 	private Set<OwnedCard> ownedCards;
-	
-	@OneToMany(fetch = FetchType.LAZY, mappedBy="patron",  cascade=CascadeType.ALL)
-	@JsonIgnoreProperties({"patron", "card", "hibernateLazyInitializer", "handler"})
-	private Set<Comment> comments;
-	
-	@OneToOne(fetch = FetchType.LAZY, mappedBy="patron")
-	@JsonIgnoreProperties({"patron", "hibernateLazyInitializer", "handler"})
-	private User user;
 
 	public Integer getId() {
 		return id;
@@ -60,22 +50,6 @@ public class Patron {
 
 	public void setOwnedCards(Set<OwnedCard> ownedCards) {
 		this.ownedCards = ownedCards;
-	}
-
-	public Set<Comment> getComments() {
-		return comments;
-	}
-
-	public void setComments(Set<Comment> comments) {
-		this.comments = comments;
-	}
-
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
 	}
 
 	@Override
@@ -123,6 +97,5 @@ public class Patron {
 	public Patron() {
 		super();
 	}
-
 	
 }

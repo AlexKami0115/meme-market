@@ -3,7 +3,6 @@ package com.revature.data;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.hibernate.query.Query;
 import org.springframework.stereotype.Component;
 
 import com.revature.beans.Patron;
@@ -36,14 +35,8 @@ public class PatronHibernate implements PatronDao {
 	public Patron getPatron(int id) {
 		Session s = hu.getSession();
 		Patron c = s.get(Patron.class, id);
-		c.getComments();
 		s.close();
-		return c;	
-		//String query = "From Patron p where p.id=:id";
-		//Query<Patron> q = s.createQuery(query, Patron.class);
-		//q.setParameter("id", id);
-		//Patron c = q.uniqueResult();
-		//return c;
+		return c;
 	};
 	
 	@Override

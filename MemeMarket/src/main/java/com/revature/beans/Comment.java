@@ -13,10 +13,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 //Done
 
 @Entity
@@ -26,11 +22,6 @@ public class Comment {
 	@SequenceGenerator(name="comments", sequenceName="Comments_seq", allocationSize=1)
 	@GeneratedValue(generator="comments", strategy=GenerationType.SEQUENCE)
 	private Integer id;
-	
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "cardId")
-	@JsonIgnoreProperties({"comment", "hibernateLazyInitializer", "handler"})
-	private Card card;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "patronId")
@@ -45,12 +36,6 @@ public class Comment {
 	}
 	public void setId(Integer id) {
 		this.id = id;
-	}
-	public Card getCard() {
-		return card;
-	}
-	public void setCard(Card card) {
-		this.card = card;
 	}
 	public Patron getPatron() {
 		return patron;

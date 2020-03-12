@@ -17,13 +17,7 @@ public class PatronServiceHibernate implements PatronService {
 		pd.addPatron(p);
 		u.setPatron(p);
 		ud.addUser(u);
-		p.setUser(u);
 		return u.getId();
-	}
-
-	@Override
-	public User getPatron(int id) {
-		return pd.getPatron(id).getUser();
 	}
 
 	@Override

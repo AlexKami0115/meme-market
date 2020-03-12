@@ -51,8 +51,6 @@ public class JeffDriver {
 		ocl.add(ocd.getOwnedCard(1));
 		ocl.add(ocd.getOwnedCard(2));
 		// Set the patrons who own the cards
-		t1.setPatronOne(ocl.get(0).getPatron());
-		t1.setPatronTwo(ocl.get(1).getPatron());
 		// Convert List to Set and set cards to be traded
 		t1.setCardsToBeTraded(new HashSet<OwnedCard>(ocl));
 		// Set trade status
