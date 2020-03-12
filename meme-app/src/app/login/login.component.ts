@@ -25,7 +25,11 @@ export class LoginComponent implements OnInit {
       this.us.checkLogin(this.username, this.password).subscribe(
         resp => {
           if (resp) this.router.navigate(['/home']);
-        });
+        },
+        error => {
+          alert('Incorrect username or password.')
+        }
+        );
     }
     else {
       alert('Please fill out all fields.');

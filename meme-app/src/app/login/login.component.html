@@ -6,7 +6,7 @@
     </div>
     <div class="form-group">
         <label for="password">Password: </label>
-        <input type="password" [(ngModel)]="password" name="password" id="password" class="form-control" required>
+        <input type="password" (keydown.enter)="submit()" [(ngModel)]="password" name="password" id="password" class="form-control" required>
     </div>
 
     <button id="submit" class="btn btn-primary btn-block" (click)="submit()" type="button">Login</button>

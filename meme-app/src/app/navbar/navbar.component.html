@@ -7,11 +7,12 @@
         <ng-container *ngIf="!isUser(); else authenticated">
             <!-- User is not logged in; show Login button -->
             <div id="nav-login">
-                <button id="register-btn" class="btn btn-secondary ml-2 my-2 my-sm-0">Register</button>
+                <button id="register-btn" routerLink="/register" class="btn btn-secondary ml-2 my-2 my-sm-0">Register</button>
                 <button id="login-btn" routerLink="/login" class="btn btn-primary ml-2 my-2 my-sm-0">Login</button>
             </div>
         </ng-container>
         <ng-template #authenticated>
+            <button id="logout-btn" class="btn btn-danger ml-2 my-2 my-sm-0">Logout</button>
             <!-- User is logged in; welcome them and show Logout button -->
 
         </ng-template>
