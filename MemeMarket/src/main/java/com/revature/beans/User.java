@@ -29,7 +29,6 @@ public class User {
 	
 	@OneToOne(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
 	@JoinColumn(name = "patronId")
-	@JsonManagedReference(value="patron-user")
 	private Patron patron;
 
 	public Integer getId() {

@@ -29,7 +29,7 @@ public class Comment {
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "cardId")
-	@JsonIgnoreProperties({"comment"})
+	@JsonIgnoreProperties({"comment", "hibernateLazyInitializer", "handler"})
 	private Card card;
 	
 	@ManyToOne(fetch = FetchType.EAGER)

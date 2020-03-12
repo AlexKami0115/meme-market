@@ -31,7 +31,7 @@ public class OwnedCard {
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "patronId")
-	@JsonIgnoreProperties({"ownedCards"})
+	@JsonIgnoreProperties({"ownedCards", "hibernateLazyInitializer", "handler"})
 	private Patron patron;
 	
 	@Column
