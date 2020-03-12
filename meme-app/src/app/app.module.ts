@@ -15,6 +15,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { UrlService } from './services/url.service';
 import { RegisterComponent } from './register/register.component';
+import { ViewCollectionComponent } from './view-collection/view-collection.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { RegisterComponent } from './register/register.component';
     AddcardComponent,
     HomeComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ViewCollectionComponent
   ],
   imports: [
     BrowserModule,

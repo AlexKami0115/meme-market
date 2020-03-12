@@ -31,7 +31,7 @@ public class Patron {
 	private Set<OwnedCard> ownedCards;
 	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy="patron",  cascade=CascadeType.ALL)
-	@JsonIgnoreProperties({"patron"})
+	@JsonIgnoreProperties({"patron", "hibernateLazyInitializer", "handler"})
 	private Set<Comment> comments;
 	
 	@OneToOne(fetch = FetchType.LAZY, mappedBy="patron")
