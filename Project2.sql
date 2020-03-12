@@ -37,7 +37,7 @@ create table Patrons(
 
 create table Userz(
     id number(10) primary key,
-    username varchar2(20) not null,
+    username varchar2(20) unique not null,
     pass varchar2(20) not null,
     PatronID number(10),
     constraint fk_Userz_Patrons foreign key (PatronID) references Patrons(id)
@@ -151,10 +151,10 @@ create table Comments(
 );
 
 create sequence Patrons_seq nocache;
-create sequence Userz_seq nocache;
+create sequence Userz_seq start with 4 nocache;
 create sequence Rarity_seq nocache;
 create sequence Tags_seq nocache;
-create sequence Cards_seq nocache;
+create sequence Cards_seq start with 4 nocache;
 create sequence OwnedCards_seq nocache;
 create sequence TradeStatus_seq nocache;
 create sequence Trades_seq nocache;
@@ -164,13 +164,39 @@ create sequence PurchaseLevels_seq nocache;
 create sequence Purchases_seq nocache;
 create sequence Comments_seq nocache;
 
+insert into Rarity (id, rarityName, rarityWeight) values (1, 'Well-Done', 50);
+insert into Rarity (id, rarityName, rarityWeight) values (2, 'Medium-Well', 24);
+insert into Rarity (id, rarityName, rarityWeight) values (3, 'Medium', 10);
+insert into Rarity (id, rarityName, rarityWeight) values (4, 'Medium-Rare', 5);
+insert into Rarity (id, rarityName, rarityWeight) values (5, 'Rare', 1);
+
 INSERT INTO TradeStatus (id, statusname) VALUES (1, 'Pending');
 INSERT INTO TradeStatus (id, statusname) VALUES (2, 'Denied');
 INSERT INTO TradeStatus (id, statusname) VALUES (3, 'Complete');
 
+insert into Userz (id, username, pass) VALUES (1, 'alexkam123', 'Al23ex23!');
+insert into Userz (id, username, pass) VALUES (2, 'jdelgado', 'pass');
+insert into Userz (id, username, pass) VALUES (3, 'Chris', 'pass');
+
+insert into PackTiers (id, tierName, tierPrice) values (1, 'Tier 1', '100');
+insert into PackTiers (id, tierName, tierPrice) values (2, 'Tier 2', '50');
+insert into PackTiers (id, tierName, tierPrice) values (3, 'Tier 3', '20');
+
+insert into Tags (id, tagName) values (1, 'spicy');
+insert into Tags (id, tagName) values (2, 'cats');
+
+insert into Cards (id, cardImage, cardText, memeText, rarityId) 
+    values (1, 'https://i.imgur.com/WnUkxTb.jpg', 'cardText', 'memeText', 1);
+    
+insert into Cards (id, cardImage, cardText, memeText, rarityId) 
+    values (2, 'https://i.imgur.com/Ka9P227.png', 'cardText', 'memeText', 2);
+    
+insert into Cards (id, cardImage, cardText, memeText, rarityId) 
+    values (3, 'https://i.imgur.com/7GdHhvJ.jpg', 'cardText', 'memeText', 3);
+
+
 
 commit;
-
 /*
 create table Patrons
 create table Rarity

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { faAlignLeft } from '@fortawesome/free-solid-svg-icons';
-import { User } from '../user';
 import { UserService } from '../services/user.service';
 
 @Component({

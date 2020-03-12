@@ -26,6 +26,10 @@ export class RegisterComponent implements OnInit {
       this.us.registerUser(this.u).subscribe(
         resp => {
           this.u = resp;
+          if (resp) this.router.navigate(['/home']);
+        },
+        error => {
+          alert('This username already exists.');
         }
       );
     }else{
