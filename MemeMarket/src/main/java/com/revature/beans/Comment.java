@@ -14,6 +14,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 //Done
@@ -28,12 +29,11 @@ public class Comment {
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "cardId")
-	@JsonBackReference(value="comment-card")
+	@JsonIgnoreProperties({"comment"})
 	private Card card;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "patronId")
-//	@JsonManagedReference(value="patron-comment")
 	private Patron patron;
 	
 	@Column

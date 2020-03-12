@@ -1,6 +1,6 @@
 package com.revature.beans;
 
-import java.util.Set;
+import java.util.Set; 
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -13,8 +13,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 //Done
 
@@ -29,15 +28,14 @@ public class Patron {
 	private Integer stonks;
 	
 	@OneToMany(fetch = FetchType.EAGER, mappedBy="patron")
-//	@JsonManagedReference(value="ownedcard-patron")
 	private Set<OwnedCard> ownedCards;
 	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy="patron",  cascade=CascadeType.ALL)
-	@JsonBackReference(value="patron-comment")
+	@JsonIgnoreProperties({"patron"})
 	private Set<Comment> comments;
 	
 	@OneToOne(fetch = FetchType.LAZY, mappedBy="patron")
-	@JsonBackReference(value="patron-user")
+	@JsonIgnoreProperties({"patron"})
 	private User user;
 
 	public Integer getId() {

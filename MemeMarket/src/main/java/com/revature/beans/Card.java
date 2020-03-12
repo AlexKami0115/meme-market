@@ -48,7 +48,6 @@ public class Card {
 	
 	@OneToMany(fetch = FetchType.EAGER)
 	@JoinColumn(name = "cardId")
-	@JsonManagedReference(value="comment-card")
 	private Set<Comment> comment;
 
 
