@@ -35,7 +35,7 @@ public class Patron {
 	private Set<Comment> comments;
 	
 	@OneToOne(fetch = FetchType.LAZY, mappedBy="patron")
-	@JsonIgnoreProperties({"patron"})
+	@JsonIgnoreProperties({"patron", "hibernateLazyInitializer", "handler"})
 	private User user;
 
 	public Integer getId() {

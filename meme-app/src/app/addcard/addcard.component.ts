@@ -4,6 +4,8 @@ import { TagService } from '../services/tag.service';
 import { Card } from '../card';
 import { CardService } from '../services/card.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Rarity } from '../rarity';
+import { RarityService } from '../services/rarity.service';
 
 @Component({
   selector: 'app-addcard',
@@ -13,27 +15,39 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class AddcardComponent implements OnInit {
   public card: Card;
   public tags: Tag[];
+  public rarities: Rarity[];
 
   constructor(
     private cardService: CardService,
     private tagService: TagService,
+    private rarityService: RarityService,
     private route: ActivatedRoute,
     private router: Router
   ) { }
 
   ngOnInit(): void {
+    this.card = new Card;
     this.tagService.getTags().subscribe(
       (data) => this.tags = data
     );
+    this.rarityService.getRarities().subscribe(
+      (data) => this.rarities = data
+    );
+    
   }
 
   submit(): void {
-    this.cardService.addCard(this.card).subscribe(
-      card => {
-        this.card = card;
-        // this.router.navigate([])
-      }
-    )
+    if (this.card.cardText && this.card.image && this.card.memeText) {
+      this.cardService.addCard(this.card).subscribe(
+        resp => {
+          this.card = resp;
+          // this.router.navigate([])
+        }
+      );
+    } else {
+      alert('Please fill out all fields.');
+    }
+    
   }
 
 }

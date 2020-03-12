@@ -1,28 +1,28 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Rarity } from '../rarity';
 import { map } from 'rxjs/operators';
-import { Tag } from '../tag';
 import { UrlService } from './url.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class TagService {
-  private appUrl = this.urlService.getUrl() + 'tag';
+export class RarityService {
+  private appUrl = this.urlService.getUrl() + 'rarity';
 
   constructor(
     private http: HttpClient,
     private urlService: UrlService
     ) { }
 
-  getTags(): Observable<Tag[]> {
+  getRarities(): Observable<Rarity[]> {
     return this.http.get(this.appUrl)
-      .pipe( map(resp => resp as Tag[]) );
+      .pipe( map(resp => resp as Rarity[]) );
   }
 
-  getTag(id: number|string): Observable<Tag> {
+  getRarity(id: number|string): Observable<Rarity> {
     return this.http.get(this.appUrl + '/' + id)
-      .pipe( map(resp => resp as Tag) );
+      .pipe( map(resp => resp as Rarity) );
   }
 }

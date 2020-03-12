@@ -1,8 +1,13 @@
 package com.revature.data;
 
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 import org.springframework.stereotype.Component;
 
 import com.revature.beans.Rarity;
@@ -24,7 +29,7 @@ public class RarityHibernate implements RarityDao {
 			t.commit();
 		} catch(HibernateException e) {
 			t.rollback();
-			LogUtil.logException(e, UserHibernate.class);
+			LogUtil.logException(e, RarityHibernate.class);
 		} finally {
 			s.close();
 		}
@@ -52,7 +57,7 @@ public class RarityHibernate implements RarityDao {
 		} catch(Exception e) {
 			if(t != null)
 				t.rollback();
-			LogUtil.logException(e, UserHibernate.class);
+			LogUtil.logException(e, RarityHibernate.class);
 		} finally {
 			s.close();
 		}
@@ -72,11 +77,22 @@ public class RarityHibernate implements RarityDao {
 		} catch(Exception e) {
 			if(t != null)
 				t.rollback();
-			LogUtil.logException(e, UserHibernate.class);
+			LogUtil.logException(e, RarityHibernate.class);
 		} finally {
 			s.close();
 		}
 		return b;
+	}
+
+	@Override
+	public Set<Rarity> getRarities() {
+		Session s = hu.getSession();
+		String query = "FROM Rarity";
+		Query<Rarity> q = s.createQuery(query, Rarity.class);
+		List<Rarity> rarityList = q.getResultList();
+		Set<Rarity> raritySet = new HashSet<Rarity>(rarityList);
+		s.close();
+		return raritySet;
 	};
 
 }
