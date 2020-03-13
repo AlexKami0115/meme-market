@@ -12,8 +12,10 @@
             </div>
         </ng-container>
         <ng-template #authenticated>
+            <!-- IF ADMIN, SHOW ADMIN BUTTON -->
+            <button *ngIf="isAdmin();" id="admin-btn"  class="btn btn-danger ml-2 my-2 my-sm-0">Admin</button>
             <!-- User is logged in; welcome them and show Logout button -->
-            <p> Welcome, </p>
+            <p> Welcome, {{user.username}} </p>
             <button id="logout-btn" (click)="logOut()" class="btn btn-danger ml-2 my-2 my-sm-0">Logout</button>
 
         </ng-template>

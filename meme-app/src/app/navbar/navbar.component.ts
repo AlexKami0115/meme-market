@@ -10,11 +10,11 @@ import { User } from '../user';
 })
 export class NavbarComponent implements OnInit {
   faAlignLeft = faAlignLeft;
-  public u: User;
+  public u = new User();
   
   constructor(
     public userService: UserService
-  ) {this.u = this.userService.getUser(); console.log('user info', this.u) }
+  ) {}
 
   ngOnInit(): void {
   }

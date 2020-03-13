@@ -51,9 +51,11 @@ export class UserService {
         .pipe(map(resp => resp as User))
   }
 
-  getUser(): User {
-    return this.user;
+  getUser(): Observable<User> {
+    return this.http.get(this.appUrl + '/', { withCredentials: true }).pipe(
+      map( resp => resp as User));
   }
+
   isAdmin(): boolean {
     return !(this.user !== undefined && this.user.patron !== undefined && this.user.patron !== null);
   }
