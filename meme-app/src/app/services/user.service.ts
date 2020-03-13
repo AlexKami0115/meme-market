@@ -60,4 +60,8 @@ export class UserService {
   isUser(): boolean {
     return (this.user !== undefined && this.user.patron !== undefined && this.user.patron !== null);
   }
+
+  logOut(): User {
+    return this.user = null;
+  }
 }

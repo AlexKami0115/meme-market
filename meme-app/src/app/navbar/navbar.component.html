@@ -12,7 +12,7 @@
             </div>
         </ng-container>
         <ng-template #authenticated>
-            <button id="logout-btn" class="btn btn-danger ml-2 my-2 my-sm-0">Logout</button>
+            <button id="logout-btn" (click)="logOut()" class="btn btn-danger ml-2 my-2 my-sm-0">Logout</button>
             <!-- User is logged in; welcome them and show Logout button -->
 
         </ng-template>
