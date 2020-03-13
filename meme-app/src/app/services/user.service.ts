@@ -18,8 +18,6 @@ export class UserService {
 
   private user: User;
 
-  
-
   constructor(
     public urlService: UrlService,
     public http: HttpClient,

@@ -19,7 +19,6 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
   submit(): void{
     if(this.username && this.password){
       this.us.checkLogin(this.username, this.password).subscribe(

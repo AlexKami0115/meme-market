@@ -16,6 +16,7 @@ import { LoginComponent } from './login/login.component';
 import { UrlService } from './services/url.service';
 import { RegisterComponent } from './register/register.component';
 import { ViewCollectionComponent } from './view-collection/view-collection.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ViewCollectionComponent } from './view-collection/view-collection.compo
     HomeComponent,
     LoginComponent,
     RegisterComponent,
-    ViewCollectionComponent
+    ViewCollectionComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
