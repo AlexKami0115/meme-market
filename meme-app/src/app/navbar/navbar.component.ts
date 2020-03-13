@@ -25,4 +25,7 @@ export class NavbarComponent implements OnInit {
     return this.userService.isAdmin();
   }
 
+  logOut(): Object {
+    return this.userService.logOut();
+  }
 }

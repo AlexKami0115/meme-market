@@ -4,6 +4,7 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { User } from '../user';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/internal/operators/map';
+import { Router } from '@angular/router';
 
 
 @Injectable({
@@ -21,7 +22,8 @@ export class UserService {
 
   constructor(
     public urlService: UrlService,
-    public http: HttpClient
+    public http: HttpClient,
+    private router: Router
   ) { }
 
   checkLogin(username: string, password: string): Observable<User>{
@@ -57,11 +59,14 @@ export class UserService {
   isAdmin(): boolean {
     return !(this.user !== undefined && this.user.patron !== undefined && this.user.patron !== null);
   }
-  isUser(): boolean {
-    return (this.user !== undefined && this.user.patron !== undefined && this.user.patron !== null);
+  isUser(): boolean {                                       /** Alex - Commenting out this field, because log in won't work with it. */
+    return (this.user !== undefined && this.user !== null); /** && this.user.patron !== undefined && this.user.patron !== null); */
   }
 
   logOut(): User {
+    console.log(this.user);
+    console.log('logout called');
     return this.user = null;
+    this.router.navigate(['/home']);
   }
 }
