@@ -1,9 +1,12 @@
 package com.revature.services;
 
+import java.util.Set;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.revature.beans.Card;
+import com.revature.beans.Rarity;
 import com.revature.data.CardDao;
 
 @Service
@@ -20,6 +23,11 @@ public class CardServiceHibernate implements CardService {
 	public Card getCard(int id) {
 		// TODO Auto-generated method stub
 		return cd.getCard(id);
+	}
+	
+	@Override
+	public Set<Card> getCardsByRarity(Rarity r){
+		return cd.getCardsByRarity(r);
 	}
 
 	@Override

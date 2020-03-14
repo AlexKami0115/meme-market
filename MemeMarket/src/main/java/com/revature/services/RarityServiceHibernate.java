@@ -15,14 +15,13 @@ public class RarityServiceHibernate implements RarityService {
 	
 	@Override
 	public Set<Rarity> getRarities() {
-		// TODO Auto-generated method stub
+		System.out.println("Here");
 		return rd.getRarities();
 	}
 
 	@Override
 	public Rarity getRarity(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+		return rd.getRarity(id);
 	}
 
 }

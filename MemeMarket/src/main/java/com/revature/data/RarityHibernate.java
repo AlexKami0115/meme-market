@@ -86,11 +86,13 @@ public class RarityHibernate implements RarityDao {
 
 	@Override
 	public Set<Rarity> getRarities() {
+//		System.out.println("Here");
 		Session s = hu.getSession();
 		String query = "FROM Rarity";
 		Query<Rarity> q = s.createQuery(query, Rarity.class);
 		List<Rarity> rarityList = q.getResultList();
-		Set<Rarity> raritySet = new HashSet<Rarity>(rarityList);
+		Set<Rarity> raritySet = new HashSet<Rarity>();
+		raritySet.addAll(rarityList);
 		s.close();
 		return raritySet;
 	};

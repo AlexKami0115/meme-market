@@ -154,8 +154,8 @@ create sequence Patrons_seq start with 3 nocache;
 create sequence Userz_seq start with 6 nocache;
 create sequence Rarity_seq nocache;
 create sequence Tags_seq nocache;
-create sequence Cards_seq start with 4 nocache;
-create sequence OwnedCards_seq nocache;
+create sequence Cards_seq start with 34 nocache;
+create sequence OwnedCards_seq start with 4 nocache;
 create sequence TradeStatus_seq nocache;
 create sequence Trades_seq nocache;
 create sequence PackTiers_seq nocache;
@@ -193,6 +193,96 @@ insert into Cards (id, cardImage, cardText, memeText, rarityId)
     
 insert into Cards (id, cardImage, cardText, memeText, rarityId) 
     values (3, 'https://i.imgur.com/7GdHhvJ.jpg', 'cardText', 'memeText', 3);
+
+insert into Cards (id, cardImage, cardText, memeText, rarityId)
+    values (4, 'https://i.imgur.com/9oviAaW.jpg', 'cardText', 'memeText', 4);
+
+insert into Cards (id, cardImage, cardText, memeText, rarityId)
+    values (5, 'https://i.imgur.com/ImUOhmH.jpg', 'cardText', 'memeText', 5);
+
+insert into Cards (id, cardImage, cardText, memeText, rarityId)
+    values (6, 'https://i.imgur.com/zQKqevE.jpg', 'cardText', 'memeText', 1);
+
+insert into Cards (id, cardImage, cardText, memeText, rarityId)
+    values (7, 'https://i.imgur.com/61qz2CY.jpg', 'cardText', 'memeText', 1);
+
+insert into Cards (id, cardImage, cardText, memeText, rarityId)
+    values (8, 'https://i.imgur.com/mMsHS2E.jpg', 'cardText', 'memeText', 1);
+
+insert into Cards (id, cardImage, cardText, memeText, rarityId)
+    values (9, 'https://i.imgur.com/CJggtL7.jpg', 'cardText', 'memeText', 1);
+
+insert into Cards (id, cardImage, cardText, memeText, rarityId)
+    values (10, 'https://i.imgur.com/f5rGuZ1.jpg', 'cardText', 'memeText', 1);
+
+insert into Cards (id, cardImage, cardText, memeText, rarityId)
+    values (11, 'https://i.imgur.com/8z3KRzV.jpg', 'cardText', 'memeText', 1);
+
+insert into Cards (id, cardImage, cardText, memeText, rarityId)
+    values (12, 'https://i.imgur.com/LGQ4akJ.jpg', 'cardText', 'memeText', 1);
+
+insert into Cards (id, cardImage, cardText, memeText, rarityId)
+    values (13, 'https://i.imgur.com/BLQgDFl.jpg', 'cardText', 'memeText', 1);
+
+insert into Cards (id, cardImage, cardText, memeText, rarityId)
+    values (14, 'https://i.imgur.com/OwMcxw4.jpg', 'cardText', 'memeText', 1);
+
+insert into Cards (id, cardImage, cardText, memeText, rarityId)
+    values (15, 'https://i.imgur.com/EJ4WQi7.jpg', 'cardText', 'memeText', 2);
+
+insert into Cards (id, cardImage, cardText, memeText, rarityId)
+    values (16, 'https://i.imgur.com/LPWuB3z.jpg', 'cardText', 'memeText', 2);
+
+insert into Cards (id, cardImage, cardText, memeText, rarityId)
+    values (17, 'https://i.imgur.com/WcIkbRJ.jpg', 'cardText', 'memeText', 2);
+
+insert into Cards (id, cardImage, cardText, memeText, rarityId)
+    values (18, 'https://i.imgur.com/1KmXSxb.jpg', 'cardText', 'memeText', 2);
+
+insert into Cards (id, cardImage, cardText, memeText, rarityId)
+    values (19, 'https://i.imgur.com/4ZBQ29h.jpg', 'cardText', 'memeText', 2);
+
+insert into Cards (id, cardImage, cardText, memeText, rarityId)
+    values (20, 'https://i.imgur.com/trGI8WL.jpg', 'cardText', 'memeText', 3);
+
+insert into Cards (id, cardImage, cardText, memeText, rarityId)
+    values (21, 'https://i.imgur.com/QwdHWda.jpg', 'cardText', 'memeText', 3);
+
+insert into Cards (id, cardImage, cardText, memeText, rarityId)
+    values (22, 'https://i.imgur.com/eYFMWKZ.jpg', 'cardText', 'memeText', 3);
+
+insert into Cards (id, cardImage, cardText, memeText, rarityId)
+    values (23, 'https://i.imgur.com/vNEy1rQ.jpg', 'cardText', 'memeText', 3);
+
+insert into Cards (id, cardImage, cardText, memeText, rarityId)
+    values (24, 'https://i.imgur.com/h55lscO.jpg', 'cardText', 'memeText', 3);
+
+insert into Cards (id, cardImage, cardText, memeText, rarityId)
+    values (25, 'https://i.imgur.com/YzJAQ4W.jpg', 'cardText', 'memeText', 3);
+
+insert into Cards (id, cardImage, cardText, memeText, rarityId)
+    values (26, 'https://i.imgur.com/lz3sPzV.jpg', 'cardText', 'memeText', 3);
+
+insert into Cards (id, cardImage, cardText, memeText, rarityId)
+    values (27, 'https://i.imgur.com/QeYNaFT.png', 'cardText', 'memeText', 4);
+
+insert into Cards (id, cardImage, cardText, memeText, rarityId)
+    values (28, 'https://i.imgur.com/axN4jli.jpg', 'cardText', 'memeText', 4);
+
+insert into Cards (id, cardImage, cardText, memeText, rarityId)
+    values (29, 'https://i.imgur.com/6uiy42x.jpg', 'cardText', 'memeText', 4);
+
+insert into Cards (id, cardImage, cardText, memeText, rarityId)
+    values (30, 'https://i.imgur.com/mtSil7y.jpg', 'cardText', 'memeText', 4);
+
+insert into Cards (id, cardImage, cardText, memeText, rarityId)
+    values (31, 'https://i.imgur.com/9oviAaW.jpg', 'cardText', 'memeText', 5);
+
+insert into Cards (id, cardImage, cardText, memeText, rarityId)
+    values (32, 'https://i.imgur.com/s5CS8qI.jpg', 'cardText', 'memeText', 5);
+
+insert into Cards (id, cardImage, cardText, memeText, rarityId)
+    values (33, 'https://i.imgur.com/PuYaKg8.jpg', 'cardText', 'memeText', 5);
 
 insert into Patrons (id, stonks) values (1, 100);
 insert into Patrons (id, stonks) values (2, 125);

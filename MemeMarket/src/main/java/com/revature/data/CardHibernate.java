@@ -1,11 +1,18 @@
 package com.revature.data;
 
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 import org.springframework.stereotype.Component;
 
 import com.revature.beans.Card;
+import com.revature.beans.Rarity;
+import com.revature.beans.User;
 import com.revature.utils.HibernateUtil;
 import com.revature.utils.LogUtil;
 
@@ -38,6 +45,17 @@ public class CardHibernate implements CardDao{
 		s.close();
 		return c;
 	};
+	
+	@Override
+	public Set<Card> getCardsByRarity(Rarity r){
+		Session s = hu.getSession();
+		String query = "from Card c where c.Rarity=:rarity";
+		Query<Card> q = s.createQuery(query, Card.class);
+		q.setParameter("rarity", r);
+		List<Card> cardList = q.getResultList();
+		Set<Card> cardSet = new HashSet<Card>(cardList);
+		return cardSet;		
+	}
 	
 	public boolean updateCard(Card c) {
 		Session s = hu.getSession();
