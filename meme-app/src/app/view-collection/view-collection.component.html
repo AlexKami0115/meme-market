@@ -1,1 +1,5 @@
-<p>view-collection works!</p>
+<table>
+    <ng-container *ngFor="let oc of ownedCardCollection">
+        <tr><td><h2>{{oc.card.image}}</h2></td></tr>
+    </ng-container>
+</table>

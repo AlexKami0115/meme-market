@@ -27,6 +27,10 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent
+  },
+  {
+    path: 'view-collection',
+    component: RegisterComponent
   }
 ];
 

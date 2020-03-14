@@ -21,7 +21,7 @@ export class OwnedCardsService {
     ) { }
 
   getOwnedCards(): OwnedCard[]{
-    return this.us.getUser().patron.ownedCards;
+    return this.us.getUserObject().patron.ownedCards;
   }
 
 

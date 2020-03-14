@@ -39,8 +39,8 @@ create table Userz(
     id number(10) primary key,
     username varchar2(20) unique not null,
     pass varchar2(20) not null,
-    PatronID number(10),
-    constraint fk_Userz_Patrons foreign key (PatronID) references Patrons(id)
+    patronID number(10),
+    constraint fk_Userz_Patrons foreign key (patronID) references Patrons(id)
 );
 
 create table Rarity(
@@ -150,8 +150,8 @@ create table Comments(
     constraint fk_Comments_Patrons foreign key (patronId) references Patrons(id)
 );
 
-create sequence Patrons_seq nocache;
-create sequence Userz_seq start with 4 nocache;
+create sequence Patrons_seq start with 3 nocache;
+create sequence Userz_seq start with 6 nocache;
 create sequence Rarity_seq nocache;
 create sequence Tags_seq nocache;
 create sequence Cards_seq start with 4 nocache;
@@ -194,7 +194,21 @@ insert into Cards (id, cardImage, cardText, memeText, rarityId)
 insert into Cards (id, cardImage, cardText, memeText, rarityId) 
     values (3, 'https://i.imgur.com/7GdHhvJ.jpg', 'cardText', 'memeText', 3);
 
+insert into Patrons (id, stonks) values (1, 100);
+insert into Patrons (id, stonks) values (2, 125);
 
+insert into Userz (id, username, pass, patronId) values (4, 'RDetrich', 'Rpass', 1);
+insert into Userz (id, username, pass, patronId) values (5, 'LLynch', 'Lpass', 2);
+
+insert into OwnedCards (id, patronId, cardId, showcased) values (1, 1, 1, null);
+insert into OwnedCards (id, patronId, cardId, showcased) values (2, 1, 2, null);
+insert into OwnedCards (id, patronId, cardId, showcased) values (3, 2, 3, null);
+
+--create table OwnedCards
+--    id number(10) primary key,
+--    patronId number(10) not null,
+--    cardId number(10) not null,
+--    showcased number(1),
 
 commit;
 /*

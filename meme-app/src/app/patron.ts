@@ -5,6 +5,4 @@ export class Patron {
     id: number;
     stonks: number;
     ownedCards: OwnedCard[];
-    comments: Comment[];
-    user: User;
 }

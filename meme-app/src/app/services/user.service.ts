@@ -56,11 +56,19 @@ export class UserService {
       map( resp => resp as User));
   }
 
+  getUserObject(): User {
+    return this.user;
+  }
+
   isAdmin(): boolean {
     return !(this.user !== undefined && this.user.patron !== undefined && this.user.patron !== null);
   }
   isUser(): boolean {                                       /** Alex - Commenting out this field, because log in won't work with it. */
     return (this.user !== undefined && this.user !== null); /** && this.user.patron !== undefined && this.user.patron !== null); */
+  }
+
+  isPatron(): boolean {
+    return (this.user !== undefined && this.user !== null && this.user.patron !== undefined && this.user.patron !== null);
   }
 
   logOut(): User {

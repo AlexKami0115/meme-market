@@ -27,6 +27,10 @@ export class NavbarComponent implements OnInit {
     return this.userService.isAdmin();
   }
 
+  isPatron(): boolean {
+    return this.userService.isPatron();
+  }
+
   logOut(): User {
     return this.userService.logOut();
   }
