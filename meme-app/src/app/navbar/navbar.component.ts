@@ -10,13 +10,14 @@ import { User } from '../user';
 })
 export class NavbarComponent implements OnInit {
   faAlignLeft = faAlignLeft;
-  public u = new User();
+  public u: User;
   
   constructor(
     public userService: UserService
   ) {}
 
   ngOnInit(): void {
+    this.u = this.userService.getUser();
   }
 
   isUser(): boolean {

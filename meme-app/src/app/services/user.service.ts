@@ -51,9 +51,8 @@ export class UserService {
         .pipe(map(resp => resp as User))
   }
 
-  getUser(): Observable<User> {
-    return this.http.get(this.appUrl + '/', { withCredentials: true }).pipe(
-      map( resp => resp as User));
+  getUser(): User {
+    return this.user;
   }
 
   getUserObject(): User {
