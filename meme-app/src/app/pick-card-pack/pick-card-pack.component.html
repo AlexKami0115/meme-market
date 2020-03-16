@@ -1,0 +1,12 @@
+<div id="pack-btns">
+    <button id="pack1-btn" (click)="buyPack(1)" class="btn btn-primary ml-2 my-2 my-sm-0">Tier 1</button>
+    <button id="pack2-btn" (click)="buyPack(2)" class="btn btn-primary ml-2 my-2 my-sm-0">Tier 2</button>
+    <button id="pack3-btn" (click)="buyPack(3)" class="btn btn-primary ml-2 my-2 my-sm-0">Tier 3</button>
+</div>
+<div id="pack-view">
+    <table>
+        <ng-container *ngFor="let c of cardsInPack">
+            <tr><td><h2><img src="{{c.image}}" id="memeImage"></h2></td></tr>
+        </ng-container>
+    </table>
+</div>
