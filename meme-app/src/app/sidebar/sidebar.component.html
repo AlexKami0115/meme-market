@@ -6,13 +6,22 @@
         <li class="active">
             <a href="#">Home <span class="sr-only">(current)</span></a>
         </li>
-        <li>
-            <a href="#">Collection</a>
-        </li>
-        <li>
-            <a href="#">Trading</a>
-        </li>
-        
+        <ng-container *ngIf="isPatron()">
+            <li>
+                <a routerLink="/view-collection">Collection</a>
+            </li>
+            <li>
+                <a href="#">Trading</a>
+            </li>
+        </ng-container>
+        <ng-container *ngIf="isAdmin()">
+            <li>
+                <a routerLink="/admin">Admin</a>
+            </li>
+            <li>
+                <a routerLink="/card/add">Add Card</a>
+            </li>
+        </ng-container>
     </ul>
     <ul class="list-unstyled CTAs">
         <li>

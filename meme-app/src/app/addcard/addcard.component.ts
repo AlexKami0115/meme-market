@@ -41,7 +41,11 @@ export class AddcardComponent implements OnInit {
       this.cardService.addCard(this.card).subscribe(
         resp => {
           this.card = resp;
-          // this.router.navigate([])
+          alert('Card successfully created!');
+          this.router.navigate(['/admin']);
+        },
+        error => {
+          alert('Card not created.');
         }
       );
     } else {

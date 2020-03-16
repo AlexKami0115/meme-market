@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { faAlignLeft } from '@fortawesome/free-solid-svg-icons';
 import { UserService } from '../services/user.service';
 import { User } from '../user';
@@ -8,7 +8,7 @@ import { User } from '../user';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent implements OnInit, OnChanges {
   faAlignLeft = faAlignLeft;
   public u: User;
   
@@ -17,6 +17,10 @@ export class NavbarComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.u = this.userService.getUser();
+  }
+
+  ngOnChanges(): void {
     this.u = this.userService.getUser();
   }
 
