@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ViewCollectionComponent } from './view-collection/view-collection.component';
+import { AdminComponent } from './admin/admin.component';
 
 
 const routes: Routes = [
@@ -32,7 +33,11 @@ const routes: Routes = [
   {
     path: 'view-collection',
     component: ViewCollectionComponent
-  }
+  },
+  {
+    path: 'admin',
+    component: AdminComponent
+  },
 ];
 
 @NgModule({

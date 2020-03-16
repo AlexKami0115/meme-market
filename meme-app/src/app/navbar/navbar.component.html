@@ -15,7 +15,7 @@
             <!-- IF PATRON, SHOW VIEW MY CARDS BUTTON -->
             <button *ngIf="isPatron();" id="view-my-cards-btn" routerLink="/view-collection" class="btn btn-secondary ml-2 my-2 my-sm-0">View My Cards</button>
             <!-- IF ADMIN, SHOW ADMIN BUTTON -->
-            <button *ngIf="isAdmin();" id="admin-btn"  class="btn btn-danger ml-2 my-2 my-sm-0">Admin</button>
+            <button *ngIf="isAdmin();" routerLink="/admin" id="admin-btn"  class="btn btn-danger ml-2 my-2 my-sm-0">Admin</button>
             <!-- User is logged in; welcome them and show Logout button -->
             <!-- <p *ngFor="let user of u"> Welcome, {{user.username}} </p> -->
             <button id="logout-btn" (click)="logOut()" class="btn btn-danger ml-2 my-2 my-sm-0">Logout</button>
