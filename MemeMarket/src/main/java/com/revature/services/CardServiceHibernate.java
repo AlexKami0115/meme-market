@@ -14,11 +14,14 @@ import org.springframework.stereotype.Service;
 import com.revature.beans.Card;
 import com.revature.beans.PackTier;
 import com.revature.beans.Rarity;
+import com.revature.beans.User;
 import com.revature.data.CardDao;
 import com.revature.data.PackTierDao;
 
 @Service
 public class CardServiceHibernate implements CardService {
+	@Autowired
+	private OwnedCardService ocs;
 	@Autowired
 	private CardDao cd;
 	@Autowired
@@ -35,13 +38,17 @@ public class CardServiceHibernate implements CardService {
 	}
 
 	@Override
-	public Set<Card> genCardPack(int packTierId){
+	public Set<Card> genCardPack(int packTierId, User u){
 		PackTier pt = ptd.getPackTier(packTierId);
-		return genCardPack(pt);
+		return genCardPack(pt, u);
 	}
 	
 	@Override
-	public Set<Card> genCardPack(PackTier pt){
+	public Set<Card> genCardPack(PackTier pt, User u){
+		if(u.getPatron().getStonks() < pt.getTierPrice()) {
+			return null;
+		}
+		u.getPatron().setStonks(u.getPatron().getStonks() - pt.getTierPrice());
 		Set<Card> cardPack = new HashSet<>();
 		List<Rarity> rl = new ArrayList<>(pt.getPackRarities());
 		int totalWeight = 0;
@@ -60,7 +67,9 @@ public class CardServiceHibernate implements CardService {
 			for(int j=0;i<rl.size();j++) {
 				if(randWeightNumber >= subTotalWeight && randWeightNumber < subTotalWeight + rl.get(j).getWeight()) {
 					List<Card> cl = crm.get(rl.get(j));
-					cardPack.add(cl.get(rand.nextInt(cl.size())));
+					Card c = cl.get(rand.nextInt(cl.size()));
+					cardPack.add(c);
+					ocs.addOwnedCard(c, u);
 					break;
 				}
 				subTotalWeight += rl.get(j).getWeight();

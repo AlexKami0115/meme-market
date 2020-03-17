@@ -24,6 +24,7 @@ export class PickCardPackComponent implements OnInit {
         this.cardsInPack = resp;
       }
     );
+    
     document.getElementById('pack-btns').style.display = 'none';
     document.getElementById('pack-view').style.display = 'block';
   }

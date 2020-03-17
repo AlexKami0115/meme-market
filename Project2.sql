@@ -105,7 +105,7 @@ create table PackTiers(
     id number(1) primary key,
     tierName varchar2(20) not null,
     tierPrice number(8) not null,
-    numOfCards number(1) not null
+    numOfCards number(1) default 3 not null
 );
 
 create table PackTiersRarity(

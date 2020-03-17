@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Card } from '../card';
 import { map } from 'rxjs/operators';
+import { User } from '../user';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,14 @@ export class PackService {
       'Content-Type': 'application/json'
   });
   private cardsInPack: Card[];
+
+  // userBuyPack(tier: number): Observable<User>{
+  //   return this.http.update(this.appUrl + '/' + tier, 
+  //   {headers: this.headers, withCredentials: true})
+  //   .pipe(
+  //     map(resp => resp as User)
+  //   )
+  // }
 
   getCardPack(tier: number): Observable<Card[]>{
     return this.http.get(this.appUrl + '/' + tier, 
