@@ -12,6 +12,7 @@ a, a:hover, a:focus {
 #sidebar {
     min-width: 250px;
     max-width: 250px;
+    height: 100%;
     min-height: 100vh;
     background: #343a40;
     color: #fff;
@@ -146,4 +147,30 @@ h2 {
     height: 1px;
     border-bottom: 1px dashed #ddd;
     margin: 40px 0;
+}
+
+.memeImage {
+    width: 333px;
+    border-style: double;
+    border-width: 4px;
+}
+
+.Well-Done {
+    border-color: black;
+}
+
+.Medium-Well {
+    border-color: #1a1;
+}
+
+.Medium {
+    border-color: #11a;
+}
+
+.Medium-Rare {
+    border-color: #a11;
+}
+
+.Rare {
+    border-color: gold;
 }

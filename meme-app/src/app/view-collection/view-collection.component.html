@@ -1,5 +1,11 @@
-<table>
+<!-- <table>
     <ng-container *ngFor="let oc of ownedCardCollection">
         <tr><td><h2><img src="{{oc.card.image}}" id="memeImage"></h2></td></tr>
     </ng-container>
-</table>
+</table> -->
+
+<div id="collection">
+    <div *ngFor="let oc of ownedCardCollection">
+        <img src="{{oc.card.image}}" class="memeImage {{oc.card.rarity.name}}">
+    </div>
+</div>

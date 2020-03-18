@@ -3,11 +3,11 @@
         <h3>MEME MARKET</h3>
     </div>
     <ul id="nav-sidebar" class="list-unstyled components">
-        <li class="active">
-            <a href="#">Home <span class="sr-only">(current)</span></a>
+        <li [class.active]="router.isActive('/home', false)">
+            <a routerLink="/home">Home <span class="sr-only">(current)</span></a>
         </li>
         <ng-container *ngIf="isPatron()">
-            <li>
+            <li [class.active]="router.isActive('/view-collection', false)">
                 <a routerLink="/view-collection">Collection</a>
             </li>
             <li>

@@ -27,4 +27,12 @@ export class CardService {
       map(resp => resp as Card) 
     );
   }
+
+  deleteCard(id: number | string): Observable<Card> {
+    return this.http.post(this.appUrl + '/' + id,
+    {headers: this.headers, withCredentials: true})
+    .pipe( 
+      map(resp => resp as Card) 
+    );
+  }
 }

@@ -68,7 +68,8 @@ export class UserService {
   }
 
   isAdmin(): boolean {
-    return !((this.user !== undefined && this.user !== null) && this.user.patron !== undefined && this.user.patron !== null);
+    if (this.user == undefined || this.user == null) return false;
+    return !(this.user.patron !== undefined && this.user.patron !== null);
   }
   isUser(): boolean {                                       /** Alex - Commenting out this field, because log in won't work with it. */
     return (this.user !== undefined && this.user !== null); /** && this.user.patron !== undefined && this.user.patron !== null); */

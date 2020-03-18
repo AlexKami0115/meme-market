@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { faAlignLeft } from '@fortawesome/free-solid-svg-icons';
 import { UserService } from '../services/user.service';
 import { User } from '../user';
@@ -9,10 +9,8 @@ import { Router } from '@angular/router';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent implements OnInit, OnChanges {
+export class NavbarComponent implements OnInit {
   faAlignLeft = faAlignLeft;
-  public u: User;
-  public logged: boolean;
   
   constructor(
     public userService: UserService,
@@ -20,13 +18,6 @@ export class NavbarComponent implements OnInit, OnChanges {
   ) {}
 
   ngOnInit(): void {
-    this.u = this.userService.getUser();
-    this.logged = this.isUser();
-  }
-
-  ngOnChanges(): void {
-    this.u = this.userService.getUser();
-    this.logged = this.isUser();
   }
 
   isUser(): boolean {
@@ -43,8 +34,6 @@ export class NavbarComponent implements OnInit, OnChanges {
 
   logOut(): void {
     this.userService.logOut();
-    this.u = this.userService.getUser();
-    // this.logged = this.isUser();
     this.router.navigate(['/home']);
   }
 }

@@ -1,4 +1,5 @@
-#memeImage{
-    height: 400px;
-    width: 300px;
+#collection {
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: center;
 }

@@ -6,7 +6,7 @@
 <div id="pack-view">
     <table>
         <ng-container *ngFor="let c of cardsInPack">
-            <tr><td><h2><img src="{{c.image}}" id="memeImage"></h2></td></tr>
+            <tr><td><h2><img src="{{c.image}}" class="memeImage {{c.rarity.name}}"></h2></td></tr>
         </ng-container>
     </table>
 </div>
