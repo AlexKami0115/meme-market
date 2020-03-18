@@ -5,6 +5,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -33,5 +34,17 @@ public class LoginController {
 			return ResponseEntity.ok(u);		
 		}
 	}
-
+	
+	@GetMapping(path="/login")
+	private ResponseEntity<User> getLoggedUser(@RequestBody User u, HttpSession session) {
+		if (u==null ) {
+			// USER DOES NOT EXIST
+			return ResponseEntity.notFound().build();			
+		}
+		else {
+			// USER EXISTS
+			session.setAttribute("loggedUser", u);
+			return ResponseEntity.ok(u);		
+		}
+	}
 }
