@@ -16,14 +16,6 @@ export class PackService {
   });
   private cardsInPack: Card[];
 
-  // userBuyPack(tier: number): Observable<User>{
-  //   return this.http.update(this.appUrl + '/' + tier, 
-  //   {headers: this.headers, withCredentials: true})
-  //   .pipe(
-  //     map(resp => resp as User)
-  //   )
-  // }
-
   getCardPack(tier: number): Observable<Card[]>{
     return this.http.get(this.appUrl + '/' + tier, 
       {headers: this.headers, withCredentials: true})
