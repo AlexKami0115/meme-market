@@ -31,7 +31,8 @@ public class PackController {
 		System.out.println("----------------------" + u);
 		List<Card> cardSet = cs.genCardPack(id, u);
 		if(cardSet == null) {return ResponseEntity.badRequest().build();}
-		u = us.getUser(u);
+		// u = us.getUser(u);
+		us.updateUser(u);
 		session.setAttribute("loggedUser", u);
 		return ResponseEntity.ok(cardSet);
 	}

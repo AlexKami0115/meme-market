@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PackService } from '../services/pack.service';
 import { Card } from '../card';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-pick-card-pack',
@@ -10,7 +11,8 @@ import { Card } from '../card';
 export class PickCardPackComponent implements OnInit {
   cardsInPack: Card[];
   constructor(
-    public ps: PackService
+    public ps: PackService,
+    public us: UserService
   ) { }
 
   ngOnInit(): void {
@@ -22,6 +24,7 @@ export class PickCardPackComponent implements OnInit {
     this.ps.getCardPack(i).subscribe(
       resp => {
         this.cardsInPack = resp;
+        this.us.getLoggedUser();
       }
     );
     

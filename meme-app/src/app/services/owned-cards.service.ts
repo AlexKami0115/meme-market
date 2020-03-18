@@ -4,6 +4,7 @@ import { UrlService } from './url.service';
 import { UserService } from './user.service';
 import { Observable } from 'rxjs';
 import { OwnedCard } from '../owned-card';
+import { User } from '../user';
  
 @Injectable({
   providedIn: 'root'
@@ -21,9 +22,7 @@ export class OwnedCardsService {
     ) { }
 
   getOwnedCards(): OwnedCard[]{
-    this.us.getLoggedUser().subscribe(
-      resp => {}
-    );
+    this.us.getLoggedUser();
     return this.us.getUserObject().patron.ownedCards;
   }
 

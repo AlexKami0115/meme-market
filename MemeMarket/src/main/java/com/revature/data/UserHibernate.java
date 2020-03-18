@@ -107,7 +107,7 @@ public class UserHibernate implements UserDao {
 		boolean b = false;
 		try{
 			t = s.beginTransaction();
-			s.update(user.getId());
+			s.update(user);
 			t.commit();
 			b = true;
 		} catch(Exception e) {

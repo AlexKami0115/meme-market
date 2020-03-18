@@ -47,15 +47,17 @@ export class UserService {
         .pipe(map(resp => resp as User))
   }
 
-  getLoggedUser(): Observable<User>{
-    return this.http.get(this.urlService.getUrl() + 'loggedUser', 
+  getLoggedUser(): void {
+    this.http.get(this.urlService.getUrl() + 'loggedUser', 
       {headers: this.headers, withCredentials: true})
       .pipe(
         map(resp => {
-          const user: User = resp as User;
-          this.user = user;
-          return user;
+          return resp as User
         })
+      ).subscribe(
+        resp => {
+          this.user = resp;
+        }
       )
   }
 

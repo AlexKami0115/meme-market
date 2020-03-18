@@ -21,7 +21,6 @@ public class OwnedCardsServiceHibernate implements OwnedCardService{
 		oc.setPatronId(u.getPatron().getId());
 		oc.setId(ocd.addOwnedCard(oc));
 		u.getPatron().getOwnedCards().add(oc);
-		ud.updateUser(u);
 	}
 	@Override
 	public void addOwnedCard(Card c, User u) {
