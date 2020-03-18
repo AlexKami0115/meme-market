@@ -37,7 +37,7 @@ public class LoginController {
 	
 	@GetMapping(path="/loggedUser")
 	private ResponseEntity<User> getLoggedUser(HttpSession session) {
-		//User u = session.setAttribute("loggedUser", u);
+		User u = (User) session.getAttribute("loggedUser");
 		if (u==null ) {
 			// USER DOES NOT EXIST
 			return ResponseEntity.notFound().build();			
