@@ -34,8 +34,9 @@ public class UserController {
 		return ResponseEntity.ok(u.getId());
 	}
 	
-	@DeleteMapping(path="/user")
-	private ResponseEntity<Object> deleteUser(@RequestBody User u) {
+	@DeleteMapping(path="/user/{username}")
+	private ResponseEntity<Object> deleteUser(@PathVariable String username) {
+		User u = us.getUser(username);
 		if(us.deleteUser(u)) {
 			return ResponseEntity.status(204).build();
 		}

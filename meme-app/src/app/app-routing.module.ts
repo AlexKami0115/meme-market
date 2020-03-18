@@ -6,6 +6,9 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ViewCollectionComponent } from './view-collection/view-collection.component';
 import { AdminComponent } from './admin/admin.component';
+import { PickCardPackComponent } from './pick-card-pack/pick-card-pack.component';
+import { ViewCardPackComponent } from './view-card-pack/view-card-pack.component';
+import { RemoveUserComponent } from './remove-user/remove-user.component';
 
 
 const routes: Routes = [
@@ -38,6 +41,18 @@ const routes: Routes = [
     path: 'admin',
     component: AdminComponent
   },
+  {
+    path: 'pick-card-pack',
+    component: PickCardPackComponent
+  },
+  {
+    path: 'view-card-pack',
+    component: ViewCardPackComponent
+  },
+  {
+    path: 'remove-user',
+    component: RemoveUserComponent
+  }
 ];
 
 @NgModule({

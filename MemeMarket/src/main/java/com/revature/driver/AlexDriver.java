@@ -41,21 +41,20 @@ public class AlexDriver {
 	
 	public static void main(String[] args) {
 
-		if(rs == null) {System.out.println("sgfdsf");}
-		Set<Rarity> rarSet = new HashSet<>();
-		rarSet = rs.getRarities();
-		System.out.println("Here 1");
-		List<Rarity> rarList = new ArrayList<Rarity>();
-		rarList.addAll(rarSet);
-		
-		
-		for(int x=0; x>=rarList.size();x++ ) {
-			Set<Card> cardSet = cs.getCardsByRarity(rarList.get(x));
-			System.out.println("------------------ " + rarList.get(x).getName() + " Cards ------------------");
-			for(Card c : cardSet) {
-				System.out.println(c);
-			}
-		}
+//		if(rs == null) {System.out.println("sgfdsf");}
+//		Set<Rarity> rarSet = new HashSet<>();
+//		rarSet = rs.getRarities();
+//		System.out.println("Here 1");
+//		List<Rarity> rarList = new ArrayList<Rarity>();
+//		rarList.addAll(rarSet);
+//		
+//		for(int x=0; x>=rarList.size();x++ ) {
+//			Set<Card> cardSet = cs.getCardsByRarity(rarList.get(x));
+//			System.out.println("------------------ " + rarList.get(x).getName() + " Cards ------------------");
+//			for(Card c : cardSet) {
+//				System.out.println(c);
+//			}
+//		}
 		
 //		Card c = new Card();
 //		Card c2 = new Card();

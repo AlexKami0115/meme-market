@@ -104,7 +104,8 @@ create table TradeOwnedCards(
 create table PackTiers(
     id number(1) primary key,
     tierName varchar2(20) not null,
-    tierPrice number(8) not null
+    tierPrice number(8) not null,
+    numOfCards number(1) default 3 not null
 );
 
 create table PackTiersRarity(
@@ -184,6 +185,21 @@ insert into PackTiers (id, tierName, tierPrice) values (3, 'Tier 3', '20');
 
 insert into Tags (id, tagName) values (1, 'spicy');
 insert into Tags (id, tagName) values (2, 'cats');
+
+insert into PackTiersRarity(packTiersId, RarityId) values (1, 3);
+insert into PackTiersRarity(packTiersId, RarityId) values (1, 4);
+insert into PackTiersRarity(packTiersId, RarityId) values (1, 5);
+
+insert into PackTiersRarity(packTiersId, RarityId) values (2, 2);
+insert into PackTiersRarity(packTiersId, RarityId) values (2, 3);
+insert into PackTiersRarity(packTiersId, RarityId) values (2, 4);
+insert into PackTiersRarity(packTiersId, RarityId) values (2, 5);
+
+insert into PackTiersRarity(packTiersId, RarityId) values (3, 1);
+insert into PackTiersRarity(packTiersId, RarityId) values (3, 2);
+insert into PackTiersRarity(packTiersId, RarityId) values (3, 3);
+insert into PackTiersRarity(packTiersId, RarityId) values (3, 4);
+insert into PackTiersRarity(packTiersId, RarityId) values (3, 5);
 
 insert into Cards (id, cardImage, cardText, memeText, rarityId) 
     values (1, 'https://i.imgur.com/WnUkxTb.jpg', 'cardText', 'memeText', 1);

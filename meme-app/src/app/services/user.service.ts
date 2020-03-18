@@ -29,7 +29,6 @@ export class UserService {
     u.username = username;
     u.password = password;
     const body = JSON.stringify(u);
-    console.log(body);
     return this.http.post(this.urlService.getUrl() + 'login', body, 
       {headers: this.headers, withCredentials: true})
       .pipe(
@@ -43,7 +42,6 @@ export class UserService {
 
   registerUser(u: User): Observable<User>{
     const body = JSON.stringify(u);
-    console.log(body);
     return this.http.post(this.appUrl, body,
         {headers: this.headers, withCredentials: true})
         .pipe(map(resp => resp as User))
@@ -73,4 +71,11 @@ export class UserService {
     console.log('logout called');
     this.user = null;
   }
+
+  deleteUser(username: string): Observable<User>{
+    const body = JSON.stringify(username);
+    return this.http.delete(this.appUrl + '/'+ username, 
+      {headers: this.headers, withCredentials: true})
+      .pipe(map(resp => resp as User))
+}
 }
