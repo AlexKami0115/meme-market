@@ -48,7 +48,7 @@ export class UserService {
   }
 
   getLoggedUser(): Observable<User>{
-    return this.http.get(this.appUrl + '/loggedUser', 
+    return this.http.get(this.urlService.getUrl() + 'loggedUser', 
       {headers: this.headers, withCredentials: true})
       .pipe(
         map(resp => {
