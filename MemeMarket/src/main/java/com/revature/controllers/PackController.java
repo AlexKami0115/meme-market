@@ -1,6 +1,6 @@
 package com.revature.controllers;
 
-import java.util.Set;
+import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
@@ -26,10 +26,10 @@ public class PackController {
 
 	@CrossOrigin(origins="http://localhost:4200")
 	@GetMapping(path="/pick-card-pack/{id}")
-	public ResponseEntity<Set<Card>> getCardPack(@PathVariable Integer id, HttpSession session) {
+	public ResponseEntity<List<Card>> getCardPack(@PathVariable Integer id, HttpSession session) {
 		User u = (User) session.getAttribute("loggedUser");
 		System.out.println("----------------------" + u);
-		Set<Card> cardSet = cs.genCardPack(id, u);
+		List<Card> cardSet = cs.genCardPack(id, u);
 		if(cardSet == null) {return ResponseEntity.badRequest().build();}
 		u = us.getUser(u);
 		session.setAttribute("loggedUser", u);

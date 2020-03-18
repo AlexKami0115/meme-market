@@ -2,7 +2,6 @@ package com.revature.services;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
@@ -38,18 +37,18 @@ public class CardServiceHibernate implements CardService {
 	}
 
 	@Override
-	public Set<Card> genCardPack(int packTierId, User u){
+	public List<Card> genCardPack(int packTierId, User u){
 		PackTier pt = ptd.getPackTier(packTierId);
 		return genCardPack(pt, u);
 	}
 	
 	@Override
-	public Set<Card> genCardPack(PackTier pt, User u){
+	public List<Card> genCardPack(PackTier pt, User u){
 		if(u.getPatron().getStonks() < pt.getTierPrice()) {
 			return null;
 		}
 		u.getPatron().setStonks(u.getPatron().getStonks() - pt.getTierPrice());
-		Set<Card> cardPack = new HashSet<>();
+		List<Card> cardPack = new ArrayList<>();
 		List<Rarity> rl = new ArrayList<>(pt.getPackRarities());
 		int totalWeight = 0;
 		int randWeightNumber;
