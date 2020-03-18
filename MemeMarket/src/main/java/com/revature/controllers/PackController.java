@@ -28,6 +28,7 @@ public class PackController {
 	@GetMapping(path="/pick-card-pack/{id}")
 	public ResponseEntity<Set<Card>> getCardPack(@PathVariable Integer id, HttpSession session) {
 		User u = (User) session.getAttribute("loggedUser");
+		System.out.println("----------------------" + u);
 		Set<Card> cardSet = cs.genCardPack(id, u);
 		if(cardSet == null) {return ResponseEntity.badRequest().build();}
 		u = us.getUser(u);

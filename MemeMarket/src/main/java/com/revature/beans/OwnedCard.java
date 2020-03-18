@@ -25,11 +25,20 @@ public class OwnedCard {
 	@JoinColumn(name = "cardId")
 	private Card card;
 	
-	@Column
 	private Integer showcased;
+	
+	private Integer patronId;
 
 	public Integer getId() {
 		return id;
+	}
+
+	public Integer getPatronId() {
+		return patronId;
+	}
+
+	public void setPatronId(Integer patronId) {
+		this.patronId = patronId;
 	}
 
 	public void setId(Integer id) {
@@ -58,6 +67,7 @@ public class OwnedCard {
 		int result = 1;
 		result = prime * result + ((card == null) ? 0 : card.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + ((patronId == null) ? 0 : patronId.hashCode());
 		result = prime * result + ((showcased == null) ? 0 : showcased.hashCode());
 		return result;
 	}
@@ -81,6 +91,11 @@ public class OwnedCard {
 				return false;
 		} else if (!id.equals(other.id))
 			return false;
+		if (patronId == null) {
+			if (other.patronId != null)
+				return false;
+		} else if (!patronId.equals(other.patronId))
+			return false;
 		if (showcased == null) {
 			if (other.showcased != null)
 				return false;
@@ -91,7 +106,7 @@ public class OwnedCard {
 
 	@Override
 	public String toString() {
-		return "OwnedCard [id=" + id + ", card=" + card + ", showcased=" + showcased + "]";
+		return "OwnedCard [id=" + id + ", card=" + card + ", showcased=" + showcased + ", patronId=" + patronId + "]";
 	}
 
 	public OwnedCard() {
