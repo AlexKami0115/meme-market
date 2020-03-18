@@ -47,6 +47,18 @@ export class UserService {
         .pipe(map(resp => resp as User))
   }
 
+  getLoggedUser(): Observable<User>{
+    return this.http.get(this.appUrl + '/loggedUser', 
+      {headers: this.headers, withCredentials: true})
+      .pipe(
+        map(resp => {
+          const user: User = resp as User;
+          this.user = user;
+          return user;
+        })
+      )
+  }
+
   getUser(): User {
     return this.user;
   }
@@ -77,5 +89,5 @@ export class UserService {
     return this.http.delete(this.appUrl + '/'+ username, 
       {headers: this.headers, withCredentials: true})
       .pipe(map(resp => resp as User))
-}
+  }
 }
