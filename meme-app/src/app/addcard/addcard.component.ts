@@ -36,6 +36,10 @@ export class AddcardComponent implements OnInit {
     
   }
 
+  addRarity(rarity: Rarity): void {
+    this.card.rarity = rarity;
+  }
+
   submit(): void {
     if (this.card.cardText && this.card.image && this.card.memeText) {
       this.cardService.addCard(this.card).subscribe(

@@ -35,9 +35,7 @@ export class UserService {
       .pipe(
         map(resp => {
           const user: User = resp as User;
-          if (user) {
-            this.user = user;
-          }
+          this.user = user;
           return user;
         })
       )
@@ -60,7 +58,7 @@ export class UserService {
   }
 
   isAdmin(): boolean {
-    return !(this.user !== undefined && this.user.patron !== undefined && this.user.patron !== null);
+    return !((this.user !== undefined && this.user !== null) && this.user.patron !== undefined && this.user.patron !== null);
   }
   isUser(): boolean {                                       /** Alex - Commenting out this field, because log in won't work with it. */
     return (this.user !== undefined && this.user !== null); /** && this.user.patron !== undefined && this.user.patron !== null); */
@@ -70,10 +68,9 @@ export class UserService {
     return (this.user !== undefined && this.user !== null && this.user.patron !== undefined && this.user.patron !== null);
   }
 
-  logOut(): User {
+  logOut(): void {
     console.log(this.user);
     console.log('logout called');
-    return this.user = null;
-    this.router.navigate(['/home']);
+    this.user = null;
   }
 }

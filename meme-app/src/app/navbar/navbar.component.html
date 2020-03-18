@@ -4,7 +4,7 @@
             <fa-icon [icon]="faAlignLeft"></fa-icon>
             Toggle Navigation
         </button>
-        <ng-container *ngIf="!isUser(); else authenticated">
+        <ng-container *ngIf="!userService.isUser(); else authenticated">
             <!-- User is not logged in; show Login button -->
             <div id="nav-login">
                 <button id="register-btn" routerLink="/register" class="btn btn-secondary ml-2 my-2 my-sm-0">Register</button>
@@ -14,9 +14,8 @@
         <ng-template #authenticated>
             <!-- User is logged in; welcome them and show Logout button -->
             <!-- <p *ngFor="let user of u"> Welcome, {{user.username}} </p> -->
-            <div class="nav-link">Welcome {{(isAdmin())?'Admin ':' '}}{{u.username}}</div>
+            <div *ngIf="userService.getUser()" class="nav-link">Welcome {{(isAdmin())?'Admin ':' '}}{{userService.getUser().username}}</div>
             <button id="logout-btn" (click)="logOut()" class="btn btn-danger ml-2 my-2 my-sm-0">Logout</button>
-
         </ng-template>
     </div>
 </nav>
