@@ -74,4 +74,11 @@ export class UserService {
     return this.user = null;
     this.router.navigate(['/home']);
   }
+
+  deleteUser(username: string): Observable<User>{
+    const body = JSON.stringify(username);
+    return this.http.delete(this.appUrl + '/'+ username, 
+      {headers: this.headers, withCredentials: true})
+      .pipe(map(resp => resp as User))
+}
 }

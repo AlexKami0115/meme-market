@@ -19,6 +19,7 @@ import { ViewCollectionComponent } from './view-collection/view-collection.compo
 import { AdminComponent } from './admin/admin.component';
 import { PickCardPackComponent } from './pick-card-pack/pick-card-pack.component';
 import { ViewCardPackComponent } from './view-card-pack/view-card-pack.component';
+import { RemoveUserComponent } from './remove-user/remove-user.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ViewCardPackComponent } from './view-card-pack/view-card-pack.component
     ViewCollectionComponent,
     AdminComponent,
     PickCardPackComponent,
-    ViewCardPackComponent
+    ViewCardPackComponent,
+    RemoveUserComponent
   ],
   imports: [
     BrowserModule,

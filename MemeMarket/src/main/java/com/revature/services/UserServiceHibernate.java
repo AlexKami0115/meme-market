@@ -31,6 +31,10 @@ public class UserServiceHibernate implements UserService{
 		return ud.getUser(username, password);
 	}
 	@Override
+	public User getUser(String username) {
+		return ud.getUser(username);
+	}
+	@Override
 	public User getUser(User u) {
 		return ud.getUser(u);
 	}
