@@ -49,9 +49,9 @@ public class CardHibernate implements CardDao{
 	@Override
 	public Set<Card> getCardsByRarity(Rarity r){
 		Session s = hu.getSession();
-		String query = "from Card c where c.Rarity=:rarity";
+		String query = "from Card where rarityId=:rarity";
 		Query<Card> q = s.createQuery(query, Card.class);
-		q.setParameter("rarity", r);
+		q.setParameter("rarity", r.getId());
 		List<Card> cardList = q.getResultList();
 		Set<Card> cardSet = new HashSet<Card>(cardList);
 		return cardSet;		
