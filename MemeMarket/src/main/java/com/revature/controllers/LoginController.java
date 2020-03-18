@@ -35,7 +35,7 @@ public class LoginController {
 		}
 	}
 	
-	@GetMapping(path="/login")
+	@GetMapping(path="/loggedUser")
 	private ResponseEntity<User> getLoggedUser(@RequestBody User u, HttpSession session) {
 		if (u==null ) {
 			// USER DOES NOT EXIST
