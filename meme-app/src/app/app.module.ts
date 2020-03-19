@@ -20,6 +20,7 @@ import { AdminComponent } from './admin/admin.component';
 import { PickCardPackComponent } from './pick-card-pack/pick-card-pack.component';
 import { ViewCardPackComponent } from './view-card-pack/view-card-pack.component';
 import { RemoveUserComponent } from './remove-user/remove-user.component';
+import { CardDetailsComponent } from './card-details/card-details.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { RemoveUserComponent } from './remove-user/remove-user.component';
     AdminComponent,
     PickCardPackComponent,
     ViewCardPackComponent,
-    RemoveUserComponent
+    RemoveUserComponent,
+    CardDetailsComponent
   ],
   imports: [
     BrowserModule,

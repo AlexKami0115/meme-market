@@ -9,6 +9,7 @@ import { AdminComponent } from './admin/admin.component';
 import { PickCardPackComponent } from './pick-card-pack/pick-card-pack.component';
 import { ViewCardPackComponent } from './view-card-pack/view-card-pack.component';
 import { RemoveUserComponent } from './remove-user/remove-user.component';
+import { CardDetailsComponent } from './card-details/card-details.component';
 
 
 const routes: Routes = [
@@ -52,7 +53,10 @@ const routes: Routes = [
   {
     path: 'remove-user',
     component: RemoveUserComponent
-  }
+  },
+  { path: 'card-details/:id', 
+    component: CardDetailsComponent 
+  },
 ];
 
 @NgModule({

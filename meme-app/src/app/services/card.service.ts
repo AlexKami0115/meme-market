@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Card } from '../card';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { UrlService } from './url.service';
 
 @Injectable({
@@ -13,6 +13,7 @@ export class CardService {
   private headers = new HttpHeaders({
     'Content-Type': 'application/json'
   });
+  messageService: any;
 
   constructor(
     public urlService: UrlService,
@@ -26,6 +27,13 @@ export class CardService {
     .pipe( 
       map(resp => resp as Card) 
     );
+  }
+
+  getCard(id: number): Observable<Card>{
+    return this.http.get(this.appUrl + "/" + id)
+      .pipe( 
+        map(resp => resp as Card) 
+      );
   }
 
   deleteCard(id: number | string): Observable<Card> {
