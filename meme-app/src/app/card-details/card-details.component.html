@@ -4,4 +4,10 @@
 <p>Card Tag: {{card.tag}}</p>
 <p>Card Rarity: {{card.rarity.name}}</p>
 
+<form>
+    Add Comment :
+    <input type="text" [(ngModel)]="comment.commentText" name="comment" size = "50">
+    <button (click)="addComment()">Add Comment</button>
+</form>
+
 <button (click)="goBack()">go back</button>

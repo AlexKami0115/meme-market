@@ -3,6 +3,7 @@ import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { CardService } from '../services/card.service';
 import { Card } from '../card';
+import { Comment } from '../comment';
 
 @Component({
   selector: 'app-card-details',
@@ -12,6 +13,7 @@ import { Card } from '../card';
 export class CardDetailsComponent implements OnInit {
   CardService: any;
   public card: Card;
+  public comment: Comment;
 
   constructor(
     private cs: CardService,
@@ -27,6 +29,10 @@ export class CardDetailsComponent implements OnInit {
   const id = +this.route.snapshot.paramMap.get('id');
   this.cs.getCard(id)
     .subscribe(Card => this.card = Card);
+  }
+
+  addComment(): void {
+    
   }
 
   goBack(): void {
