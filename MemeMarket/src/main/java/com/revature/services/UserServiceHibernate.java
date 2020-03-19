@@ -1,6 +1,9 @@
 package com.revature.services;
 
-import org.springframework.beans.factory.annotation.Autowired; 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.revature.beans.Patron;
@@ -30,6 +33,18 @@ public class UserServiceHibernate implements UserService{
 	public User getUser(String username, String password) {
 		return ud.getUser(username, password);
 	}
+	
+	public List<User> getAllPatronUsers(){
+		List<User> uList = ud.getAll();
+		List<User> patronUserList = new ArrayList<>();
+		for(int i=0;i<uList.size();i++) {
+			if(uList.get(i).getPatron() != null) {
+				patronUserList.add(uList.get(i));
+			}
+		}
+		return patronUserList;
+	}
+	
 	@Override
 	public User getUser(String username) {
 		return ud.getUser(username);

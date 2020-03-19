@@ -30,8 +30,8 @@ public class PackController {
 		User u = (User) session.getAttribute("loggedUser");
 		System.out.println("----------------------" + u);
 		List<Card> cardSet = cs.genCardPack(id, u);
+		// TODO if cardSet is null, the patron did't have enough money -> might need to change what returns
 		if(cardSet == null) {return ResponseEntity.badRequest().build();}
-		// u = us.getUser(u);
 		us.updateUser(u);
 		session.setAttribute("loggedUser", u);
 		return ResponseEntity.ok(cardSet);

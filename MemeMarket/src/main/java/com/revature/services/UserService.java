@@ -1,6 +1,6 @@
 package com.revature.services;
 
-import org.springframework.web.bind.annotation.PathVariable;
+import java.util.List;
 
 import com.revature.beans.Patron;
 import com.revature.beans.User;
@@ -8,6 +8,7 @@ import com.revature.beans.User;
 public interface UserService {
 	public int addUser(User u, Patron p);
 	public int addUser(User u);
+	public List<User> getAllPatronUsers();
 	public User getUser(String username, String password);
 	public User getUser(String username);
 	public User getUser(User u);

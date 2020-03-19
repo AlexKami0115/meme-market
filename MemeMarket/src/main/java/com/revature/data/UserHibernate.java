@@ -2,6 +2,8 @@ package com.revature.data;
 
 
 
+import java.util.List;
+
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -44,6 +46,14 @@ public class UserHibernate implements UserDao {
 		User u = q.uniqueResult();
 		s.close();
 		return u;
+	}
+	
+	@Override
+	public List<User> getAll(){
+		Session s = hu.getSession();
+		String query = "from Userz";
+		Query<User> q = s.createQuery(query, User.class);
+		return q.getResultList();
 	}
 	
 	@Override

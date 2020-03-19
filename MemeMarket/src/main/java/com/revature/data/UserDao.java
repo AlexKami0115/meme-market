@@ -1,5 +1,7 @@
 package com.revature.data;
 
+import java.util.List;
+
 import com.revature.beans.User;
 
 public interface UserDao {
@@ -10,6 +12,7 @@ public interface UserDao {
 	
 	public User getUser(String username);
 	
+	public List<User> getAll();
 	
 	public User getUser(User u);
 	
