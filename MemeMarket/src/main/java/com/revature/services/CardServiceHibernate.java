@@ -60,8 +60,8 @@ public class CardServiceHibernate implements CardService {
 			crm.put(rl.get(i), new ArrayList<Card>(cs));
 		}
 		Random rand = new Random();
-		randWeightNumber = rand.nextInt(totalWeight);
 		for(int i=0;i<pt.getNumOfCards();i++) {
+			randWeightNumber = rand.nextInt(totalWeight);
 			int subTotalWeight = 0;
 			for(int j=0;i<rl.size();j++) {
 				if(randWeightNumber >= subTotalWeight && randWeightNumber < subTotalWeight + rl.get(j).getWeight()) {
