@@ -6,6 +6,6 @@
 
 <div id="collection">
     <div *ngFor="let oc of ownedCardCollection">
-        <img src="{{oc.card.image}}" class="memeImage {{oc.card.rarity.name}}">
+        <img src="{{oc.card.image}}" class="memeImage {{oc.card.rarity.name}}" routerLink="/card-details/{{oc.card.id}}">
     </div>
 </div>
