@@ -21,12 +21,9 @@ import { PickCardPackComponent } from './pick-card-pack/pick-card-pack.component
 import { ViewCardPackComponent } from './view-card-pack/view-card-pack.component';
 import { RemoveUserComponent } from './remove-user/remove-user.component';
 import { CardDetailsComponent } from './card-details/card-details.component';
-<<<<<<< HEAD
 import { BrowsePatronsComponent } from './browse-patrons/browse-patrons.component';
-=======
 import { BuyStonksComponent } from './buy-stonks/buy-stonks.component';
 import { AdminCardComponent } from './admin-card/admin-card.component';
->>>>>>> 54e055720b0c7078117dbab61b1d0089b9196cf1
 
 @NgModule({
   declarations: [
@@ -43,12 +40,9 @@ import { AdminCardComponent } from './admin-card/admin-card.component';
     ViewCardPackComponent,
     RemoveUserComponent,
     CardDetailsComponent,
-<<<<<<< HEAD
-    BrowsePatronsComponent
-=======
+    BrowsePatronsComponent,
     BuyStonksComponent,
     AdminCardComponent
->>>>>>> 54e055720b0c7078117dbab61b1d0089b9196cf1
   ],
   imports: [
     BrowserModule,
