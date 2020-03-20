@@ -10,6 +10,7 @@ import { PickCardPackComponent } from './pick-card-pack/pick-card-pack.component
 import { ViewCardPackComponent } from './view-card-pack/view-card-pack.component';
 import { RemoveUserComponent } from './remove-user/remove-user.component';
 import { CardDetailsComponent } from './card-details/card-details.component';
+import { AdminCardComponent } from './admin-card/admin-card.component';
 
 
 const routes: Routes = [
@@ -57,6 +58,10 @@ const routes: Routes = [
   { path: 'card-details/:id', 
     component: CardDetailsComponent 
   },
+  {
+    path: 'admin-card',
+    component: AdminCardComponent
+  }
 ];
 
 @NgModule({
