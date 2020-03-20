@@ -88,4 +88,9 @@ public class CardServiceHibernate implements CardService {
 		return cd.deleteCard(c);
 	}
 
+	@Override
+	public Set<Card> getCards() {
+		return cd.getCards();
+	}
+
 }
