@@ -7,7 +7,6 @@ import com.revature.beans.User;
 public interface UserDao {
 	public int addUser(User u);
 	
-	
 	public User getUser(String username, String password);
 	
 	public User getUser(String username);

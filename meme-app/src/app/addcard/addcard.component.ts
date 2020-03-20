@@ -14,26 +14,21 @@ import { RarityService } from '../services/rarity.service';
 })
 export class AddcardComponent implements OnInit {
   public card: Card;
-  public tags: Tag[];
+  public tags: String;
   public rarities: Rarity[];
 
   constructor(
     private cardService: CardService,
     private tagService: TagService,
     private rarityService: RarityService,
-    private route: ActivatedRoute,
     private router: Router
   ) { }
 
   ngOnInit(): void {
     this.card = new Card;
-    this.tagService.getTags().subscribe(
-      (data) => this.tags = data
-    );
     this.rarityService.getRarities().subscribe(
       (data) => this.rarities = data
     );
-    
   }
 
   addRarity(rarity: Rarity): void {
@@ -42,6 +37,13 @@ export class AddcardComponent implements OnInit {
 
   submit(): void {
     if (this.card.cardText && this.card.image && this.card.memeText) {
+      this.card.tag = [];
+      let tagArr = this.tags.split(" ");
+      for (let t of tagArr) {
+        let tag = new Tag();
+        tag.name = t;
+        this.card.tag.push(tag);
+      }
       this.cardService.addCard(this.card).subscribe(
         resp => {
           this.card = resp;

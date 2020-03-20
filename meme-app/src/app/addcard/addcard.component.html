@@ -14,9 +14,7 @@
     </div>
     <div class="form-group">
         <label for="tags">Tags: </label>
-        <select name="tags" id="tags" class="form-control">
-            <option *ngFor="let t of tags" [value]="t.id">{{t.name}}</option>
-        </select>
+        <input type="text" [(ngModel)]="tags" name="tags" id="tags" class="form-control" required>
     </div>
     <div class="form-group">
         <label for="rarity">Rarity: </label>
