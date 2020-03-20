@@ -4,12 +4,19 @@
 <p>Meme Text: {{card.memeText}}</p>
 <p>Card Tag: {{card.tag}}</p>
 <p>Card Rarity: {{card.rarity.name}}</p>
-<div class="line"></div>
+
 <form>
     Add Comment :
     <input type="text" [(ngModel)]="comment.commentText" name="comment" size = "50">
     <button (click)="addComment()">Add Comment</button>
 </form>
+<div class="line"></div>
+<div id="collection">
+    <p> Comments: </p>
+    <div *ngFor="let c of card.comment">
+        <p>{{c.username}} : {{c.commentText}} </p>
+    </div>
+</div>
 <div class="line"></div>
 <button (click)="goBack()" class="btn btn-secondary">Go Back</button>
 <button (click)="deleteCard()" class="btn btn-danger mx-2" *ngIf="us.isAdmin()">Delete Card</button>

@@ -1,6 +1,7 @@
 package com.revature.beans;
 
-import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -26,7 +27,7 @@ public class Patron {
 	
 	@OneToMany(fetch = FetchType.EAGER)
 	@JoinColumn(name = "patronId")
-	private List<OwnedCard> ownedCards;
+	private Set<OwnedCard> ownedCards = new TreeSet<OwnedCard>();
 
 	public Integer getId() {
 		return id;
@@ -44,11 +45,11 @@ public class Patron {
 		this.stonks = stonks;
 	}
 
-	public List<OwnedCard> getOwnedCards() {
+	public Set<OwnedCard> getOwnedCards() {
 		return ownedCards;
 	}
 
-	public void setOwnedCards(List<OwnedCard> ownedCards) {
+	public void setOwnedCards(Set<OwnedCard> ownedCards) {
 		this.ownedCards = ownedCards;
 	}
 

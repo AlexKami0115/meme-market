@@ -32,6 +32,7 @@ export class OwnedCardsService {
 
   getOwnedCards(): OwnedCard[]{
     this.us.getLoggedUser();
+    console.log(this.us.getUserObject().patron.ownedCards);
     return this.us.getUserObject().patron.ownedCards;
   }
 
@@ -54,8 +55,7 @@ export class OwnedCardsService {
       .pipe(
         map(resp => {
           const comment: Comment = resp as Comment;
-          this.comment = comment;
-          return comment;
+          return this.comment = comment;
         })
       )
   }

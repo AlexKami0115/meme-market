@@ -1,5 +1,6 @@
 import { Tag } from './tag';
 import { Rarity } from './rarity';
+import { Comment } from './comment';
 
 export class Card {
     static find(arg0: (hero: any) => boolean): any {
@@ -9,6 +10,7 @@ export class Card {
     image: string;
     cardText: string;
     memeText: string;
+    comment: Comment[];
     tag: Tag[];
     rarity: Rarity;
 }

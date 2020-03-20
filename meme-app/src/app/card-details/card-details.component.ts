@@ -43,6 +43,8 @@ export class CardDetailsComponent implements OnInit {
     if(this.comment.commentText) {
       this.ocs.addCardComment(cardId, this.comment.commentText).subscribe((resp)=>{
         this.comment = resp;
+        alert('Comment: ' + this.comment.commentText + ' added!');
+        this.card.comment.push(this.comment);
       });;
     }
     else {
