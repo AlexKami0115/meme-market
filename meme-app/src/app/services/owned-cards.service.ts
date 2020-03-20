@@ -39,10 +39,7 @@ export class OwnedCardsService {
     this.us.getLoggedUser();
     let c = new Comment;
 
-    // ADDING TO COMMENT
-    this.cs.getCard(cardId).subscribe((card)=>{
-      c.card = card;
-    });
+    c.cardId = cardId;
     c.commentText = commentText;
     c.patron = this.us.getUserObject().patron;
 
