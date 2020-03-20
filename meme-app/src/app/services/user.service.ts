@@ -24,6 +24,17 @@ export class UserService {
     private router: Router
   ) { }
 
+  getPatronUsers(): Observable<User[]>{
+    return this.http.get(this.urlService.getUrl() + 'patronsUsers',
+      {headers: this.headers, withCredentials: true})
+      .pipe(
+        map(resp => {
+          const users: User[] = resp as User[];
+          return users;
+        })
+      )
+  }
+
   checkLogin(username: string, password: string): Observable<User>{
     let u = new User;
     u.username = username;

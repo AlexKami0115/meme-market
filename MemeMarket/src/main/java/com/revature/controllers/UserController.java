@@ -1,5 +1,7 @@
 package com.revature.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -32,6 +34,12 @@ public class UserController {
 		p.setStonks(100);
 		us.addUser(u, p);
 		return ResponseEntity.ok(u.getId());
+	}
+	
+	@GetMapping(path="/patronUsers")
+	private ResponseEntity<List<User>> getPatronUsers() {
+		List<User> uList = us.getAllPatronUsers();
+		return ResponseEntity.ok(uList);
 	}
 	
 	@DeleteMapping(path="/user/{username}")

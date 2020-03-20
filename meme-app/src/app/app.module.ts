@@ -21,6 +21,7 @@ import { PickCardPackComponent } from './pick-card-pack/pick-card-pack.component
 import { ViewCardPackComponent } from './view-card-pack/view-card-pack.component';
 import { RemoveUserComponent } from './remove-user/remove-user.component';
 import { CardDetailsComponent } from './card-details/card-details.component';
+import { BrowsePatronsComponent } from './browse-patrons/browse-patrons.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { CardDetailsComponent } from './card-details/card-details.component';
     PickCardPackComponent,
     ViewCardPackComponent,
     RemoveUserComponent,
-    CardDetailsComponent
+    CardDetailsComponent,
+    BrowsePatronsComponent
   ],
   imports: [
     BrowserModule,
