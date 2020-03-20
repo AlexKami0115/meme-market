@@ -29,7 +29,7 @@ public class Comment {
 	private String commentText;
 	@Column
 	private Timestamp timeOfComment;
-	@Column
+	
 	private Integer cardId;
 	
 	public Comment() {
@@ -110,5 +110,11 @@ public class Comment {
 	}
 	public void setTimeOfComment(Timestamp timeOfComment) {
 		this.timeOfComment = timeOfComment;
+	}
+	public Integer getCardId() {
+		return cardId;
+	}
+	public void setCardId(Integer cardId) {
+		this.cardId = cardId;
 	}
 }
