@@ -10,8 +10,8 @@
             <li [class.active]="router.isActive('/view-collection', false)">
                 <a routerLink="/view-collection">Collection</a>
             </li>
-            <li>
-                <a href="#">Trading</a>
+            <li [class.active]="router.isActive('/browse-patrons', false)">
+                <a routerLink="/browse-patrons">Browse Other Users</a>
             </li>
         </ng-container>
         <ng-container *ngIf="isAdmin()">

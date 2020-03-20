@@ -51,7 +51,7 @@ public class UserHibernate implements UserDao {
 	@Override
 	public List<User> getAll(){
 		Session s = hu.getSession();
-		String query = "from Userz";
+		String query = "from User";
 		Query<User> q = s.createQuery(query, User.class);
 		List<User> uList = q.getResultList();
 		return uList;

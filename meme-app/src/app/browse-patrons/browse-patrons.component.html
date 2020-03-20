@@ -1,8 +1,25 @@
 <table>
     <ng-container *ngFor="let pu of patronUsers">
         <tr>
-            
-            {{pu.username}}
+            <td>{{pu.username}}</td>
+            <ng-container *ngIf="pu.patron.ownedCards[0] != null; else blankTD0">
+                <td><img src="{{pu.patron.ownedCards[0].card.image}}" class="memeImage {{pu.patron.ownedCards[0].card.rarity.name}}" routerLink="/card-details/{{pu.patron.ownedCards[0].card.id}}"></td>
+            </ng-container>
+            <ng-template #blankTD0>
+                <td></td>
+            </ng-template>
+            <ng-container *ngIf="pu.patron.ownedCards[1] != null; else blankTD1">
+                <td><img src="{{pu.patron.ownedCards[1].card.image}}" class="memeImage {{pu.patron.ownedCards[1].card.rarity.name}}" routerLink="/card-details/{{pu.patron.ownedCards[1].card.id}}"></td>
+            </ng-container>
+            <ng-template #blankTD1>
+                <td></td>
+            </ng-template>
+            <ng-container *ngIf="pu.patron.ownedCards[2] != null; else blankTD2">
+                <td><img src="{{pu.patron.ownedCards[2].card.image}}" class="memeImage {{pu.patron.ownedCards[2].card.rarity.name}}" routerLink="/card-details/{{pu.patron.ownedCards[2].card.id}}"></td>
+            </ng-container>
+            <ng-template #blankTD2>
+                <td></td>
+            </ng-template>
         </tr>
     </ng-container>
 </table>

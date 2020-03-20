@@ -25,7 +25,7 @@ export class UserService {
   ) { }
 
   getPatronUsers(): Observable<User[]>{
-    return this.http.get(this.urlService.getUrl() + 'patronsUsers',
+    return this.http.get(this.urlService.getUrl() + 'patronUsers',
       {headers: this.headers, withCredentials: true})
       .pipe(
         map(resp => {
