@@ -1,5 +1,7 @@
 package com.revature.data;
 
+import java.sql.Timestamp;
+
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -15,6 +17,8 @@ public class CommentHibernate implements CommentDao{
 	
 	@Override
 	public int addComment(Comment c) {
+		Timestamp ts = new Timestamp(System.currentTimeMillis());
+		c.setTimeOfComment(ts);
 		Session s = hu.getSession();
 		Transaction t = null;
 		Integer i = 0;

@@ -146,7 +146,7 @@ create table Comments(
     cardId number(10) not null,
     username varchar2(20) not null,
     commentText varchar2(500) not null,
-    timeOfComment timestamp default systimestamp,
+    timeOfComment timestamp default systimestamp not null,
     constraint fk_Comments_Cards foreign key (cardId) references Cards(id),
     constraint fk_Comments_Patrons foreign key (username) references Userz(username)
 );
