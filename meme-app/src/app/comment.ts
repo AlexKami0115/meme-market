@@ -5,7 +5,7 @@ import { Timestamp } from 'rxjs';
 export class Comment {
     id: number;
     cardId: number;
-    patron: Patron;
+    username: string;
     commentText: string;
     timeOfComment: Date;
 }

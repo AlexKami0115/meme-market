@@ -41,7 +41,7 @@ export class OwnedCardsService {
 
     c.cardId = cardId;
     c.commentText = commentText;
-    c.patron = this.us.getUserObject().patron;
+    c.username = this.us.getUserObject().username;
 
     console.log(c);
     
