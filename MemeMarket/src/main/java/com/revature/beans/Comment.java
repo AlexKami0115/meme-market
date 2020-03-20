@@ -30,14 +30,15 @@ public class Comment {
 	@Column
 	private Timestamp timeOfComment;
 	
+	private Integer cardId;
+	
 	public Comment() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	@Override
 	public String toString() {
 		return "Comment [id=" + id + ", username=" + username + ", commentText=" + commentText + ", timeOfComment="
-				+ timeOfComment + "]";
+				+ timeOfComment + ", cardId=" + cardId + "]";
 	}
 	@Override
 	public int hashCode() {
