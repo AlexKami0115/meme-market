@@ -1,7 +1,7 @@
 <table>
     <ng-container *ngFor="let pu of patronUsers">
         <tr>
-            <td>{{pu.username}}</td>
+            <td><a routerLink="/other-users-collection/{{pu.id}}">{{pu.username}}</a></td>
             <ng-container *ngIf="pu.patron.ownedCards[0] != null; else blankTD0">
                 <td><img src="{{pu.patron.ownedCards[0].card.image}}" class="memeImage {{pu.patron.ownedCards[0].card.rarity.name}}" routerLink="/card-details/{{pu.patron.ownedCards[0].card.id}}"></td>
             </ng-container>

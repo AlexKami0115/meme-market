@@ -24,6 +24,7 @@ import { CardDetailsComponent } from './card-details/card-details.component';
 import { BrowsePatronsComponent } from './browse-patrons/browse-patrons.component';
 import { BuyStonksComponent } from './buy-stonks/buy-stonks.component';
 import { AdminCardComponent } from './admin-card/admin-card.component';
+import { OtherUsersCollectionComponent } from './other-users-collection/other-users-collection.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { AdminCardComponent } from './admin-card/admin-card.component';
     CardDetailsComponent,
     BrowsePatronsComponent,
     BuyStonksComponent,
-    AdminCardComponent
+    AdminCardComponent,
+    OtherUsersCollectionComponent
   ],
   imports: [
     BrowserModule,

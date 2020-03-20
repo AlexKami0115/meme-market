@@ -12,6 +12,7 @@ import { RemoveUserComponent } from './remove-user/remove-user.component';
 import { CardDetailsComponent } from './card-details/card-details.component';
 import { AdminCardComponent } from './admin-card/admin-card.component';
 import { BrowsePatronsComponent } from './browse-patrons/browse-patrons.component';
+import { OtherUsersCollectionComponent } from './other-users-collection/other-users-collection.component';
 
 
 const routes: Routes = [
@@ -66,6 +67,9 @@ const routes: Routes = [
   {
     path: 'browse-patrons',
     component: BrowsePatronsComponent
+  },
+  { path: 'other-users-collection/:id', 
+    component: OtherUsersCollectionComponent 
   }
 ];
 
