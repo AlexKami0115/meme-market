@@ -29,7 +29,7 @@ public class Comment {
 	private String commentText;
 	@Column
 	private Timestamp timeOfComment;
-	
+	@Column
 	private Integer cardId;
 	
 	public Comment() {

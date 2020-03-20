@@ -47,6 +47,8 @@ export class OwnedCardsService {
     
     const body = JSON.stringify(c);
 
+    console.log('stringified:' + body);
+
     return this.http.post(this.urlService.getUrl() + 'addComment', body, 
       {headers: this.headers, withCredentials: true})
       .pipe(
