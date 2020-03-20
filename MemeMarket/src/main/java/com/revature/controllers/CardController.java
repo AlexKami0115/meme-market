@@ -5,6 +5,7 @@ import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -49,5 +50,14 @@ public class CardController {
 		System.out.println("comment: " + comment);
 		commentService.addComment(comment);
 		return ResponseEntity.ok(comment);
+	}
+	
+	@DeleteMapping(path="/card/{id}")
+	private ResponseEntity<Card> deleteCard(@PathVariable Integer id) {
+		if (cs.deleteCard(cs.getCard(id))) {
+			return ResponseEntity.noContent().build();
+		} else {
+			return ResponseEntity.notFound().build();
+		}
 	}
 }

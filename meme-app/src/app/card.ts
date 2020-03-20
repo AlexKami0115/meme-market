@@ -9,6 +9,6 @@ export class Card {
     image: string;
     cardText: string;
     memeText: string;
-    tag: Tag;
+    tag: Tag[];
     rarity: Rarity;
 }

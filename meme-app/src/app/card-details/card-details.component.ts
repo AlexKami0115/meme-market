@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CardService } from '../services/card.service';
 import { Card } from '../card';
 import { Comment } from '../comment';
 import { OwnedCardsService } from '../services/owned-cards.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-card-details',
@@ -20,7 +21,9 @@ export class CardDetailsComponent implements OnInit {
     private cs: CardService,
     private ocs: OwnedCardsService,
     private route: ActivatedRoute,
-    private location: Location
+    private location: Location,
+    public us: UserService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -45,6 +48,14 @@ export class CardDetailsComponent implements OnInit {
     else {
       alert('Please enter a comment')
     }
+  }
+
+  deleteCard(): void {
+    this.cs.deleteCard(this.card.id).subscribe(
+      resp => {
+        this.router.navigate(['/admin-card']);
+      }
+    )
   }
 
   goBack(): void {

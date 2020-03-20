@@ -64,7 +64,7 @@ public class CardHibernate implements CardDao{
 		boolean b = false;
 		try{
 			t = s.beginTransaction();
-			s.update(c.getId());
+			s.update(c);
 			t.commit();
 			b = true;
 		} catch(Exception e) {
@@ -80,9 +80,12 @@ public class CardHibernate implements CardDao{
 		Session s = hu.getSession();
 		Transaction t = null;
 		boolean b = false;
+		c.setCardText("Deleted Card");
+		c.setMemeText("Deleted Meme");
+		c.setImage("https://i.imgur.com/JqFuYc1.png");
 		try{
 			t = s.beginTransaction();
-			s.delete(c);
+			s.update(c);
 			t.commit();
 			b = true;
 		} catch(Exception e) {
