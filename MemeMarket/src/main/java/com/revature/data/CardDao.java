@@ -11,4 +11,5 @@ public interface CardDao {
 	public Set<Card> getCardsByRarity(Rarity r);
 	public boolean updateCard(Card c);
 	public boolean deleteCard(Card c);
+	public Set<Card> getCards();
 }

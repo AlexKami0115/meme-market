@@ -93,6 +93,17 @@ public class CardHibernate implements CardDao{
 			s.close();
 		}
 		return b;
+	}
+
+	@Override
+	public Set<Card> getCards() {
+		Session s = hu.getSession();
+		String query = "FROM Card";
+		Query<Card> q = s.createQuery(query, Card.class);
+		List<Card> cardList = q.getResultList();
+		Set<Card> cardSet = new HashSet<Card>(cardList);
+		s.close();
+		return cardSet;	
 	};
 
 }

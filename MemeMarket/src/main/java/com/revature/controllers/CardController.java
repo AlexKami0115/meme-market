@@ -1,5 +1,7 @@
 package com.revature.controllers;
 
+import java.util.Set;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -23,6 +25,12 @@ public class CardController {
 		Card c = cs.getCard(id);
 		System.out.println(c);
 		return ResponseEntity.ok(c);
+	}
+	
+	@GetMapping(path="/card")
+	private ResponseEntity<Set<Card>> getCards() {
+		Set<Card> cardSet = cs.getCards();
+		return ResponseEntity.ok(cardSet);
 	}
 	
 	@PostMapping(path="/card")
