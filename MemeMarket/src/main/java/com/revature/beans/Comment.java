@@ -23,37 +23,21 @@ public class Comment {
 	@GeneratedValue(generator="comments", strategy=GenerationType.SEQUENCE)
 	private Integer id;
 	
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "patronId")
-	private Patron patron;
-	
+	private String username;
+
 	@Column
 	private String commentText;
 	@Column
 	private Timestamp timeOfComment;
-	public Integer getId() {
-		return id;
+	
+	public Comment() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
-	public Patron getPatron() {
-		return patron;
-	}
-	public void setPatron(Patron patron) {
-		this.patron = patron;
-	}
-	public String getCommentText() {
-		return commentText;
-	}
-	public void setCommentText(String commentText) {
-		this.commentText = commentText;
-	}
-	public Timestamp getTimeOfComment() {
-		return timeOfComment;
-	}
-	public void setTimeOfComment(Timestamp timeOfComment) {
-		this.timeOfComment = timeOfComment;
+	@Override
+	public String toString() {
+		return "Comment [id=" + id + ", username=" + username + ", commentText=" + commentText + ", timeOfComment="
+				+ timeOfComment + "]";
 	}
 	@Override
 	public int hashCode() {
@@ -61,8 +45,8 @@ public class Comment {
 		int result = 1;
 		result = prime * result + ((commentText == null) ? 0 : commentText.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((patron == null) ? 0 : patron.hashCode());
 		result = prime * result + ((timeOfComment == null) ? 0 : timeOfComment.hashCode());
+		result = prime * result + ((username == null) ? 0 : username.hashCode());
 		return result;
 	}
 	@Override
@@ -84,26 +68,40 @@ public class Comment {
 				return false;
 		} else if (!id.equals(other.id))
 			return false;
-		if (patron == null) {
-			if (other.patron != null)
-				return false;
-		} else if (!patron.equals(other.patron))
-			return false;
 		if (timeOfComment == null) {
 			if (other.timeOfComment != null)
 				return false;
 		} else if (!timeOfComment.equals(other.timeOfComment))
 			return false;
+		if (username == null) {
+			if (other.username != null)
+				return false;
+		} else if (!username.equals(other.username))
+			return false;
 		return true;
 	}
-	@Override
-	public String toString() {
-		return "Comment [id=" + id + ", patron=" + patron + ", commentText=" + commentText + ", timeOfComment="
-				+ timeOfComment + "]";
+	public Integer getId() {
+		return id;
 	}
-	public Comment() {
-		super();
+	public void setId(Integer id) {
+		this.id = id;
 	}
-	
-	
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getCommentText() {
+		return commentText;
+	}
+	public void setCommentText(String commentText) {
+		this.commentText = commentText;
+	}
+	public Timestamp getTimeOfComment() {
+		return timeOfComment;
+	}
+	public void setTimeOfComment(Timestamp timeOfComment) {
+		this.timeOfComment = timeOfComment;
+	}
 }

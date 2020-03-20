@@ -20,7 +20,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="Cards")
-public class Card {
+public class Card implements Comparable<Card> {
 	@Id
 	@SequenceGenerator(name="card", sequenceName="Cards_seq", allocationSize=1)
 	@GeneratedValue(generator="card", strategy=GenerationType.SEQUENCE)
@@ -48,6 +48,7 @@ public class Card {
 	@JoinColumn(name = "cardId")
 	private Set<Comment> comment;
 
+	
 
 	public Integer getId() {
 		return id;
@@ -191,6 +192,15 @@ public class Card {
 
 	public Card() {
 		super();
+	}
+
+
+	@Override
+	public int compareTo(Card c) {
+		if(this.rarity.equals(c.rarity)) {
+			return this.id.compareTo(c.id);
+		}
+		return this.rarity.compareTo(c.rarity);
 	}
 	
 	

@@ -2,6 +2,7 @@ package com.revature.data;
 
 
 
+import java.util.Collections;
 import java.util.List;
 
 import org.hibernate.HibernateException;
@@ -45,6 +46,9 @@ public class UserHibernate implements UserDao {
 		q.setParameter("password", password);
 		User u = q.uniqueResult();
 		s.close();
+		if(u.getPatron() != null) {
+			Collections.sort(u.getPatron().getOwnedCards());
+		}
 		return u;
 	}
 	
@@ -53,7 +57,13 @@ public class UserHibernate implements UserDao {
 		Session s = hu.getSession();
 		String query = "from Userz";
 		Query<User> q = s.createQuery(query, User.class);
-		return q.getResultList();
+		List<User> uList = q.getResultList();
+		for(int i=0;i<uList.size();i++) {
+			if(uList.get(i).getPatron() != null) {
+				Collections.sort(uList.get(i).getPatron().getOwnedCards());
+			}
+		}
+		return uList;
 	}
 	
 	@Override
@@ -64,6 +74,9 @@ public class UserHibernate implements UserDao {
 		q.setParameter("username", username);
 		User u = q.uniqueResult();
 		s.close();
+		if(u.getPatron() != null) {
+			Collections.sort(u.getPatron().getOwnedCards());
+		}
 		return u;
 	}
 	
@@ -79,6 +92,9 @@ public class UserHibernate implements UserDao {
 			ret = q.uniqueResult();
 		}
 		s.close();
+		if(ret.getPatron() != null) {
+			Collections.sort(ret.getPatron().getOwnedCards());
+		}
 		return ret;
 	}
 	
@@ -87,6 +103,9 @@ public class UserHibernate implements UserDao {
 		Session s = hu.getSession();
 		User ret = s.get(User.class, id);
 		s.close();
+		if(ret.getPatron() != null) {
+			Collections.sort(ret.getPatron().getOwnedCards());
+		}
 		return ret;
 	}
 	

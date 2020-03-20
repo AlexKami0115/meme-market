@@ -15,7 +15,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="OwnedCards")
-public class OwnedCard {
+public class OwnedCard implements Comparable<OwnedCard>{
 	@Id
 	@SequenceGenerator(name="ownedCard", sequenceName="OwnedCards_seq", allocationSize=1)
 	@GeneratedValue(generator="ownedCard", strategy=GenerationType.SEQUENCE)
@@ -111,6 +111,14 @@ public class OwnedCard {
 
 	public OwnedCard() {
 		super();
+	}
+
+	@Override
+	public int compareTo(OwnedCard oc) {
+		if(this.showcased != null && !this.showcased.equals(oc.showcased)) return 1;
+		if(oc.showcased != null && !oc.showcased.equals(this.showcased)) return -1;
+		if(this.card != null && this.card.equals(oc.card)) return this.id.compareTo(oc.id);
+		return this.card.compareTo(oc.card);
 	}
 
 	

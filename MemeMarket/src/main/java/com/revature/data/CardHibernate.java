@@ -1,6 +1,7 @@
 
 package com.revature.data;
 
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -48,14 +49,14 @@ public class CardHibernate implements CardDao{
 	};
 	
 	@Override
-	public Set<Card> getCardsByRarity(Rarity r){
+	public List<Card> getCardsByRarity(Rarity r){
 		Session s = hu.getSession();
 		String query = "from Card where rarityId=:rarity";
 		Query<Card> q = s.createQuery(query, Card.class);
 		q.setParameter("rarity", r.getId());
 		List<Card> cardList = q.getResultList();
-		Set<Card> cardSet = new HashSet<Card>(cardList);
-		return cardSet;		
+		Collections.sort(cardList);
+		return cardList;		
 	}
 	
 	public boolean updateCard(Card c) {

@@ -12,7 +12,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="Rarity")
-public class Rarity {
+public class Rarity implements Comparable<Rarity>{
 	@Id
 	@SequenceGenerator(name="rarity", sequenceName="Rarity_seq", allocationSize=1)
 	@GeneratedValue(generator="rarity", strategy=GenerationType.SEQUENCE)
@@ -80,6 +80,13 @@ public class Rarity {
 	}
 	public Rarity() {
 		super();
+	}
+	@Override
+	public int compareTo(Rarity r) {
+		if(this.id.equals(r.id)) return 0;
+		if(this.id == null) return -1;
+		if(r.getId() == null) return 1;
+		return this.id.compareTo(r.id);
 	}
 	
 	

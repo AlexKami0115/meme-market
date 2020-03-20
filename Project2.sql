@@ -144,11 +144,11 @@ create table Purchases( -- Using real money to buy stonks.
 create table Comments(
     id number(10) primary key,
     cardId number(10) not null,
-    PatronId number(10) not null,
+    username varchar2(20) not null,
     commentText varchar2(500) not null,
     timeOfComment timestamp default systimestamp,
     constraint fk_Comments_Cards foreign key (cardId) references Cards(id),
-    constraint fk_Comments_Patrons foreign key (patronId) references Patrons(id)
+    constraint fk_Comments_Patrons foreign key (username) references Userz(username)
 );
 
 create sequence Patrons_seq start with 3 nocache;
