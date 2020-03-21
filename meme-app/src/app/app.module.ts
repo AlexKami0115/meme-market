@@ -25,6 +25,7 @@ import { BrowsePatronsComponent } from './browse-patrons/browse-patrons.componen
 import { BuyStonksComponent } from './buy-stonks/buy-stonks.component';
 import { AdminCardComponent } from './admin-card/admin-card.component';
 import { OtherUsersCollectionComponent } from './other-users-collection/other-users-collection.component';
+import { TradeSelectCardsComponent } from './trade-select-cards/trade-select-cards.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { OtherUsersCollectionComponent } from './other-users-collection/other-us
     BrowsePatronsComponent,
     BuyStonksComponent,
     AdminCardComponent,
-    OtherUsersCollectionComponent
+    OtherUsersCollectionComponent,
+    TradeSelectCardsComponent
   ],
   imports: [
     BrowserModule,

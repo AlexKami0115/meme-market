@@ -4,6 +4,7 @@ import { OwnedCard } from '../owned-card';
 import { UserService } from '../services/user.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { User } from '../user';
+import { TradeService } from '../services/trade.service';
 
 @Component({
   selector: 'app-other-users-collection',
@@ -11,20 +12,20 @@ import { User } from '../user';
   styleUrls: ['./other-users-collection.component.css']
 })
 export class OtherUsersCollectionComponent implements OnInit {
-  public user: User;
+  public loggedUser: User;
   public otherUser: User;
 
   constructor(
     private route: ActivatedRoute,
     private location: Location,
     public us: UserService,
-    private router: Router
+    private router: Router,
+    public ts: TradeService
     ) { }
 
   ngOnInit(): void {
-    this.user = this.us.getUser();
+    this.loggedUser = this.us.getUser();
     this.getUser();
-    
   }
 
   getUser(): void {
@@ -32,7 +33,7 @@ export class OtherUsersCollectionComponent implements OnInit {
     this.us.getUserById(id)
       .subscribe(resp => {
         this.otherUser = resp
-        if(this.user.id === this.otherUser.id){
+        if(this.loggedUser.id === this.otherUser.id){
           this.router.navigate(['/view-collection']);
         }
       });

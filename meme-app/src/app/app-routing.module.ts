@@ -13,6 +13,7 @@ import { CardDetailsComponent } from './card-details/card-details.component';
 import { AdminCardComponent } from './admin-card/admin-card.component';
 import { BrowsePatronsComponent } from './browse-patrons/browse-patrons.component';
 import { OtherUsersCollectionComponent } from './other-users-collection/other-users-collection.component';
+import { TradeSelectCardsComponent } from './trade-select-cards/trade-select-cards.component';
 
 
 const routes: Routes = [
@@ -70,6 +71,10 @@ const routes: Routes = [
   },
   { path: 'other-users-collection/:id', 
     component: OtherUsersCollectionComponent 
+  },
+  {
+    path: 'trade-select-cards',
+    component: TradeSelectCardsComponent
   }
 ];
 
