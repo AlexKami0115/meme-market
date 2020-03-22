@@ -3,6 +3,7 @@ import { UrlService } from '../services/url.service';
 import { UserService } from '../services/user.service';
 import { User } from '../user';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-buy-stonks',
@@ -36,7 +37,12 @@ export class BuyStonksComponent implements OnInit {
       this.user.patron.stonks += Number(this.stonks);
       this.userService.updateUser(this.user).subscribe(
         resp => {
-          alert('Successfully bought ' + this.stonks + ' stonks!');
+          Swal.fire({
+            icon: 'success',
+            text: this.stonks + ' stonks successfully purchased.',
+            showConfirmButton: false,
+            timer: 2200
+          })
           this.router.navigate(['/pick-card-pack']);
         }
       )
