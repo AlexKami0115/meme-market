@@ -16,11 +16,21 @@ export class TradeService {
 });
   public loggedUser: User;
   public otherUser: User;
+  
 
   constructor(
     private urlService: UrlService,
     private http: HttpClient
   ) { }
+
+  addCard(c: Card): Observable<Card> {
+    const body = JSON.stringify(c);
+    return this.http.post(this.appUrl, body, 
+    {headers: this.headers, withCredentials: true})
+    .pipe( 
+      map(resp => resp as Card) 
+    );
+  }
 
   setTradeUsers(lu: User, ou: User){
     this.loggedUser = lu;
