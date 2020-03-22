@@ -15,6 +15,7 @@ import { BrowsePatronsComponent } from './browse-patrons/browse-patrons.componen
 import { OtherUsersCollectionComponent } from './other-users-collection/other-users-collection.component';
 import { TradeSelectCardsComponent } from './trade-select-cards/trade-select-cards.component';
 import { BuyStonksComponent } from './buy-stonks/buy-stonks.component';
+import { TradesComponent } from './trades/trades.component';
 
 
 const routes: Routes = [
@@ -80,6 +81,10 @@ const routes: Routes = [
   {
     path: 'buy-stonks',
     component: BuyStonksComponent
+  },
+  {
+    path: 'trades',
+    component: TradesComponent
   }
 ];
 

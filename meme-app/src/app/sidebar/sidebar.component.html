@@ -13,6 +13,9 @@
             <li [class.active]="router.isActive('/browse-patrons', false)">
                 <a routerLink="/browse-patrons">Browse Other Users</a>
             </li>
+            <li [class.active]="router.isActive('/trades', false)">
+                <a routerLink="/trades">Trades</a>
+            </li>
         </ng-container>
         <ng-container *ngIf="isAdmin()">
             <li [class.active]="router.isActive('/admin', false)">

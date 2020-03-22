@@ -1,0 +1,16 @@
+<h2>Trades</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>User</td>
+            <td>Status</td>
+            <td></td>
+        </tr>
+    </thead>
+    <tr *ngFor="let t of trades">
+        <td></td>
+        <td>{{t.tradeStatus.statusName}}</td>
+        <td><button class="btn btn-primary">View</button></td>
+    </tr>
+</table>
