@@ -15,13 +15,13 @@
             </li>
         </ng-container>
         <ng-container *ngIf="isAdmin()">
-            <li>
+            <li [class.active]="router.isActive('/admin', false)">
                 <a routerLink="/admin">Admin</a>
             </li>
-            <li>
+            <li [class.active]="router.isActive('/card/add', false)">
                 <a routerLink="/card/add">Add Card</a>
             </li>
-            <li>
+            <li [class.active]="router.isActive('/admin-card', false)">
                 <a routerLink="/admin-card">All Cards</a>
             </li>
         </ng-container>

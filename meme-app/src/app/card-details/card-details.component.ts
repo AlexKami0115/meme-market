@@ -63,4 +63,9 @@ export class CardDetailsComponent implements OnInit {
   goBack(): void {
     this.location.back();
   }
+
+  getTimestamp(timeOfComment: Date): String {
+    let timestamp = new Date(timeOfComment);
+    return timestamp.toLocaleString();
+  }
 }

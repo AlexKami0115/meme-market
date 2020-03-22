@@ -5,17 +5,18 @@
 <p>Card Tag: {{card.tag}}</p>
 <p>Card Rarity: {{card.rarity.name}}</p>
 
-<form>
-    Add Comment :
-    <input type="text" [(ngModel)]="comment.commentText" name="comment" size = "50">
-    <button (click)="addComment()">Add Comment</button>
-</form>
 <div class="line"></div>
 <div id="collection">
-    <p> Comments: </p>
-    <div *ngFor="let c of card.comment">
-        <p>{{c.username}} : {{c.commentText}} </p>
+    <h2>Comments</h2>
+    <div class="comment" *ngFor="let c of card.comment">
+        <h6>{{c.username}}</h6>
+        {{c.commentText}}
+        <div class="timestamp">{{getTimestamp(c.timeOfComment)}}</div>
     </div>
+    <form class="form-inline">
+        <input type="text" [(ngModel)]="comment.commentText" class="form-control" name="comment" placeholder="Type comment here" size="50">
+        <button (click)="addComment()" class="btn btn-primary">Add Comment</button>
+    </form>
 </div>
 <div class="line"></div>
 <button (click)="goBack()" class="btn btn-secondary">Go Back</button>
