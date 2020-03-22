@@ -6,6 +6,7 @@ import { Card } from '../card';
 import { Comment } from '../comment';
 import { OwnedCardsService } from '../services/owned-cards.service';
 import { UserService } from '../services/user.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-card-details',
@@ -55,6 +56,12 @@ export class CardDetailsComponent implements OnInit {
   deleteCard(): void {
     this.cs.deleteCard(this.card.id).subscribe(
       resp => {
+        Swal.fire({
+          icon: 'success',
+          text: 'Card Deleted!',
+          showConfirmButton: false,
+          timer: 2000
+        })
         this.router.navigate(['/admin-card']);
       }
     )
