@@ -45,6 +45,7 @@ export class CardDetailsComponent implements OnInit {
         this.comment = resp;
         alert('Comment: ' + this.comment.commentText + ' added!');
         this.card.comment.push(this.comment);
+        this.comment = new Comment;
       });;
     }
     else {
