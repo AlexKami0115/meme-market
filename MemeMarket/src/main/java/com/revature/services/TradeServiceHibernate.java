@@ -1,10 +1,12 @@
 package com.revature.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.revature.beans.Trade;
 import com.revature.data.TradeDao;
 
+@Service
 public class TradeServiceHibernate implements TradeService {
 	@Autowired
 	private TradeDao td;

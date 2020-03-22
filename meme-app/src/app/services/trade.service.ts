@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { OwnedCard } from '../owned-card';
+import { TradeStatus } from '../trade-status';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,7 @@ export class TradeService {
 });
   public loggedUser: User;
   public otherUser: User;
-  public trade: Trade;
+  public trade: Trade = new Trade();
 
 
   constructor(
@@ -35,11 +36,21 @@ export class TradeService {
   }
 
   submitTrade(tc: OwnedCard[]){
+    let tradeStatus: TradeStatus = new TradeStatus();
+    tradeStatus.id = 1;
+    tradeStatus.statusName = 'Pending';
     this.trade.patronOne = this.loggedUser.patron;
     this.trade.patronTwo = this.otherUser.patron;
     this.trade.cardsToBeTraded = tc;
-    this.addTrade(this.trade);
-    alert('Your offer has been submitted.');
+    this.trade.tradeStatus = tradeStatus;
+    this.addTrade(this.trade).subscribe(
+      resp => {
+        alert('Your offer has been submitted.');
+      },
+      error => {
+        alert('Your offer was unable to be submitted.');
+      }
+    );
   }
 
   setTradeUsers(lu: User, ou: User){
