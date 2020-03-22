@@ -1,0 +1,10 @@
+package com.revature.services;
+
+import com.revature.beans.Trade;
+
+public interface TradeService {
+	public int addTrade(Trade tr);
+	public Trade getTrade(int id);
+	public boolean updateTrade(Trade tr);
+	public boolean deleteTrade(Trade tr);
+}

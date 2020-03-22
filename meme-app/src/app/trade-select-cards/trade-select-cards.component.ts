@@ -10,7 +10,7 @@ import { OwnedCard } from '../owned-card';
   styleUrls: ['./trade-select-cards.component.css']
 })
 export class TradeSelectCardsComponent implements OnInit {
-  public cardsToBeTraded: OwnedCard[] = new Array();
+  public cardsToBeTraded: OwnedCard[];
   public loggedUser: User;
   public otherUser: User;
 
@@ -22,6 +22,7 @@ export class TradeSelectCardsComponent implements OnInit {
   ngOnInit(): void {
     this.loggedUser = this.ts.getLoggedUser();
     this.otherUser = this.ts.getOtherUser();
+    this.cardsToBeTraded = new Array();
     
     document.getElementById('otherUsersCardDiv').style.display = 'block';
     document.getElementById('loggedUsersCardDiv').style.display = 'none';
@@ -49,9 +50,10 @@ export class TradeSelectCardsComponent implements OnInit {
 
   submitTradeOffer(){
     if(this.cardsToBeTraded.length === 0){
-      //show alert
+      alert('No cards have been selected.')
     }else{
-      
+      this.ts.submitTrade(this.cardsToBeTraded);
+      this.goBack();
     }
   }
 

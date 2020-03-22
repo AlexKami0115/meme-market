@@ -30,7 +30,7 @@ export class TradeService {
     return this.http.post(this.appUrl, body, 
     {headers: this.headers, withCredentials: true})
     .pipe( 
-      map(resp => resp as Trade) 
+      map(resp => resp as Trade)
     );
   }
 
@@ -39,6 +39,7 @@ export class TradeService {
     this.trade.patronTwo = this.otherUser.patron;
     this.trade.cardsToBeTraded = tc;
     this.addTrade(this.trade);
+    alert('Your offer has been submitted.');
   }
 
   setTradeUsers(lu: User, ou: User){
