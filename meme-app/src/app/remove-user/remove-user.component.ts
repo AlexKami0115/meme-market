@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
 import { Router } from '@angular/router';
+import { User } from '../user';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-remove-user',
@@ -9,6 +11,7 @@ import { Router } from '@angular/router';
 })
 export class RemoveUserComponent implements OnInit {
   public username: string;
+  patronUsers: User[];
 
   constructor(
     private us: UserService,
@@ -16,22 +19,38 @@ export class RemoveUserComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.us.getPatronUsers().subscribe(
+      resp => {
+        this.patronUsers = resp;
+      }
+    );
   }
 
   removeUser(): void {
     if(this.username){
       this.us.deleteUser(this.username).subscribe(
         resp => {
-          alert('username: ' + this.username + 'deleted')
+          Swal.fire({
+            icon: 'success',
+            text: 'User: ' + this.username + ' removed.',
+            showConfirmButton: false,
+            timer: 2000
+          })
           this.router.navigate(['/home']);
         },
         error => {
-          alert('Username not Found.')
+          Swal.fire({
+            icon: 'error',
+            text: 'Username not found.',
+          })
         }
         );
     }
     else {
-      alert('Please enter a valid username');
+      Swal.fire({
+        icon: 'error',
+        text: 'Please enter a valid username.',
+      })
     }
   }
 }

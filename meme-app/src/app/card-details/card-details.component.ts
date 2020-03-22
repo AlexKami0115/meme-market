@@ -43,7 +43,6 @@ export class CardDetailsComponent implements OnInit {
     if(this.comment.commentText) {
       this.ocs.addCardComment(cardId, this.comment.commentText).subscribe((resp)=>{
         this.comment = resp;
-        alert('Comment: ' + this.comment.commentText + ' added!');
         this.card.comment.push(this.comment);
         this.comment = new Comment;
       });;
@@ -73,7 +72,6 @@ export class CardDetailsComponent implements OnInit {
   deleteComment(comment: Comment): void {
     this.ocs.deleteCardComment(comment).subscribe(
       resp => {
-        alert('comment is deleted: ' + comment.commentText);
         this.card.comment.pop();
       }
     )

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PackService } from '../services/pack.service';
 import { Card } from '../card';
 import { UserService } from '../services/user.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-pick-card-pack',
@@ -19,6 +20,12 @@ export class PickCardPackComponent implements OnInit {
   }
 
   buyPack(i: number): void {
+    Swal.fire({
+      icon: 'success',
+      text: 'Opening Card Pack..',
+      showConfirmButton: false,
+      timer: 2500
+    })
     this.ps.getCardPack(i).subscribe(
       resp => {
         this.cardsInPack = resp;
