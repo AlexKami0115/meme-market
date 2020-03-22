@@ -60,4 +60,14 @@ public class CardController {
 			return ResponseEntity.notFound().build();
 		}
 	}
+	
+	@DeleteMapping(path="/ownedCards/{id}")
+	private ResponseEntity<Card> deleteComment(@PathVariable Integer id) {
+		Comment comment = commentService.getComment(id);
+		if (commentService.deleteComment(comment)) {
+			return ResponseEntity.noContent().build();
+		} else {
+			return ResponseEntity.notFound().build();
+		}
+	}
 }

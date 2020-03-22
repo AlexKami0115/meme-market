@@ -45,6 +45,7 @@ export class CardDetailsComponent implements OnInit {
         this.comment = resp;
         alert('Comment: ' + this.comment.commentText + ' added!');
         this.card.comment.push(this.comment);
+        this.comment = new Comment;
       });;
     }
     else {
@@ -67,5 +68,14 @@ export class CardDetailsComponent implements OnInit {
   getTimestamp(timeOfComment: Date): String {
     let timestamp = new Date(timeOfComment);
     return timestamp.toLocaleString();
+  }
+
+  deleteComment(comment: Comment): void {
+    this.ocs.deleteCardComment(comment).subscribe(
+      resp => {
+        alert('comment is deleted: ' + comment.commentText);
+        this.card.comment.pop();
+      }
+    )
   }
 }
