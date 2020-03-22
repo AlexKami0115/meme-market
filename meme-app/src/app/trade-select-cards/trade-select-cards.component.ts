@@ -47,6 +47,14 @@ export class TradeSelectCardsComponent implements OnInit {
     console.log(this.cardsToBeTraded);
   }
 
+  submitTradeOffer(){
+    if(this.cardsToBeTraded.length === 0){
+      //show alert
+    }else{
+      
+    }
+  }
+
   viewLoggedCollection(){
     document.getElementById('otherUsersCardDiv').style.display = 'none';
     document.getElementById('loggedUsersCardDiv').style.display = 'block';
