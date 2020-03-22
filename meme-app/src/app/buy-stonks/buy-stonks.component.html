@@ -1,2 +1,35 @@
 <h2>Buy Stonks</h2>
-
+<ng-container *ngIf="userService.isPatron(); else notlogged">
+    <form class="form" style="width: 500px;">
+        <div class="form-group">
+            <label for="stonks">Buy: </label>
+            <select class="form-control" #stonksSelect name="stonks" id="stonks" (change)="setStonks(stonksSelect.value)" required>
+                <option value="">Choose an amount</option>
+                <option value="100">100 stonks for $5</option>
+                <option value="250">250 stonks for $10</option>
+                <option value="500">500 stonks for $20</option>
+                <option value="1000">1000 stonks for $40</option>
+            </select>
+        </div>
+        <div class="row">
+            <div class="col-7">
+                <label for="ccnum">Credit Card #: </label>
+                <input type="tel" class="form-control" name="ccnum" id="ccnum" pattern="\d*" maxlength="19" placeholder="1234 1234 1234 1234">
+            </div>
+            <div class="col">
+                <label for="expdate">Exp. Date: </label>
+                <input type="tel" class="form-control" name="expdate" id="expdate" pattern="\d*/d*" maxlength="5" placeholder="MM/YY">
+            </div>
+            <div class="col">
+                <label for="cvc">CVC: </label>
+                <input type="tel" class="form-control" name="cvc" id="cvc" pattern="\d*" maxlength="3" placeholder="123">
+            </div>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary my-2" (click)="submit()">BUY STONKS</button>
+        </div>
+    </form>
+</ng-container>
+<ng-template #notlogged>
+    <p>You must be logged in to buy stonks!</p>
+</ng-template>

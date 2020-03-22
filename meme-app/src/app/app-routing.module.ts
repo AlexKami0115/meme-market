@@ -14,6 +14,7 @@ import { AdminCardComponent } from './admin-card/admin-card.component';
 import { BrowsePatronsComponent } from './browse-patrons/browse-patrons.component';
 import { OtherUsersCollectionComponent } from './other-users-collection/other-users-collection.component';
 import { TradeSelectCardsComponent } from './trade-select-cards/trade-select-cards.component';
+import { BuyStonksComponent } from './buy-stonks/buy-stonks.component';
 
 
 const routes: Routes = [
@@ -75,6 +76,10 @@ const routes: Routes = [
   {
     path: 'trade-select-cards',
     component: TradeSelectCardsComponent
+  },
+  {
+    path: 'buy-stonks',
+    component: BuyStonksComponent
   }
 ];
 

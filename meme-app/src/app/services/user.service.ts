@@ -113,6 +113,14 @@ export class UserService {
     const body = JSON.stringify(username);
     return this.http.delete(this.appUrl + '/'+ username, 
       {headers: this.headers, withCredentials: true})
-      .pipe(map(resp => resp as User))
+      .pipe(map(resp => resp as User));
+  }
+
+  updateUser(u: User): Observable<User> {
+    this.user = u;
+    const body = JSON.stringify(u);
+    return this.http.put(this.appUrl, body,
+      {headers: this.headers, withCredentials: true})
+      .pipe(map(resp => resp as User));
   }
 }

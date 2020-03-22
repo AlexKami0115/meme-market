@@ -2,6 +2,8 @@ package com.revature.controllers;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -34,6 +37,17 @@ public class UserController {
 		p.setStonks(100);
 		us.addUser(u, p);
 		return ResponseEntity.ok(u.getId());
+	}
+	
+	@PutMapping(path="/user")
+	private ResponseEntity<User> updateUser(@RequestBody User u, HttpSession session) {
+		// This method basically only updates stonks because of an issue with OwnedCards
+		Integer stonks = u.getPatron().getStonks();
+		User user = us.getUserById(u.getId());
+		user.getPatron().setStonks(stonks);
+		us.updateUser(user);
+		session.setAttribute("loggedUser", user);
+		return ResponseEntity.ok(user);
 	}
 	
 	@GetMapping(path="/patronUsers")

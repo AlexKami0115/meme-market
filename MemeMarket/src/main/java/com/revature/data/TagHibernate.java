@@ -1,11 +1,15 @@
 package com.revature.data;
 
+import java.util.List;
+
 import org.hibernate.HibernateException;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 import org.springframework.stereotype.Component;
 
+import com.revature.beans.Card;
 import com.revature.beans.Tag;
 import com.revature.utils.HibernateUtil;
 import com.revature.utils.LogUtil;
@@ -38,6 +42,17 @@ public class TagHibernate implements TagDao{
 		Tag t = s.get(Tag.class, id);
 		s.close();
 		return t;
+	};
+	
+	@Override
+	public Tag getTagByName(String name) {
+		Session s = hu.getSession();
+		String query = "from Tag where name=:name";
+		Query<Tag> q = s.createQuery(query, Tag.class);
+		q.setParameter("name", name);
+		List<Tag> tagList = q.getResultList();
+		s.close();
+		return tagList.get(0);
 	};
 	
 	@Override

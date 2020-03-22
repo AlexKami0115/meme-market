@@ -30,7 +30,6 @@ public class LoginController {
 		}
 		else {
 			// USER EXISTS
-			System.out.println("owned cards: " + u.getPatron().getOwnedCards());
 			session.setAttribute("loggedUser", u);
 			return ResponseEntity.ok(u);		
 		}

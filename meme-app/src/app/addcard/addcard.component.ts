@@ -27,16 +27,21 @@ export class AddcardComponent implements OnInit {
   ngOnInit(): void {
     this.card = new Card;
     this.rarityService.getRarities().subscribe(
-      (data) => this.rarities = data
+      (data) => {
+        this.rarities = data;
+        this.card.rarity = this.rarities[0];
+      }
     );
   }
 
-  addRarity(rarity: Rarity): void {
-    this.card.rarity = rarity;
+  addRarity(id: String): void {
+    this.card.rarity = this.rarities[Number(id)-1];
   }
 
   submit(): void {
-    if (this.card.cardText && this.card.image && this.card.memeText) {
+    // Only try to add cards if required info is set
+    if (this.card.cardText && this.card.image && this.card.memeText && this.card.rarity) {
+      // Add all tags to the card
       this.card.tag = [];
       let tagArr = this.tags.split(" ");
       for (let t of tagArr) {
@@ -44,6 +49,7 @@ export class AddcardComponent implements OnInit {
         tag.name = t;
         this.card.tag.push(tag);
       }
+      // Send card to backend to be added
       this.cardService.addCard(this.card).subscribe(
         resp => {
           this.card = resp;

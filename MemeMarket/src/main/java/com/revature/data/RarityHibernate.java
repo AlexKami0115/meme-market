@@ -3,6 +3,7 @@ package com.revature.data;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.TreeSet;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -88,11 +89,10 @@ public class RarityHibernate implements RarityDao {
 	public Set<Rarity> getRarities() {
 //		System.out.println("Here");
 		Session s = hu.getSession();
-		String query = "FROM Rarity";
+		String query = "FROM Rarity ORDER BY id";
 		Query<Rarity> q = s.createQuery(query, Rarity.class);
 		List<Rarity> rarityList = q.getResultList();
-		Set<Rarity> raritySet = new HashSet<Rarity>();
-		raritySet.addAll(rarityList);
+		Set<Rarity> raritySet = new TreeSet<Rarity>(rarityList);
 		s.close();
 		return raritySet;
 	};

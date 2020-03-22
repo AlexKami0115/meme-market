@@ -16,8 +16,6 @@ export class PickCardPackComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    document.getElementById('pack-btns').style.display = 'block';
-    document.getElementById('pack-view').style.display = 'none';
   }
 
   buyPack(i: number): void {

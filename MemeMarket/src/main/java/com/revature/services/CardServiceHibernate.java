@@ -13,9 +13,11 @@ import org.springframework.stereotype.Service;
 import com.revature.beans.Card;
 import com.revature.beans.PackTier;
 import com.revature.beans.Rarity;
+import com.revature.beans.Tag;
 import com.revature.beans.User;
 import com.revature.data.CardDao;
 import com.revature.data.PackTierDao;
+import com.revature.data.TagDao;
 
 @Service
 public class CardServiceHibernate implements CardService {
@@ -25,9 +27,21 @@ public class CardServiceHibernate implements CardService {
 	private CardDao cd;
 	@Autowired
 	private PackTierDao ptd;
+	@Autowired
+	private TagDao td;
 
 	@Override
 	public int addCard(Card c) {
+		for (Tag t : c.getTag()) {
+			Tag test = td.getTagByName(t.getName());
+			if (test == null) {
+				// Tag doesn't exist yet, add it
+				td.addTag(t);
+			} else {
+				// Tag already exists, set id
+				t.setId(test.getId());
+			}
+		}
 		return cd.addCard(c);
 	}
 
