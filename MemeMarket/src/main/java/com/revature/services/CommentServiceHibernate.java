@@ -17,4 +17,14 @@ public class CommentServiceHibernate implements CommentService{
 		return cd.addComment(c);
 	}
 
+	@Override
+	public boolean deleteComment(Comment c) {
+		return cd.deleteComment(c);
+	}
+
+	@Override
+	public Comment getComment(int id) {
+		return cd.getComment(id);
+	}
+
 }

@@ -59,4 +59,11 @@ export class OwnedCardsService {
         })
       )
   }
+
+  deleteCardComment(comment: Comment): Observable<Comment>{
+    const body = JSON.stringify(comment.id);
+    return this.http.delete(this.appUrl + '/'+ body, 
+      {headers: this.headers, withCredentials: true})
+      .pipe(map(resp => resp as Comment));
+  }
 }
