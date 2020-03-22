@@ -51,7 +51,7 @@ public class CardServiceHibernate implements CardService {
 		String s[] = c.getMemeText().split("<br>");
 		if(s != null && s.length > 0) {
 			String memeText = s[0];
-			for(int i=0;i<s.length;i++) {
+			for(int i=1;i<s.length;i++) {
 				memeText = memeText + "\n";
 				memeText = memeText + s[i];
 			}
