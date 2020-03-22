@@ -52,7 +52,7 @@ public class CardServiceHibernate implements CardService {
 		if(s != null && s.length > 0) {
 			String memeText = s[0];
 			for(int i=0;i<s.length;i++) {
-				memeText = memeText + "\n";
+				memeText = memeText + System.lineSeparator();
 				memeText = memeText + s[i];
 			}
 			c.setMemeText(memeText);
