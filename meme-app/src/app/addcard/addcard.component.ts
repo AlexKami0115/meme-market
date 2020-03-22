@@ -6,6 +6,7 @@ import { CardService } from '../services/card.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Rarity } from '../rarity';
 import { RarityService } from '../services/rarity.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-addcard',
@@ -53,15 +54,26 @@ export class AddcardComponent implements OnInit {
       this.cardService.addCard(this.card).subscribe(
         resp => {
           this.card = resp;
-          alert('Card successfully created!');
+          Swal.fire({
+            icon: 'success',
+            text: 'Card Added!',
+            showConfirmButton: false,
+            timer: 2000
+          })
           this.router.navigate(['/admin']);
         },
         error => {
-          alert('Card not created.');
+          Swal.fire({
+            icon: 'error',
+            text: 'Card not created. Please try again.',
+          })
         }
       );
     } else {
-      alert('Please fill out all fields.');
+      Swal.fire({
+        icon: 'error',
+        text: 'Please fill out all fields.',
+      })
     }
     
   }

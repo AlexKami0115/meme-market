@@ -3,6 +3,7 @@ import { User } from '../user';
 import { Router } from '@angular/router';
 import { LoginService } from '../services/login.service';
 import { UserService } from '../services/user.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-register',
@@ -26,14 +27,24 @@ export class RegisterComponent implements OnInit {
       this.us.registerUser(this.u).subscribe(
         resp => {
           this.u = resp;
+          Swal.fire({
+            icon: 'success',
+            text: 'Registration Success! Please log in with your account.',
+          })
           if (resp) this.router.navigate(['/home']);
         },
         error => {
-          alert('This username already exists.');
+          Swal.fire({
+            icon: 'error',
+            text: 'Username already exists.',
+          })
         }
       );
     }else{
-      alert('Please fill out all fields')
+      Swal.fire({
+        icon: 'error',
+        text: 'Please fill out both fields.',
+      })
     }
   }
 

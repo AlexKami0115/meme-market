@@ -1,5 +1,7 @@
 package com.revature.data;
 
+import java.util.Set;
+
 import com.revature.beans.Trade;
 
 public interface TradeDao {
@@ -8,4 +10,5 @@ public interface TradeDao {
 	public Trade getTrade(int id);
 	public boolean updateTrade(Trade tr);
 	public boolean deleteTrade(Trade tr);
+	public Set<Trade> getTradesByPatron(Integer id);
 }

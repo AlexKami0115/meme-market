@@ -1,10 +1,21 @@
 package com.revature.data;
 
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
+
 import org.hibernate.HibernateException;
+import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.revature.beans.Card;
+import com.revature.beans.Rarity;
 import com.revature.beans.Trade;
 import com.revature.utils.HibernateUtil;
 import com.revature.utils.LogUtil;
@@ -12,6 +23,8 @@ import com.revature.utils.LogUtil;
 @Component
 public class TradeHibernate implements TradeDao{
 	private HibernateUtil hu = HibernateUtil.getInstance();
+	@Autowired
+	private PatronDao pd;
 	
 	@Override
 	public int addTrade(Trade tr) {
@@ -78,4 +91,15 @@ public class TradeHibernate implements TradeDao{
 		}
 		return b;
 	};
+	
+	@Override
+	public Set<Trade> getTradesByPatron(Integer id){
+		Session s = hu.getSession();
+		
+		String query = "FROM Trade";
+		Query<Trade> q = s.createQuery(query, Trade.class);
+		List<Trade> tradeList = q.getResultList();
+		Set<Trade> tradeSet = new HashSet<>(tradeList);
+		return tradeSet;
+	}
 }

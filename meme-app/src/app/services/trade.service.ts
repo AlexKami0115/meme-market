@@ -53,6 +53,12 @@ export class TradeService {
     );
   }
 
+  getTrades(): Observable<Trade[]> {
+    return this.http.get(this.appUrl,
+      {headers: this.headers, withCredentials: true})
+      .pipe(map(resp => resp as Trade[]));
+  }
+
   setTradeUsers(lu: User, ou: User){
     this.loggedUser = lu;
     this.otherUser = ou;

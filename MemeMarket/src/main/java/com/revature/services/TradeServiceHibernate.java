@@ -1,5 +1,7 @@
 package com.revature.services;
 
+import java.util.Set;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,6 +31,11 @@ public class TradeServiceHibernate implements TradeService {
 	@Override
 	public boolean deleteTrade(Trade tr) {
 		return td.deleteTrade(tr);
+	}
+
+	@Override
+	public Set<Trade> getTrades(Integer id) {
+		return td.getTradesByPatron(id);
 	}
 
 }

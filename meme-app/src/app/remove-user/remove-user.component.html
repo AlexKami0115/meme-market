@@ -7,3 +7,20 @@
     <button id="submit" class="btn btn-primary btn-block" (click)="removeUser()" type="button">Remove User</button>
 </form>
 <div class="line"></div>
+
+
+<table class="table table-striped" id="UsersTable">
+    <thead class="thead-dark">
+        <tr>
+            <th>All Users</th>
+        </tr>
+    </thead>
+    <tr *ngIf="!patronUsers">
+        <td colspan="4" style="text-align: center;"><img src="https://media.giphy.com/media/y1ZBcOGOOtlpC/200.gif" alt="Loading..."></td>
+    </tr>
+    <ng-container *ngFor="let pu of patronUsers">
+        <tr>
+            <td><a routerLink="/other-users-collection/{{pu.id}}">{{pu.username}}</a></td>
+        </tr>
+    </ng-container>
+</table>

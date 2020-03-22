@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -23,15 +24,27 @@ export class LoginComponent implements OnInit {
     if(this.username && this.password){
       this.us.checkLogin(this.username, this.password).subscribe(
         resp => {
+          Swal.fire({
+            icon: 'success',
+            text: 'Login success.',
+            showConfirmButton: false,
+            timer: 1700
+          })
           if (resp) this.router.navigate(['/home']);
         },
         error => {
-          alert('Incorrect username or password.')
+          Swal.fire({
+            icon: 'error',
+            text: 'Incorrect username or password!',
+          })
         }
         );
     }
     else {
-      alert('Please fill out all fields.');
+      Swal.fire({
+        icon: 'error',
+        text: 'Please fill out both fields.',
+      })
     }
   }
 
