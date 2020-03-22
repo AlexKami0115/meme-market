@@ -12,7 +12,7 @@
         <h6>{{c.username}}</h6>
         {{c.commentText}}
         <div class="timestamp">{{getTimestamp(c.timeOfComment)}}</div>
-        <button (click)="deleteComment(c)" class="submit-with-icon" *ngIf="us.isAdmin()"><span class="glyphicon glyphicon-trash"> Delete Comment</span></button>
+        <button (click)="deleteComment(c)" id="deleteButton" class="submit-with-icon" *ngIf="us.isAdmin()"><span class="glyphicon glyphicon-trash"> Delete Comment</span></button>
     </div>
     <form class="form-inline">
         <input type="text" [(ngModel)]="comment.commentText" class="form-control" name="comment" placeholder="Type comment here" size="50">
