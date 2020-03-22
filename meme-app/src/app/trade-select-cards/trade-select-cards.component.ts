@@ -10,7 +10,7 @@ import { OwnedCard } from '../owned-card';
   styleUrls: ['./trade-select-cards.component.css']
 })
 export class TradeSelectCardsComponent implements OnInit {
-  public cardsToBeTraded: OwnedCard[];
+  public cardsToBeTraded: OwnedCard[] = new Array();
   public loggedUser: User;
   public otherUser: User;
 
@@ -28,8 +28,23 @@ export class TradeSelectCardsComponent implements OnInit {
   }
 
   toggleInOutOfList(oc: OwnedCard){
-    this.cardsToBeTraded.push(oc);
-    document.getElementById('ownedCard' + oc.id.toString).style.opacity = '.5';
+    let alreadyInList: boolean = false;
+    let index: number = 0;
+    for(let ctbt of this.cardsToBeTraded){
+      if(alreadyInList || ctbt.id === oc.id){
+        alreadyInList = true;
+        break;
+      }
+      index += 1;
+    }
+    if(!alreadyInList){
+      this.cardsToBeTraded.push(oc);
+      document.getElementById('ownedCard' + oc.id).style.opacity = '.5';
+    }else{
+      this.cardsToBeTraded.splice(index,1);
+      document.getElementById('ownedCard' + oc.id).style.opacity = '1';
+    }
+    console.log(this.cardsToBeTraded);
   }
 
   viewLoggedCollection(){
