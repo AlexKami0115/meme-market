@@ -1,10 +1,15 @@
 <ng-container *ngIf="us.isPatron(); else notlogged">
     <div id="pack-btns">
         <h2>Get Your Cards Here</h2>
-        <button id="pack1-btn" (click)="buyPack(1)" class="btn btn-primary ml-2 my-2 my-sm-0">Tier 1</button>
-        <button id="pack2-btn" (click)="buyPack(2)" class="btn btn-primary ml-2 my-2 my-sm-0">Tier 2</button>
-        <button id="pack3-btn" (click)="buyPack(3)" class="btn btn-primary ml-2 my-2 my-sm-0">Tier 3</button>
+        <button id="pack1-btn" (click)="buyPack(1)" class="btn btn-primary ml-2 my-2 my-sm-0">Tier 1 (100 stonks)</button>
+        <button id="pack2-btn" (click)="buyPack(2)" class="btn btn-primary ml-2 my-2 my-sm-0">Tier 2 (50 stonks)</button>
+        <button id="pack3-btn" (click)="buyPack(3)" class="btn btn-primary ml-2 my-2 my-sm-0">Tier 3 (20 stonks)</button>
+    <p><br><br> Each pack comes with 3 memes. </p>
+    <p>Tier 1 - Guarentees meme rarity of medium and higher. Best chance at receiving rares.</p>
+    <p>Tier 2 - Guarentees meme rarity of well-done and higher. Higher chance at receiving rares.</p>
+    <p>Tier 3 - Includes all meme rarities. Lower chance at receiving rares.</p>
     </div>
+
     <div id="pack-view" style="display: none;">
         <h2>What You Got</h2>
         <div *ngFor="let c of cardsInPack">

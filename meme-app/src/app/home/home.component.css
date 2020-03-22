@@ -76,4 +76,9 @@ body{
     100%{
       clip-path: ellipse(120px 120px at 102.62% -1.61%)
     }
-  }
+}
+
+p {
+    font-size: 25px;
+}
+  
