@@ -5,6 +5,7 @@ import { UrlService } from './url.service';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { OwnedCard } from '../owned-card';
 
 @Injectable({
   providedIn: 'root'
@@ -24,16 +25,21 @@ export class TradeService {
     private http: HttpClient
   ) { }
 
-  addTrade(t: Trade): Observable<Card> {
+  addTrade(t: Trade): Observable<Trade> {
     const body = JSON.stringify(t);
     return this.http.post(this.appUrl, body, 
     {headers: this.headers, withCredentials: true})
     .pipe( 
-      map(resp => resp as Card) 
+      map(resp => resp as Trade) 
     );
   }
 
-  setTradeCards()
+  submitTrade(tc: OwnedCard[]){
+    this.trade.patronOne = this.loggedUser.patron;
+    this.trade.patronTwo = this.otherUser.patron;
+    this.trade.cardsToBeTraded = tc;
+    this.addTrade(this.trade);
+  }
 
   setTradeUsers(lu: User, ou: User){
     this.loggedUser = lu;
