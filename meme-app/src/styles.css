@@ -153,25 +153,35 @@ h2 {
 .memeImage {
     width: 333px;
     border-style: double;
-    border-width: 4px;
+    border-width: 6px;
 }
 
-.Well-Done {
+.Well-Done:hover {
     border-color: black;
+    border-width: 9px;
+    transform: rotate(-6deg);
 }
 
-.Medium-Well {
+.Medium-Well:hover {
     border-color: #1a1;
+    border-width: 9px;
+    transform: rotate(-6deg);
 }
 
-.Medium {
+.Medium:hover {
     border-color: #11a;
+    border-width: 9px;
+    transform: rotate(-6deg);
 }
 
-.Medium-Rare {
+.Medium-Rare:hover {
     border-color: #a1a;
+    border-width: 9px;
+    transform: rotate(-6deg);
 }
 
-.Rare {
+.Rare:hover {
     border-color: gold;
+    border-width: 9px;
+    transform: rotate(-6deg);
 }
