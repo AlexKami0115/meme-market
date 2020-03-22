@@ -217,7 +217,7 @@ insert into Cards (id, cardImage, cardText, memeText, rarityId)
     values (5, 'https://i.imgur.com/ImUOhmH.jpg', 'cardText', '[Image: Task Manager (Not Responding)]<br>YOU WERE SUPPOSED<br>TO DESTROY THEM<br>[Image: Obi Wan Kenobi yelling on Mustafar]<br>NOT JOIN THEM', 5);
 
 insert into Cards (id, cardImage, cardText, memeText, rarityId)
-    values (6, 'https://i.imgur.com/zQKqevE.jpg', 'cardText', '[Image: Dog sitting below white board with message (If you ever find<br>yourself cringing<br>at something you<br>did in the past, it<br>it means you have<br>grown as a<br>person)]', 1);
+    values (6, 'https://i.imgur.com/zQKqevE.jpg', 'cardText', '[Image: Dog sitting below white board with message<br>(If you ever find<br>yourself cringing<br>at something you<br>did in the past, it<br>it means you have<br>grown as a<br>person)]', 1);
 
 insert into Cards (id, cardImage, cardText, memeText, rarityId)
     values (7, 'https://i.imgur.com/61qz2CY.jpg', 'cardText', '[Image: Giant dust clowd with a dog face (gangnam style) enveloping a city (society in 2012)]', 1);
@@ -232,7 +232,7 @@ insert into Cards (id, cardImage, cardText, memeText, rarityId)
     values (10, 'https://i.imgur.com/f5rGuZ1.jpg', 'cardText', '[Image: Indiana Jones (Me) staring at a golden idol (My Mom''s<br>charger]<br>[Image: Indiana Jones (Me) replacing a golden diol (My Mom''s<br>charger) with a bag of sand (damaged<br>charger)]', 1);
 
 insert into Cards (id, cardImage, cardText, memeText, rarityId)
-    values (11, 'https://i.imgur.com/8z3KRzV.jpg', 'cardText', '[Drawing: Two puppies carrying a banner with a message (Google is better than<br>Reddit to search for<br>something on Reddit]', 1);
+    values (11, 'https://i.imgur.com/8z3KRzV.jpg', 'cardText', '[Drawing: Two puppies carrying a banner with a message<br>(Google is better than<br>Reddit to search for<br>something on Reddit)]', 1);
 
 insert into Cards (id, cardImage, cardText, memeText, rarityId)
     values (12, 'https://i.imgur.com/LGQ4akJ.jpg', 'cardText', 'Me going into WWIII knowing<br>how to use the Pythagorean<br>Theorem<br>[Drawing: Extremely muscular shirtless man in a fighting stance]', 1);
@@ -247,55 +247,52 @@ insert into Cards (id, cardImage, cardText, memeText, rarityId)
     values (16, 'https://i.imgur.com/LPWuB3z.jpg', 'cardText', 'girl: wears ripped jeans<br>girl''s knee:<br>[Image: Jim from The Office, looking through window blinds]', 2);
 
 insert into Cards (id, cardImage, cardText, memeText, rarityId)
-    values (17, 'https://i.imgur.com/WcIkbRJ.jpg', 'cardText', '[Image: Text message conversation (So can we talk?<br>     Talk about what?<br>Us<br>     Why you wanna talk<br>     about the United States) with Unided States distorted]', 2);
+    values (17, 'https://i.imgur.com/WcIkbRJ.jpg', 'cardText', '[Image: Text message conversation<br>(>> So can we talk?<br><br>Talk about what? <<<br><br>>> Us<br>Why you wanna talk <<<br>about the United States)<br>with United States distorted]', 2);
 
 insert into Cards (id, cardImage, cardText, memeText, rarityId)
-    values (18, 'https://i.imgur.com/1KmXSxb.jpg', 'cardText', 'Me and the boys at our Hallowee', 2);
+    values (18, 'https://i.imgur.com/1KmXSxb.jpg', 'cardText', 'Me and the boys at our Halloween party<br>[Image: Four guys in bad costumes posing for a picture]', 2);
 
 insert into Cards (id, cardImage, cardText, memeText, rarityId)
-    values (19, 'https://i.imgur.com/4ZBQ29h.jpg', 'cardText', 'memeText', 2);
+    values (19, 'https://i.imgur.com/4ZBQ29h.jpg', 'cardText', '[Image: Palpatine disfigured and distressed (Phone charger at any angle)]<br>I''m too weak.<br>[Image: Palpatine agressively shooting lightning (Phone charger at one specific angle)]<br>UnlimitedPower!', 2);
 
 insert into Cards (id, cardImage, cardText, memeText, rarityId)
-    values (20, 'https://i.imgur.com/trGI8WL.jpg', 'cardText', 'memeText', 3);
+    values (20, 'https://i.imgur.com/trGI8WL.jpg', 'cardText', 'Media complaining<br>about violent video<br>games<br>[Image: An enraged women being held back while pointing and shouting at a cat in other image]<br>Me, too afraid to pick<br>rude dialogue options<br>thinking it would make<br>the characters sad<br>[Image: Keyboard superimposed over a hissing cat]', 3);
 
 insert into Cards (id, cardImage, cardText, memeText, rarityId)
-    values (21, 'https://i.imgur.com/QwdHWda.jpg', 'cardText', 'memeText', 3);
+    values (21, 'https://i.imgur.com/QwdHWda.jpg', 'cardText', '[Image: Flat screen LCD TV/monitor]<br>*Puts down gently in fear of breaking the TV*<br>[Image: Old CRT TV]<br>*Puts down gently in fear of breaking the table and your fingers*', 3);
 
 insert into Cards (id, cardImage, cardText, memeText, rarityId)
-    values (22, 'https://i.imgur.com/eYFMWKZ.jpg', 'cardText', 'memeText', 3);
+    values (22, 'https://i.imgur.com/eYFMWKZ.jpg', 'cardText', 'The yougest picture of you is the oldest picture of you<br>[Image: Perplexed man takes off his glasses]', 3);
 
 insert into Cards (id, cardImage, cardText, memeText, rarityId)
-    values (23, 'https://i.imgur.com/vNEy1rQ.jpg', 'cardText', 'memeText', 3);
+    values (23, 'https://i.imgur.com/vNEy1rQ.jpg', 'cardText', '2050 is as far away as 1990<br>[Image: Michael from The Office]<br>[softly] Don''t.', 3);
 
 insert into Cards (id, cardImage, cardText, memeText, rarityId)
-    values (24, 'https://i.imgur.com/h55lscO.jpg', 'cardText', 'memeText', 3);
+    values (24, 'https://i.imgur.com/h55lscO.jpg', 'cardText', 'Me and my grandpa when there''s<br>nobody at our fishing spot<br>[Image: Man peering around a tree licking his lips and rubbing his hands together<br>with the image mirrored so that an aged version of the same man is peering around the other side of the tree]', 3);
 
 insert into Cards (id, cardImage, cardText, memeText, rarityId)
-    values (25, 'https://i.imgur.com/YzJAQ4W.jpg', 'cardText', 'memeText', 3);
+    values (25, 'https://i.imgur.com/YzJAQ4W.jpg', 'cardText', 'Me: *opens 3 chrome tabs*<br><br>My $2000 laptop:<br>[Image: The turbine engine of a plane]', 3);
 
 insert into Cards (id, cardImage, cardText, memeText, rarityId)
-    values (26, 'https://i.imgur.com/lz3sPzV.jpg', 'cardText', 'memeText', 3);
+    values (26, 'https://i.imgur.com/lz3sPzV.jpg', 'cardText', 'This collab makes so much sense<br>[Image: Package of Scott toilet paper with Taco Bell Logo on it called Fiesta Strangth]', 3);
 
 insert into Cards (id, cardImage, cardText, memeText, rarityId)
-    values (27, 'https://i.imgur.com/QeYNaFT.png', 'cardText', 'memeText', 4);
+    values (27, 'https://i.imgur.com/QeYNaFT.png', 'cardText', '[Image: Colossusv creature wielding a sword<br>(People who use etc. becasue there<br>are too many examples)<br>facing up with an ordanary small man also wielding a sword (People who use etc. becasue they<br>can''t think of anymore examples)]', 4);
 
 insert into Cards (id, cardImage, cardText, memeText, rarityId)
-    values (28, 'https://i.imgur.com/axN4jli.jpg', 'cardText', 'memeText', 4);
+    values (28, 'https://i.imgur.com/axN4jli.jpg', 'cardText', '[Image: A Roman soldure (my brain)<br>blowing a horn (the fact that ther are more nipples than humans)<br>at a young boy in bed screeming (me at 3am)]', 4);
 
 insert into Cards (id, cardImage, cardText, memeText, rarityId)
-    values (29, 'https://i.imgur.com/6uiy42x.jpg', 'cardText', 'memeText', 4);
+    values (29, 'https://i.imgur.com/6uiy42x.jpg', 'cardText', 'I''m gonna get close to this group of<br>humans. What''s the worst that can<br>happen?<br>[Image: A wolf out in the wild]<br>Thousands of years later:<br>[Image: A sad puppy pug with a birthday cap on<br>amungst an assortment of pink birthday party favors]', 4);
 
 insert into Cards (id, cardImage, cardText, memeText, rarityId)
-    values (30, 'https://i.imgur.com/mtSil7y.jpg', 'cardText', 'memeText', 4);
+    values (30, 'https://i.imgur.com/mtSil7y.jpg', 'cardText', '[Image: The torso of a man buttening up a nice suit<br>(DRESS FOR THE JOB YOU WANT, NBOT THE JOB YOU HAVE)<br>[Image: Man sitting in an office cubical in front of a computer<br>dressed like an F1 racecard driver]', 4);
 
 insert into Cards (id, cardImage, cardText, memeText, rarityId)
-    values (31, 'https://i.imgur.com/9oviAaW.jpg', 'cardText', 'memeText', 5);
+    values (32, 'https://i.imgur.com/s5CS8qI.jpg', 'cardText', '7 year old me in a corner of the pool<br>[Image: Spiderman clinging to a glass panel on the side of a skyscraper with one hand and both feet against the panel', 5);
 
 insert into Cards (id, cardImage, cardText, memeText, rarityId)
-    values (32, 'https://i.imgur.com/s5CS8qI.jpg', 'cardText', 'memeText', 5);
-
-insert into Cards (id, cardImage, cardText, memeText, rarityId)
-    values (33, 'https://i.imgur.com/PuYaKg8.jpg', 'cardText', 'memeText', 5);
+    values (33, 'https://i.imgur.com/PuYaKg8.jpg', 'cardText', '"Video Games Cause violence"<br>[Image: An enraged women being held back while pointing and shouting at a cat in other image]<br>Me taking care of my fields<br>[Image: Hissing cat driving a tractor through an animated field:', 5);
 
 insert into Patrons (id, stonks) values (1, 100);
 insert into Patrons (id, stonks) values (2, 125);
