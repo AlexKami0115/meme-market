@@ -47,7 +47,17 @@ public class CardServiceHibernate implements CardService {
 
 	@Override
 	public Card getCard(int id) {
-		return cd.getCard(id);
+		Card c = cd.getCard(id);
+		String s[] = c.getMemeText().split("<br>");
+		if(s != null && s.length > 0) {
+			String memeText = s[0];
+			for(int i=0;i<s.length;i++) {
+				memeText = memeText + "\n";
+				memeText = memeText + s[i];
+			}
+			c.setMemeText(memeText);
+		}
+		return c;
 	}
 
 	@Override

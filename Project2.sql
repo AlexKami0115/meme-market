@@ -58,7 +58,7 @@ create table Cards(
     id number(10) primary key,
     cardImage varchar2(100) not null,
     cardText varchar2(50),
-    memeText varchar2(50),
+    memeText varchar2(400),
     rarityId number(1),
     constraint fk_Cards_Rarity foreign key (rarityID) references Rarity(id)
 );
@@ -202,58 +202,55 @@ insert into PackTiersRarity(packTiersId, RarityId) values (3, 4);
 insert into PackTiersRarity(packTiersId, RarityId) values (3, 5);
 
 insert into Cards (id, cardImage, cardText, memeText, rarityId) 
-    values (1, 'https://i.imgur.com/WnUkxTb.jpg', 'cardText', 'memeText', 1);
+    values (1, 'https://i.imgur.com/WnUkxTb.jpg', 'cardText', 'Do you even lift?<br><br>Me:<br>[Image: Hand lifting open Oreo package]', 1);
     
 insert into Cards (id, cardImage, cardText, memeText, rarityId) 
-    values (2, 'https://i.imgur.com/Ka9P227.png', 'cardText', 'memeText', 2);
+    values (2, 'https://i.imgur.com/Ka9P227.png', 'cardText', 'Nobody:<br>Gaming laptops after 15 minutes on battery:<br>[Image: Bernie Sanders]<br>I am once again asking<br>for your electrical support', 2);
     
 insert into Cards (id, cardImage, cardText, memeText, rarityId) 
-    values (3, 'https://i.imgur.com/7GdHhvJ.jpg', 'cardText', 'memeText', 3);
+    values (3, 'https://i.imgur.com/7GdHhvJ.jpg', 'cardText', 'me: my back hurts so bad what the hell<br><br>also me:<br>[Drawing: Man aggressively slouching]', 3);
 
 insert into Cards (id, cardImage, cardText, memeText, rarityId)
-    values (4, 'https://i.imgur.com/9oviAaW.jpg', 'cardText', 'memeText', 4);
+    values (4, 'https://i.imgur.com/9oviAaW.jpg', 'cardText', 'me: *bites into burger*<br><br>everything on the opposite<br>end of the burger:<br>[Image: Man jumping out the back of a plane]', 4);
 
 insert into Cards (id, cardImage, cardText, memeText, rarityId)
-    values (5, 'https://i.imgur.com/ImUOhmH.jpg', 'cardText', 'memeText', 5);
+    values (5, 'https://i.imgur.com/ImUOhmH.jpg', 'cardText', '[Image: Task Manager (Not Responding)]<br>YOU WERE SUPPOSED<br>TO DESTROY THEM<br>[Image: Obi Wan Kenobi yelling on Mustafar]<br>NOT JOIN THEM', 5);
 
 insert into Cards (id, cardImage, cardText, memeText, rarityId)
-    values (6, 'https://i.imgur.com/zQKqevE.jpg', 'cardText', 'memeText', 1);
+    values (6, 'https://i.imgur.com/zQKqevE.jpg', 'cardText', '[Image: Dog sitting below white board with message (If you ever find<br>yourself cringing<br>at something you<br>did in the past, it<br>it means you have<br>grown as a<br>person)]', 1);
 
 insert into Cards (id, cardImage, cardText, memeText, rarityId)
-    values (7, 'https://i.imgur.com/61qz2CY.jpg', 'cardText', 'memeText', 1);
+    values (7, 'https://i.imgur.com/61qz2CY.jpg', 'cardText', '[Image: Giant dust clowd with a dog face (gangnam style) enveloping a city (society in 2012)]', 1);
 
 insert into Cards (id, cardImage, cardText, memeText, rarityId)
-    values (8, 'https://i.imgur.com/mMsHS2E.jpg', 'cardText', 'memeText', 1);
+    values (8, 'https://i.imgur.com/mMsHS2E.jpg', 'cardText', 'Me thinking about all<br>the half price<br>Reeses on Feb 15th<br>[Image: Man peering around a tree licking his lips and rubbing his hands together]', 1);
 
 insert into Cards (id, cardImage, cardText, memeText, rarityId)
-    values (9, 'https://i.imgur.com/CJggtL7.jpg', 'cardText', 'memeText', 1);
+    values (9, 'https://i.imgur.com/CJggtL7.jpg', 'cardText', 'Me hists my elbow on desk<br><br>My entire nervous system:<br>', 1);
 
 insert into Cards (id, cardImage, cardText, memeText, rarityId)
-    values (10, 'https://i.imgur.com/f5rGuZ1.jpg', 'cardText', 'memeText', 1);
+    values (10, 'https://i.imgur.com/f5rGuZ1.jpg', 'cardText', '[Image: Indiana Jones (Me) staring at a golden idol (My Mom''s<br>charger]<br>[Image: Indiana Jones (Me) replacing a golden diol (My Mom''s<br>charger) with a bag of sand (damaged<br>charger)]', 1);
 
 insert into Cards (id, cardImage, cardText, memeText, rarityId)
-    values (11, 'https://i.imgur.com/8z3KRzV.jpg', 'cardText', 'memeText', 1);
+    values (11, 'https://i.imgur.com/8z3KRzV.jpg', 'cardText', '[Drawing: Two puppies carrying a banner with a message (Google is better than<br>Reddit to search for<br>something on Reddit]', 1);
 
 insert into Cards (id, cardImage, cardText, memeText, rarityId)
-    values (12, 'https://i.imgur.com/LGQ4akJ.jpg', 'cardText', 'memeText', 1);
+    values (12, 'https://i.imgur.com/LGQ4akJ.jpg', 'cardText', 'Me going into WWIII knowing<br>how to use the Pythagorean<br>Theorem<br>[Drawing: Extremely muscular shirtless man in a fighting stance]', 1);
 
 insert into Cards (id, cardImage, cardText, memeText, rarityId)
-    values (13, 'https://i.imgur.com/BLQgDFl.jpg', 'cardText', 'memeText', 1);
+    values (13, 'https://i.imgur.com/BLQgDFl.jpg', 'cardText', '[Image: Man holding up spraycan with speach bubble (Is this good<br>for wasps?) facing a cashier with speach bubble (No, it kills<br>them.)]', 1);
 
 insert into Cards (id, cardImage, cardText, memeText, rarityId)
-    values (14, 'https://i.imgur.com/OwMcxw4.jpg', 'cardText', 'memeText', 1);
+    values (14, 'https://i.imgur.com/OwMcxw4.jpg', 'cardText', 'Teacher: You will be grading each<br>ohter''s tests<br>Students:<br>[Image: Russion general amoung rows of men in generic warm clothing]<br>I serve the Soviet Union', 1);
 
 insert into Cards (id, cardImage, cardText, memeText, rarityId)
-    values (15, 'https://i.imgur.com/EJ4WQi7.jpg', 'cardText', 'memeText', 2);
+    values (16, 'https://i.imgur.com/LPWuB3z.jpg', 'cardText', 'girl: wears ripped jeans<br>girl''s knee:<br>[Image: Jim from The Office, looking through window blinds]', 2);
 
 insert into Cards (id, cardImage, cardText, memeText, rarityId)
-    values (16, 'https://i.imgur.com/LPWuB3z.jpg', 'cardText', 'memeText', 2);
+    values (17, 'https://i.imgur.com/WcIkbRJ.jpg', 'cardText', '[Image: Text message conversation (So can we talk?<br>     Talk about what?<br>Us<br>     Why you wanna talk<br>     about the United States) with Unided States distorted]', 2);
 
 insert into Cards (id, cardImage, cardText, memeText, rarityId)
-    values (17, 'https://i.imgur.com/WcIkbRJ.jpg', 'cardText', 'memeText', 2);
-
-insert into Cards (id, cardImage, cardText, memeText, rarityId)
-    values (18, 'https://i.imgur.com/1KmXSxb.jpg', 'cardText', 'memeText', 2);
+    values (18, 'https://i.imgur.com/1KmXSxb.jpg', 'cardText', 'Me and the boys at our Hallowee', 2);
 
 insert into Cards (id, cardImage, cardText, memeText, rarityId)
     values (19, 'https://i.imgur.com/4ZBQ29h.jpg', 'cardText', 'memeText', 2);

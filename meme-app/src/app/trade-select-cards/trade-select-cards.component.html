@@ -3,7 +3,7 @@
 <div id="otherUsersCardDiv">
     <button (click)="viewLoggedCollection()" class="btn btn-secondary">View Your Collection</button>
     <h2>{{otherUser.username}}'s Collection</h2>
-    <p>Select the cards you would like to recieve.</p>
+    <p>Select the card(s) you would like to recieve.</p>
     <div id="collection">
         <div *ngFor="let oc of otherUser.patron.ownedCards">
             <img id="ownedCard{{oc.id}}" src="{{oc.card.image}}" (click)="toggleInOutOfList(oc)" class="memeImage {{oc.card.rarity.name}}">
@@ -13,7 +13,7 @@
 <div id="loggedUsersCardDiv">
     <button (click)="viewOtherCollection()" class="btn btn-secondary">View {{otherUser.username}}'s' Collection</button>
     <h2>Your Collection</h2>
-    <p>Select the cards you would like to offer.</p>
+    <p>Select the card(s) you would like to offer.</p>
     <div id="collection">
         <div *ngFor="let oc of loggedUser.patron.ownedCards">
             <img id="ownedCard{{oc.id}}" src="{{oc.card.image}}" (click)="toggleInOutOfList(oc)"  class="memeImage {{oc.card.rarity.name}}">
