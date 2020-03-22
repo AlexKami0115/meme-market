@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { User } from '../user';
+import { Trade } from '../trade';
 
 @Injectable({
   providedIn: 'root'
@@ -7,18 +8,21 @@ import { User } from '../user';
 export class TradeService {
   public loggedUser: User;
   public otherUser: User;
-  
+  public trade: Trade;
+
 
   constructor() { }
 
-  addCard(c: Card): Observable<Card> {
-    const body = JSON.stringify(c);
+  addTrade(t: Trade): Observable<Card> {
+    const body = JSON.stringify(t);
     return this.http.post(this.appUrl, body, 
     {headers: this.headers, withCredentials: true})
     .pipe( 
       map(resp => resp as Card) 
     );
   }
+
+  setTradeCards()
 
   setTradeUsers(lu: User, ou: User){
     this.loggedUser = lu;
