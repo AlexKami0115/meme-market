@@ -292,7 +292,7 @@ insert into Cards (id, cardImage, cardText, memeText, rarityId)
     values (32, 'https://i.imgur.com/s5CS8qI.jpg', 'cardText', '7 year old me in a corner of the pool<br>[Image: Spiderman clinging to a glass panel on the side of a skyscraper with one hand and both feet against the panel', 5);
 
 insert into Cards (id, cardImage, cardText, memeText, rarityId)
-    values (33, 'https://i.imgur.com/PuYaKg8.jpg', 'cardText', '"Video Games Cause violence"<br>[Image: An enraged women being held back while pointing and shouting at a cat in other image]<br>Me taking care of my fields<br>[Image: Hissing cat driving a tractor through an animated field:', 5);
+    values (33, 'https://i.imgur.com/PuYaKg8.jpg', 'cardText', '"Video Games Cause violence"<br>[Image: An enraged women being held back while pointing and shouting at a cat in other image]<br>Me taking care of my fields<br>[Image: Hissing cat driving a tractor through an animated field]', 5);
 
 insert into Patrons (id, stonks) values (1, 100);
 insert into Patrons (id, stonks) values (2, 125);
